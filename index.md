@@ -1,0 +1,20 @@
+---
+layout: layout
+title: "Chapter 7 Networking: Emergence 1979-1981 LANs and DataPBXs"
+---
+
+7.13 Ralph Ungermann and Charlie Bass and the Founding of Ungermann-Bass
+
+Forced out of Zilog at the end of 1978, Ungermann immediately began looking for the next great technological opportunity. His inclinations led him to communications: a field he had been in ever since 1967-1970 when he served on the staff of Art Collins, the founder of Collins Radio. Ungermann had participated in creating a time division multiplexer cabling system interconnecting much of the equipment in their state-of-the-art semiconductor factory — a precursor of local area networking. Leaving Collins Radio for Western Digital, Ungermann managed the development of the UART (Universal Asynchronous Receiver and Transceiver) semiconductor chip; recognized as the first major communications semiconductor chip, funded by DEC and designed in large measure by Bell of DEC. He then joined Intel and created the first USART (Universal Synchronous Asynchronous Receiver and Transceiver) chip. At Zilog, he followed up with the very successful SIO chip, a two-port serial asynchronous/synchronous interface chip, an extension of his previous work. He remembers his search:
+
+> I talked to fifty companies and to a lot of people about what was going on and where they were going. What struck me was that every computer company was working on networking technology and every one told me the same thing: ‘Boy, just think, if we can control the wire, we’re going to control the business.’ It was clear to me that that’s not what the customer wanted and that there was an opportunity there.
+
+Ungermann began talking to others in networking such as Metcalfe, wanting to be sure he was not deceiving himself, further perfecting his vision.
+
+Meanwhile, for those Ungermann had hired at Zilog and left behind, it became a waiting game to see what Exxon, the parent company, would do next. Surely Exxon management must know their loyalties ran to Ungermann, not Zilog, and certainly not to Exxon. Not that many would have mourned their fate, for the self-confident swagger of Zilog that kept people working until they nearly fell asleep from exhaustion had sadly slipped into an unfamiliar world of tiring doubt that made coming to work reason to find new jobs. Ungermann recalls:
+
+> Charlie [Bass] decided, as everybody did, that his career wasn’t going to be at Zilog, so we decided to get together. We started kicking things around about what we’d do.
+
+Even as these conversations were going on, the new Zilog management team led by Manny Fernandez, recruited from Fairchild Semiconductor, tried to make sense of its future. To strengthen management, Fernandez raided his former employer and hired William (Bill) Carrico to be marketing manager for semiconductors. Fernandez soon asked Carrico to investigate the troubled systems group; the one Ungermann had led.
+
+Recognizing the need to bring focus to an ambitious list of development projects, Carrico convened a series of strategy meetings in May-June 1979 attended by Bass, Estrin, Davidson, Joe Kennedy, Dave Folger and Phil Bellinger. Having just introduced their Z-8000 microprocessor, much of the discussion centered around issues such as: What is the systems business given microcomputers? Can microcomputers be architected to perform as one larger computer? Should they build a multi-user minicomputer? All questions begging answers to bring coherence to their product plans. In the sorting out of what needed to be done, and which projects should be cut, Folger suggested Ariel be used to interconnect more than just Z-80 or Z-8000 microcomputers, and be reconceptualized as an “intelligent wire.” One use could be to interconnect terminals to Zilog minicomputers as a terminal multiplexer.

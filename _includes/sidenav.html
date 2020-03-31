@@ -1,0 +1,338 @@
+    {% assign contents_checked = '' %}
+    {% if site.chapters %}
+      {% for chapter in site.chapters %}
+        {% if page.chapter == chapter.chapter %}
+          {% assign contents_checked = 'checked' %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+      <div class="sidenav">
+        <!--<a href="javascript:void(0)" class="closebtn" onclick="sidemenu()">&times;</a>-->
+        <h1>Explore</h1>
+        <div class="hr"></div>
+        <ul class="nav__list" >
+          <li>
+            <input id="table-of-contents" type="checkbox" name="nav" {{ contents_checked }} hidden onclick="uncheck(this, 'nav');" />
+            <label for="table-of-contents">
+              <div>Table Of Contents</div>
+              <svg xmlns="http://www.w3.org/2000/svg" >
+                <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+              </svg>
+            </label>
+        {% if site.chapters %}
+            <ul class="group-list">
+          {% for chapter in site.chapters %}
+            {% assign has_sections = '0' %}
+            {% assign sections = site.sections%}
+            {% for section in sections %}
+              {% if section.chapter == chapter.chapter %}
+                {% capture has_sections %}{{ has_sections = has_sections | plus: '1'}}{% endcapture %}
+              {% endif %}
+            {% endfor %}
+              <li>
+                <input id="chapter-{{chapter.chapter}}" type="checkbox" name="subnav" {% if page.chapter == chapter.chapter %} checked {% endif %} hidden onclick="uncheck(this, 'subnav');" />
+                <label for="chapter-{{chapter.chapter}}" {% if chapter.appendix %}class="nonum"{% endif %}>
+                  <div>{{chapter.title}}</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+            {% if site.sections %}
+                <ul class="sub-group-list">
+              {% for section in sections %}
+                {% if section.chapter == chapter.chapter %}
+                  <li><a href="{{ site.baseurl }}{{section.url}}" {% if section.url == page.url %}class="selected"{% endif %}>{{section.title}}</a></li>
+                {% endif %}
+              {% endfor %}
+                </ul>
+            {% endif %}
+              </li>
+          {% endfor %}
+            </ul>
+        {% endif %}
+          </li>
+          <li>
+            <input id="market-sector" type="checkbox" name="nav" hidden onclick="uncheck(this, 'nav');" />
+            <label for="market-sector">
+              <div>Market Sector</div>
+              <svg xmlns="http://www.w3.org/2000/svg" >
+                <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+              </svg>
+            </label>
+            <ul class="group-list">
+              <li>
+                <input id="sub-group-01" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-01" class="nonum">
+                  <div>Data Communications</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">Companies</a></li>
+                  <li><a href="#">Individuals</a></li>
+                  <li><a href="#">Reports/Analysis</a></li>
+                </ul>
+              </li>
+              <li>
+                <input id="sub-group-02" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-02" class="nonum">
+                  <div>Networking</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">Companies</a></li>
+                  <li><a href="#">Individuals</a></li>
+                  <li><a href="#">Reports/Analysis</a></li>
+                </ul>
+              </li>
+              <li>
+                <input id="sub-group-03" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-03" class="nonum">
+                  <div>Internetworking</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">Companies</a></li>
+                  <li><a href="#">Individuals</a></li>
+                  <li><a href="#">Reports/Analysis</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <input id="companies-organization" type="checkbox" name="nav" hidden onclick="uncheck(this, 'nav');" />
+            <label for="companies-organization">
+              <div>Companies/Organization</div>
+              <svg xmlns="http://www.w3.org/2000/svg" >
+                <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+              </svg>
+            </label>
+            <ul class="group-list">
+              <li>
+                <input id="sub-group-001" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-001" class="nonum">
+                  <div>Startups</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li>
+                    <input id="sub-sub-group-1" type="checkbox" hidden />
+                    <label for="sub-sub-group-1">
+                      <div>Data Communications</div>
+                      <svg xmlns="http://www.w3.org/2000/svg" >
+                        <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                      </svg>
+                    </label>
+                    <ul class="sub-sub-group-list">
+                      <li><a href="#">American Data Systems</a></li>
+                      <li><a href="#">Codex</a></li>
+                      <li><a href="#">Concord Data Systems</a></li>
+                      <li><a href="#">Digital Communications Associates</a></li>
+                      <li><a href="#">General Datacomm</a></li>
+                      <li><a href="#">Infotron</a></li>
+                      <li><a href="#">Intertel</a></li>
+                      <li><a href="#">Micom</a></li>
+                      <li><a href="#">Milgo</a></li>
+                      <li><a href="#">Paradyne</a></li>
+                      <li><a href="#">Timeplex</a></li>
+                      <li><a href="#">Universal Data Systems</a></li>
+                      <li><a href="#">Vadic</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input id="sub-sub-group-2" type="checkbox" hidden />
+                    <label for="sub-sub-group-2">
+                      <div>Networking</div>
+                      <svg xmlns="http://www.w3.org/2000/svg" >
+                        <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                      </svg>
+                    </label>
+                    <ul class="sub-sub-group-list">
+                      <li><a href="#">3Com</a></li>
+                      <li><a href="#">Bridge Communications</a></li>
+                      <li><a href="#">Communications Machinery Corporation</a></li>
+                      <li><a href="#">Concord Data Systems</a></li>
+                      <li><a href="#">Excelan</a></li>
+                      <li><a href="#">Equinox</a></li>
+                      <li><a href="#">Interlan</a></li>
+                      <li><a href="#">Metapath</a></li>
+                      <li><a href="#">Proteon</a></li>
+                      <li><a href="#">Sytek</a></li>
+                      <li><a href="#">Ungermann-Bass</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input id="sub-sub-group-3" type="checkbox" hidden />
+                    <label for="sub-sub-group-3">
+                      <div>Internetworking</div>
+                      <svg xmlns="http://www.w3.org/2000/svg" >
+                        <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                      </svg>
+                    </label>
+                    <ul class="sub-sub-group-list">
+                      <li><a href="#">cisco</a></li>
+                      <li><a href="#">NET</a></li>
+                      <li><a href="#">Proteon</a></li>
+                      <li><a href="#">Retix</a></li>
+                      <li><a href="#">Wellfleet</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <input id="sub-group-002" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-002" class="nonum">
+                  <div>Existing Companies</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">AT&T</a></li>
+                  <li><a href="#">Bolt Beranek & Newman</a></li>
+                  <li><a href="#">DEC</a></li>
+                  <li><a href="#">HP</a></li>
+                  <li><a href="#">IBM</a></li>
+                  <li><a href="#">Rockwell International</a></li>
+                  <li><a href="#">Xerox</a></li>
+                </ul>
+              </li>
+              <li>
+                <input id="sub-group-003" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-003" class="nonum">
+                  <div>Government</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">CCB</a></li>
+                  <li><a href="#">ARPA/DARPA</a></li>
+                  <li><a href="#">Department of Defense</a></li>
+                  <li><a href="#">Department of Justice</a></li>
+                  <li><a href="#">FCC</a></li>
+                  <li><a href="#">IPTO</a></li>
+                  <li><a href="#">MITRE</a></li>
+                  <li><a href="#">NBS (NIST)</a></li>
+                  <li><a href="#">RAND</a></li>
+                </ul>
+              </li>
+              <li>
+                <input id="sub-group-004" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-004" class="nonum">
+                  <div>Standards Organizations</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">IEEE 802</a></li>
+                  <li><a href="#">CCITT</a></li>
+                  <li><a href="#">ECMA</a></li>
+                  <li><a href="#">ISO (and subcommittees)</a></li>
+                  <li><a href="#">NBS</a></li>
+                </ul>
+              </li>
+              <li>
+                <input id="sub-group-005" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-005" class="nonum">
+                  <div>Universities</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">Harvard</a></li>
+                  <li><a href="#">MIT</a></li>
+                  <li><a href="#">MIT - Lincoln Labs</a></li>
+                  <li><a href="#">Stanford</a></li>
+                  <li><a href="#">UC Irvine</a></li>
+                  <li><a href="#">UCLA</a></li>
+                  <li><a href="#">UCSB</a></li>
+                  <li><a href="#">University of Hawaii</a></li>
+                  <li><a href="#">University of Utah</a></li>
+                </ul>
+              </li>
+              <li>
+                <input id="sub-group-006" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-006" class="nonum">
+                  <div>Trade Organizations</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">CCIA</a></li>
+                  <li><a href="#">IDCMA</a></li>
+                </ul>
+              </li>
+              <li>
+                <input id="sub-group-007" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-007" class="nonum">
+                  <div>Venture Capital Firms</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">American Research and Development Corporation</a></li>
+                  <li><a href="#">J.H. Whitney & Company</a></li>
+                  <li><a href="#">Kleiner Perkins Caufield & Byers</a></li>
+                  <li><a href="#">Merrill, Pickard, Anderson & Eyre (NET)</a></li>
+                  <li><a href="#">Oak Investment Partners</a></li>
+                  <li><a href="#">Robertson Coleman & Stevens</a></li>
+                  <li><a href="#">Sequoia Capital</a></li>
+                  <li><a href="#">Sevin Rosen Bayless Borovoy</a></li>
+                </ul>
+              </li>
+              <li>
+                <input id="sub-group-008" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-008" class="nonum">
+                  <div>Investment Banks</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">Alex. Brown & Sons</a></li>
+                  <li><a href="#">Goldman Sachs</a></li>
+                  <li><a href="#">Montgomery Securites</a></li>
+                  <li><a href="#">Morgan Stanley</a></li>
+                  <li><a href="#">Solomon Brothers</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <input id="interview-transcripts" type="checkbox" name="nav" hidden onclick="uncheck(this, 'nav');" />
+            <label for="interview-transcripts">
+              <div>interview-transcripts</div>
+              <svg xmlns="http://www.w3.org/2000/svg" >
+                <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+              </svg>
+            </label>
+            <ul class="group-list">
+              <li>
+                <input id="sub-group-0001" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-0001">
+                  <div>Interview Transcripts</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                  </svg>
+                </label>
+                <ul class="sub-group-list">
+                  <li><a href="#">Alphabetical Listing</a></li>
+                  <li><a href="#">Listing by Company</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
