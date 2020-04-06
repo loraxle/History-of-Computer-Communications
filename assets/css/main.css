@@ -664,6 +664,20 @@ section > p {
   font-weight: 500;
   line-height: 25px;
 }
+section a[name^="fnloc"] {
+  color: var(--bg-blue);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  vertical-align: super;
+}
+.footnotes > ul > li > a {
+  color: var(--bg-blue);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 2px; 
+}
 blockquote {
   margin: 0 0 0 25px;
   padding: 0;

@@ -26,7 +26,14 @@ collections:
         permalink: /section/:path/
     chapters:
         output: false
-        permalink: /chapter/:path/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "sections"
+    values:
+      layout: "explore"
 
 include:
   - _chapters

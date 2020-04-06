@@ -22,16 +22,15 @@
           {% endif %}
         {% endfor %}
             {{ content }}
-
+            {% if page.footnotes %}
             <div class="footnotes">
-              
-                <ul>
-                  {% for item in page.footnotes %}
-                  <li><a name="#fn{{ item.num }}" href="#fnloc{{ item.num }}">[{{ item.num }}]</a>: {{ item.src }}</li>
-                  {% endfor %}
-                </ul>
-              
+              <ul>
+                {% for item in page.footnotes %}
+                <li><a name="fn{{ item.num }}" href="#fnloc{{ item.num }}">[{{ item.num }}]</a>: {{ item.src }}</li>
+                {% endfor %}
+              </ul>
             </div>
+            {% endif %}
           </section>
           <div class="prevnav">
             <div>
