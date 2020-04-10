@@ -63,3 +63,22 @@ function uncheck(selected_element, uncheck_name){
 		}
 	}
 }
+
+var imgs = document.querySelectorAll("section p img");
+for (var i = imgs.length - 1; i >= 0; i--) {
+  var filename=imgs[i].src.split('/').pop()
+  classname = "";
+  if (filename.includes("-c.")) {
+    classname = "imgc";
+  } else if (filename.includes("-l.")) {
+    classname = "imgl";
+  } else if (filename.includes("-r.")) {
+    classname = "imgr";
+  }
+  var formattedImg = 
+    "<div class='" + classname + "'>" + 
+      "<img src='" + imgs[i].src + "' alt='" + imgs[i].src + "' title='" + imgs[i].src + "'>" + 
+      "<h3>" + imgs[i].title + "</h3>" + 
+    "</div";
+  imgs[i].parentNode.innerHTML = formattedImg; 
+}
