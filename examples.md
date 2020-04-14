@@ -1,5 +1,5 @@
 ---
-chapter: 02
+layout: explore
 title: "Mardown Examples"
 footnotes:
   - num: 1
@@ -36,7 +36,7 @@ Images
 Here is an example of an image with a H3 heading above it. (i've ommited the `{{ site.baseurl }}` to show a better preview as this is not markdown but unique to Jekyll and its build process)
 
 ### Example of the two types of modem ideas
-![description of the image for screen readers](../assets/img/modem-example.jpg)
+![description of the image for screen readers](assets/img/modem-example.jpg)
 
 
 Basic Markdown Syntax
