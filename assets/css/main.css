@@ -671,6 +671,30 @@ section a[name^="fnloc"] {
   font-size: 16px;
   vertical-align: super;
 }
+/*section p img[src*="-l"] { }*/
+section p div.imgl {
+  border: 1px solid #E6E6E6;
+  float: left;
+  margin-right: 10px;
+  margin-top: 7px;
+  padding: 9px;
+  background-color: #F5F5F5;
+  width: 100%;
+  max-width: 281px;
+}
+section p div.imgl img {
+  max-width: 263px;
+}
+section p div.imgl h3 {
+  margin: 8px 0 0 0;
+  padding: 0;
+  text-align: center;
+  font-family: acumin-pro, sans-serif;
+  font-style: normal;
+  font-weight: 700px;
+  line-height: 21px;
+  font-size: 16px;
+}
 .footnotes > ul > li > a {
   color: var(--bg-blue);
   text-decoration: none;
