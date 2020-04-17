@@ -1,5 +1,5 @@
 ---
-order: 05
+order: "05"
 title: "Universities"
 nav:
   - heading: Harvard

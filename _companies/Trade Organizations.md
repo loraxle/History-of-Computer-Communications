@@ -1,5 +1,5 @@
 ---
-order: 06
+order: "06"
 title: "Trade Organizations"
 nav:
   - heading: CCIA

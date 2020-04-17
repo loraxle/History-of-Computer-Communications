@@ -1,5 +1,5 @@
 ---
-order: 02
+order: "02"
 title: "Existing Companies"
 nav:
   - heading: AT&T

@@ -1,5 +1,5 @@
 ---
-order: 04
+order: "04"
 title: "Standards Organizations"
 nav:
   - heading: IEEE 802

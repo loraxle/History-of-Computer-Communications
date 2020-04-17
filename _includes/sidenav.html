@@ -116,7 +116,8 @@
             </label>
             <ul class="group-list">
             {% assign idx = 0 %}
-            {% for company in site.companies | sort: "order" %}
+            {% assign companies = site.companies | sort: 'order' %}
+            {% for company in companies %}
               {% assign idx = idx | plus: 1 %}
               <li>
                 <input id="sub-group-000{{ idx }}" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />

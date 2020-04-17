@@ -1,5 +1,5 @@
 ---
-order: 08
+order: "08"
 title: "Investment Banks"
 nav:
   - heading: Alex. Brown & Sons

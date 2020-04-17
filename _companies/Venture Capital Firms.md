@@ -1,5 +1,5 @@
 ---
-order: 07
+order: "07"
 title: "Venture Capital Firms"
 nav:
   - heading: American Research and Development Corporation
