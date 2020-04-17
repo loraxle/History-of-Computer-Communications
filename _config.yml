@@ -26,6 +26,12 @@ collections:
         permalink: /section/:path/
     chapters:
         output: false
+    market_sectors:
+        output: false
+    companies:
+        output: false
+    interview_transcripts:
+        output: false
 
 defaults:
   -

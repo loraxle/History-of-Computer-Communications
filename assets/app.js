@@ -82,3 +82,16 @@ for (var i = imgs.length - 1; i >= 0; i--) {
     "</div";
   imgs[i].parentNode.innerHTML = formattedImg; 
 }
+if (window.location.hash) { // URL Fragment exists
+  var path = window.location.pathname;
+  var endpoint = path.split("/History-of-Computer-Communications/");
+  if (endpoint.length > 1) {
+    var paths = endpoint[1].split("/").slice(0,2);
+    var section = paths[0];
+    var section_id = paths[1];
+    //console.log(section_id);
+    var fragment = decodeURI(window.location.hash).split("#")[1];
+    console.log(fragment);
+    //console.log(document.querySelector(".selected"));
+  }
+}

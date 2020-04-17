@@ -487,9 +487,9 @@ ul.group-list > li > label.nonum::before {
   line-height: 20px;
   padding: 8px 25px 8px 12px;
 }
+/*.sub-group-list label:hover,*/
 .sub-group-list a:focus, .sub-group-list a:hover,
-.sub-group-list label:focus,
-.sub-group-list label:hover {
+.sub-group-list label:focus {
   background-color: var(--hovered);
   color: var(--gray-darker);
 }
@@ -740,7 +740,12 @@ footer {
   font-family: acumin-pro, sans-serif;
   font-style: normal;
 }
-
+ul.sub-sub-group-list {
+  margin-left: 20px;
+}
+ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-list {
+  padding-right: 20px;    
+}
 @media screen and (min-width: 768px) {
   nav {
     height: 75px;

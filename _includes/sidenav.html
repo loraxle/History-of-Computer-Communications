@@ -51,6 +51,7 @@
             </ul>
         {% endif %}
           </li>
+          {% if site.market_sectors %}
           <li>
             <input id="market-sector" type="checkbox" name="nav" hidden onclick="uncheck(this, 'nav');" />
             <label for="market-sector">
@@ -60,50 +61,51 @@
               </svg>
             </label>
             <ul class="group-list">
+            {% assign marketSectors = site.market_sectors | sort: 'order' %}
+            {% assign idx = 0 %}
+            {% for market_sector in marketSectors %}
+              {% assign idx = idx | plus: 1 %}
               <li>
-                <input id="sub-group-01" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-01" class="nonum">
-                  <div>Data Communications</div>
+                <input id="sub-group-00{{ idx }}" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-00{{ idx }}" class="nonum">
+                  <div>{{ market_sector.title }}</div>
                   <svg xmlns="http://www.w3.org/2000/svg" >
                     <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
                   </svg>
                 </label>
                 <ul class="sub-group-list">
-                  <li><a href="#">Companies</a></li>
-                  <li><a href="#">Individuals</a></li>
-                  <li><a href="#">Reports/Analysis</a></li>
+                {% assign idx2 = 0 %}
+                {% for item in market_sector.nav %}
+                  {% assign idx2 = idx2 | plus: 1 %}
+                  <li>
+                    <input id="sub-sub-group-{{ idx }}-{{ idx2 }}" type="checkbox" hidden />
+                    <label for="sub-sub-group-{{ idx }}-{{ idx2 }}">
+                      <div>{{ item.heading }}</div>
+                      <svg xmlns="http://www.w3.org/2000/svg" >
+                        <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                      </svg>
+                    </label>
+                  {% if item.sub-sections %}
+                    <ul class="sub-sub-group-list">
+                    {% for section in item.sub-sections %}
+                      {% for s in site.sections %}
+                        {% assign section_id = s.id | remove: "/section/" %}
+                        {% if section_id == section %}
+                      <li><a href="{{ site.baseurl }}{{ s.id }}/">{{ s.title }}</a></li>
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                  </li>
+                {% endfor %}  
                 </ul>
               </li>
-              <li>
-                <input id="sub-group-02" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-02" class="nonum">
-                  <div>Networking</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">Companies</a></li>
-                  <li><a href="#">Individuals</a></li>
-                  <li><a href="#">Reports/Analysis</a></li>
-                </ul>
-              </li>
-              <li>
-                <input id="sub-group-03" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-03" class="nonum">
-                  <div>Internetworking</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">Companies</a></li>
-                  <li><a href="#">Individuals</a></li>
-                  <li><a href="#">Reports/Analysis</a></li>
-                </ul>
-              </li>
+            {% endfor %}
             </ul>
           </li>
+          {% endif %}
+          {% if site.companies %}
           <li>
             <input id="companies-organization" type="checkbox" name="nav" hidden onclick="uncheck(this, 'nav');" />
             <label for="companies-organization">
@@ -113,203 +115,78 @@
               </svg>
             </label>
             <ul class="group-list">
+            {% assign idx = 0 %}
+            {% for company in site.companies | sort: "order" %}
+              {% assign idx = idx | plus: 1 %}
               <li>
-                <input id="sub-group-001" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-001" class="nonum">
-                  <div>Startups</div>
+                <input id="sub-group-000{{ idx }}" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
+                <label for="sub-group-000{{ idx }}" class="nonum">
+                  <div>{{ company.title }}</div>
                   <svg xmlns="http://www.w3.org/2000/svg" >
                     <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
                   </svg>
                 </label>
                 <ul class="sub-group-list">
+                {% assign idx2 = 0 %}
+                {% for item in company.nav %}
+                  {% assign idx2 = idx2 | plus: 1 %}
                   <li>
-                    <input id="sub-sub-group-1" type="checkbox" hidden />
-                    <label for="sub-sub-group-1">
-                      <div>Data Communications</div>
+                    <input id="sub-sub-group-0{{ idx }}-{{ idx2 }}" type="checkbox" hidden />
+                    <label for="sub-sub-group-0{{ idx }}-{{ idx2 }}">
+                      <div>{{ item.heading }}</div>
                       <svg xmlns="http://www.w3.org/2000/svg" >
                         <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
                       </svg>
                     </label>
+                  {% if item.sub-sections %}
                     <ul class="sub-sub-group-list">
-                      <li><a href="#">American Data Systems</a></li>
-                      <li><a href="#">Codex</a></li>
-                      <li><a href="#">Concord Data Systems</a></li>
-                      <li><a href="#">Digital Communications Associates</a></li>
-                      <li><a href="#">General Datacomm</a></li>
-                      <li><a href="#">Infotron</a></li>
-                      <li><a href="#">Intertel</a></li>
-                      <li><a href="#">Micom</a></li>
-                      <li><a href="#">Milgo</a></li>
-                      <li><a href="#">Paradyne</a></li>
-                      <li><a href="#">Timeplex</a></li>
-                      <li><a href="#">Universal Data Systems</a></li>
-                      <li><a href="#">Vadic</a></li>
+                    {% for section in item.sub-sections %}
+                      {% for s in site.sections %}
+                        {% assign section_id = s.id | remove: "/section/" %}
+                        {% if section_id == section %}
+                      <li><a href="{{ site.baseurl }}{{ s.id }}/">{{ s.title }}</a></li>
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
                     </ul>
-                  </li>
-                  <li>
-                    <input id="sub-sub-group-2" type="checkbox" hidden />
-                    <label for="sub-sub-group-2">
-                      <div>Networking</div>
-                      <svg xmlns="http://www.w3.org/2000/svg" >
-                        <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                      </svg>
-                    </label>
+                  {% endif %}
+                  {% if item.nested-nav %}
                     <ul class="sub-sub-group-list">
-                      <li><a href="#">3Com</a></li>
-                      <li><a href="#">Bridge Communications</a></li>
-                      <li><a href="#">Communications Machinery Corporation</a></li>
-                      <li><a href="#">Concord Data Systems</a></li>
-                      <li><a href="#">Excelan</a></li>
-                      <li><a href="#">Equinox</a></li>
-                      <li><a href="#">Interlan</a></li>
-                      <li><a href="#">Metapath</a></li>
-                      <li><a href="#">Proteon</a></li>
-                      <li><a href="#">Sytek</a></li>
-                      <li><a href="#">Ungermann-Bass</a></li>
+                    {% assign idx3 = 0 %}
+                    {% for nested in item.nested-nav %}
+                      {% assign idx3 = idx3 | plus: 1 %}
+                      <li>
+                        <input id="sub-sub-sub-group-{{ idx }}-{{ idx3 }}" type="checkbox" hidden />
+                        <label for="sub-sub-sub-group-{{ idx }}-{{ idx3 }}">
+                          <div>{{ nested.nested-heading }}</div>
+                          <svg xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                          </svg>
+                        </label>
+                        <ul class="sub-sub-group-list">
+                        {% for section in nested.nested-sections %}
+                          {% for s in site.sections %}
+                            {% if s.id %}
+                              {% assign section_id = s.id | remove: "/section/" %}
+                              {% if section_id == section %}
+                          <li><a href="{{ site.baseurl }}{{ s.id }}/">{{ s.title }}</a></li>
+                              {% endif %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endfor %}
+                        </ul>
+                      </li>
+                    {% endfor %}
                     </ul>
+                  {% endif %}
                   </li>
-                  <li>
-                    <input id="sub-sub-group-3" type="checkbox" hidden />
-                    <label for="sub-sub-group-3">
-                      <div>Internetworking</div>
-                      <svg xmlns="http://www.w3.org/2000/svg" >
-                        <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                      </svg>
-                    </label>
-                    <ul class="sub-sub-group-list">
-                      <li><a href="#">cisco</a></li>
-                      <li><a href="#">NET</a></li>
-                      <li><a href="#">Proteon</a></li>
-                      <li><a href="#">Retix</a></li>
-                      <li><a href="#">Wellfleet</a></li>
-                    </ul>
-                  </li>
+                {% endfor %}  
                 </ul>
               </li>
-              <li>
-                <input id="sub-group-002" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-002" class="nonum">
-                  <div>Existing Companies</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">AT&T</a></li>
-                  <li><a href="#">Bolt Beranek & Newman</a></li>
-                  <li><a href="#">DEC</a></li>
-                  <li><a href="#">HP</a></li>
-                  <li><a href="#">IBM</a></li>
-                  <li><a href="#">Rockwell International</a></li>
-                  <li><a href="#">Xerox</a></li>
-                </ul>
-              </li>
-              <li>
-                <input id="sub-group-003" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-003" class="nonum">
-                  <div>Government</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">CCB</a></li>
-                  <li><a href="#">ARPA/DARPA</a></li>
-                  <li><a href="#">Department of Defense</a></li>
-                  <li><a href="#">Department of Justice</a></li>
-                  <li><a href="#">FCC</a></li>
-                  <li><a href="#">IPTO</a></li>
-                  <li><a href="#">MITRE</a></li>
-                  <li><a href="#">NBS (NIST)</a></li>
-                  <li><a href="#">RAND</a></li>
-                </ul>
-              </li>
-              <li>
-                <input id="sub-group-004" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-004" class="nonum">
-                  <div>Standards Organizations</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">IEEE 802</a></li>
-                  <li><a href="#">CCITT</a></li>
-                  <li><a href="#">ECMA</a></li>
-                  <li><a href="#">ISO (and subcommittees)</a></li>
-                  <li><a href="#">NBS</a></li>
-                </ul>
-              </li>
-              <li>
-                <input id="sub-group-005" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-005" class="nonum">
-                  <div>Universities</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">Harvard</a></li>
-                  <li><a href="#">MIT</a></li>
-                  <li><a href="#">MIT - Lincoln Labs</a></li>
-                  <li><a href="#">Stanford</a></li>
-                  <li><a href="#">UC Irvine</a></li>
-                  <li><a href="#">UCLA</a></li>
-                  <li><a href="#">UCSB</a></li>
-                  <li><a href="#">University of Hawaii</a></li>
-                  <li><a href="#">University of Utah</a></li>
-                </ul>
-              </li>
-              <li>
-                <input id="sub-group-006" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-006" class="nonum">
-                  <div>Trade Organizations</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">CCIA</a></li>
-                  <li><a href="#">IDCMA</a></li>
-                </ul>
-              </li>
-              <li>
-                <input id="sub-group-007" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-007" class="nonum">
-                  <div>Venture Capital Firms</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">American Research and Development Corporation</a></li>
-                  <li><a href="#">J.H. Whitney & Company</a></li>
-                  <li><a href="#">Kleiner Perkins Caufield & Byers</a></li>
-                  <li><a href="#">Merrill, Pickard, Anderson & Eyre (NET)</a></li>
-                  <li><a href="#">Oak Investment Partners</a></li>
-                  <li><a href="#">Robertson Coleman & Stevens</a></li>
-                  <li><a href="#">Sequoia Capital</a></li>
-                  <li><a href="#">Sevin Rosen Bayless Borovoy</a></li>
-                </ul>
-              </li>
-              <li>
-                <input id="sub-group-008" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-008" class="nonum">
-                  <div>Investment Banks</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">Alex. Brown & Sons</a></li>
-                  <li><a href="#">Goldman Sachs</a></li>
-                  <li><a href="#">Montgomery Securites</a></li>
-                  <li><a href="#">Morgan Stanley</a></li>
-                  <li><a href="#">Solomon Brothers</a></li>
-                </ul>
-              </li>
+            {% endfor %}
             </ul>
           </li>
+          {% endif %}
           <li>
             <input id="interview-transcripts" type="checkbox" name="nav" hidden onclick="uncheck(this, 'nav');" />
             <label for="interview-transcripts">
@@ -319,19 +196,8 @@
               </svg>
             </label>
             <ul class="group-list">
-              <li>
-                <input id="sub-group-0001" type="checkbox" name="subnav" hidden onclick="uncheck(this, 'subnav');" />
-                <label for="sub-group-0001">
-                  <div>Interview Transcripts</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
-                  </svg>
-                </label>
-                <ul class="sub-group-list">
-                  <li><a href="#">Alphabetical Listing</a></li>
-                  <li><a href="#">Listing by Company</a></li>
-                </ul>
-              </li>
+              <li><a href="#">Alphabetical Listing</a></li>
+              <li><a href="#">Listing by Company</a></li>
             </ul>
           </li>
         </ul>
