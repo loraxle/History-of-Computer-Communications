@@ -525,6 +525,13 @@ ul.group-list > li > label.nonum::before {
   transition: max-height .5s ease-in-out;
 }
 
+ul.nav__list.not-ready .group-list,
+ul.nav__list.not-ready .sub-group-list,
+ul.nav__list.not-ready .sub-sub-group-list {
+  -webkit-transition: none;
+  transition: none;
+}
+
 .nav__list input[type=checkbox]:checked + label + ul {
   /* reset the height when checkbox is checked */
   max-height: 2000px; /* must be higher than div will expand to work */
@@ -877,6 +884,6 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 }
 @media screen and (min-width: 1640px) {
   .client-content {
-    margin: 79px 0px 100px;
+    margin: 79px 0px 100px 30%;
   }
 }

@@ -82,16 +82,63 @@ for (var i = imgs.length - 1; i >= 0; i--) {
     "</div";
   imgs[i].parentNode.innerHTML = formattedImg; 
 }
+
+function crawlDOM(elm) {
+  var crawling = true;
+  do {
+    if (elm.className) {
+      if (elm.classList.contains("nav__list")) {
+        crawling = false;          
+      }
+    }
+    elm = elm.parentNode;
+    if (elm.tagName == "LI") {
+      for (var i=0; i < elm.childNodes.length; i++) {
+        if (elm.childNodes[i].tagName == "INPUT") {
+          if (elm.childNodes[i].type == "checkbox") {
+            elm.childNodes[i].checked = true;
+          }   
+        }
+      }
+    }
+  }
+  while (crawling); 
+}
+
 if (window.location.hash) { // URL Fragment exists
-  var path = window.location.pathname;
-  var endpoint = path.split("/History-of-Computer-Communications/");
-  if (endpoint.length > 1) {
-    var paths = endpoint[1].split("/").slice(0,2);
-    var section = paths[0];
-    var section_id = paths[1];
-    //console.log(section_id);
-    var fragment = decodeURI(window.location.hash).split("#")[1];
-    console.log(fragment);
-    //console.log(document.querySelector(".selected"));
+  var fragment = decodeURI(window.location.hash).split("#")[1];
+  if (!isNaN(fragment)) { //only using integers for URL fragment
+    fragment = "section" + fragment;
+    var activeSection = document.getElementsByName(fragment);
+    if (activeSection.length > 0) {
+      uncheck(activeSection[0], 'nav');
+      activeSection[0].checked=true;
+      document.querySelector(".selected").classList.remove("selected");
+      activeSection[0].classList.toggle("selected");
+      crawlDOM(activeSection[0]);
+    }
+  }
+}
+
+
+window.onload = function () {
+  document.querySelector(".not-ready").classList.remove("not-ready");
+}
+var navList = document.querySelector(".nav__list");
+for (var i=0; i < navList.childNodes.length; i++) {
+  if (navList.childNodes[i].tagName == "LI") {
+    for (var idx=0; idx < navList.childNodes[i].childNodes.length; idx++) {
+      if (navList.childNodes[i].childNodes[idx].tagName == "INPUT") {
+        if (navList.childNodes[i].childNodes[idx].id == "table-of-contents") {
+          continue;          
+        }
+        navList.childNodes[i].addEventListener("click", function(e){
+          if (e.target.tagName == "A") {
+            //location.href=e.target.href;
+            console.log(e.target.href);
+          }
+        }, false);
+      }
+    } 
   }
 }
