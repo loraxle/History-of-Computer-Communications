@@ -1,0 +1,25 @@
+---
+layout: null
+---
+{
+{% for section in site.sections %}
+  {% assign section_id=section.url | remove: "/section/" | remove: "/" %}
+  "{{ section_id }}" : {
+    "ch" : "{{ section.chapter }}",
+    {% for chapter in site.chapters %}{% if chapter.chapter == section.chapter %}{% if chapter.appendix %}"ch_title" : "{{ chapter.title }}",{% else %}"ch_title" : "Chapter {{ chapter.chapter }} - {{ chapter.title }}",{% endif %}{% endif %}{% endfor %}
+    "content" : "{{ section.content | strip_newlines | xml_escape  }}",
+    {% if section.footnotes %}"footnotes" : [
+      {% for footnote in section.footnotes %}
+      {
+        "num" : {{ footnote.num }},
+        "src" : "{{ footnote.src }}"  
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],{% endif %}
+    "next" : "{% if section.next.url %}{{ section.next.url }}{% endif%}",
+    "prev" : "{% if section.previous.url %}{{ section.previous.url }}{% endif%}",
+    "title" : "{{ section_id }} {{ section.title }}",
+    "url" : "{{ section.url }}"
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+}

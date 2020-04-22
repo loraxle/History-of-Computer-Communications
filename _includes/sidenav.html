@@ -6,13 +6,13 @@
         {% endif %}
       {% endfor %}
     {% endif %}
-      <div class="sidenav">
-        <!--<a href="javascript:void(0)" class="closebtn" onclick="sidemenu()">&times;</a>-->
+      <div class="sidenav notready">
+        <input type="hidden" id="custId" value="">
         <h1>Explore</h1>
         <div class="hr"></div>
-        <ul class="nav__list not-ready" >
+        <ul class="nav__list" >
           <li>
-            <input id="table-of-contents" type="checkbox" name="nav" {{ contents_checked }} hidden />
+            <input id="table-of-contents" type="checkbox" name="nav" {% comment %}{{ contents_checked }}{% endcomment %} hidden />
             <label for="table-of-contents">
               <div>Table Of Contents</div>
               <svg xmlns="http://www.w3.org/2000/svg" >
@@ -23,14 +23,14 @@
             <ul class="group-list">
           {% for chapter in site.chapters %}
             {% assign has_sections = '0' %}
-            {% assign sections = site.sections%}
+            {% assign sections = site.sections | sort: 'order' %}
             {% for section in sections %}
               {% if section.chapter == chapter.chapter %}
                 {% capture has_sections %}{{ has_sections = has_sections | plus: '1'}}{% endcapture %}
               {% endif %}
             {% endfor %}
               <li>
-                <input id="chapter-{{chapter.chapter}}" type="checkbox" name="subnav" {% if page.chapter == chapter.chapter %} checked {% endif %} hidden />
+                <input id="chapter-{{chapter.chapter}}" type="checkbox" name="subnav" {% comment %}{% if page.chapter == chapter.chapter %} checked {% endif %}{% endcomment %} hidden />
                 <label for="chapter-{{chapter.chapter}}" {% if chapter.appendix %}class="nonum"{% endif %}>
                   <div>{{chapter.title}}</div>
                   <svg xmlns="http://www.w3.org/2000/svg" >
@@ -41,7 +41,7 @@
                 <ul class="sub-group-list">
               {% for section in sections %}
                 {% if section.chapter == chapter.chapter %}
-                  <li><a href="{{ site.baseurl }}{{section.url}}" {% if section.url == page.url %}class="selected"{% endif %}>{{section.title}}</a></li>
+                  <li><a href="{{ site.baseurl }}{{section.url}}" id="{{ section.id | remove: '/section/' }}" {% if section.url == page.url %}class="selected"{% endif %}>{{section.title}}</a></li>
                 {% endif %}
               {% endfor %}
                 </ul>

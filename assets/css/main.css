@@ -311,11 +311,44 @@ svg#vertical {
   top: 0;
   overflow: scroll;
   max-height: 100vh;
-  /*background-color: var(--sidebar-bg) !important;*/
   border-right: 1px solid #E0E0E0;
   border-top: 1px solid #E0E0E0;
   padding: 50px 0px 87px 27px;
   pointer-events: all;
+}
+.sidenav.notready {
+  opacity: 0;
+}
+.sidenav.ready {
+  opacity: 1;
+  animation: fadein 0.75s;
+  -moz-animation: fadein 0.75s; /* Firefox */
+  -webkit-animation: fadein 0.75s; /* Safari and Chrome */
+  animation-timing-function: ease-in;
+}
+@keyframes fadein {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
 }
 .sidenav::-webkit-scrollbar {
   display: none;
@@ -525,13 +558,6 @@ ul.group-list > li > label.nonum::before {
   transition: max-height .5s ease-in-out;
 }
 
-ul.nav__list.not-ready .group-list,
-ul.nav__list.not-ready .sub-group-list,
-ul.nav__list.not-ready .sub-sub-group-list {
-  -webkit-transition: none;
-  transition: none;
-}
-
 .nav__list input[type=checkbox]:checked + label + ul {
   /* reset the height when checkbox is checked */
   max-height: 2000px; /* must be higher than div will expand to work */
@@ -575,6 +601,12 @@ label > svg {
 .nav__list input[type=checkbox]:checked:hover + label > svg > path {
   stroke: var(--bg-blue);
   stroke-width: 3;
+}
+.sidenav.notready ul.nav__list .group-list,
+.sidenav.notready ul.nav__list .sub-group-list,
+.sidenav.notready ul.nav__list .sub-sub-group-list {
+  -webkit-transition: none;
+  transition: none;
 }
 /* end sidemenu */
 
@@ -653,6 +685,10 @@ label > svg {
 .prevnav a span {
   margin-top:-3px;
 }
+#prevwrap.hide,
+#nextwrap.hide {
+  visibility: hidden;
+}
 section > h1 {
   color: var(--gray-darker);
   font-size: 22px;
@@ -702,7 +738,7 @@ section p div.imgl h3 {
   line-height: 21px;
   font-size: 16px;
 }
-.footnotes > ul > li > a {
+#footnotes > ul > li > a {
   color: var(--bg-blue);
   text-decoration: none;
   font-weight: 700;
