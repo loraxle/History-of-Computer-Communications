@@ -200,7 +200,9 @@ for (var i=0; i < navList.childNodes.length; i++) {
               return; //allow links to open new tabs
             }
             e.preventDefault();
-            document.querySelector(".selected").classList.remove("selected");
+            if (document.querySelector(".selected")) {
+              document.querySelector(".selected").classList.remove("selected");
+            }
             e.target.classList.add("selected");
             e.target.blur();
             var section_id = e.target.pathname.replace("/History-of-Computer-Communications/section/", "");
