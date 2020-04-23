@@ -11,7 +11,7 @@ nav:
   - heading: Department of Defense
     sub-sections:
       - "1.0"
-  - heading: Department of Justic
+  - heading: Department of Justice
     sub-sections:
       - "1.0"
   - heading: FCC
