@@ -1,32 +1,40 @@
 ---
 layout: null
 ---
-{% assign sections = site.sections | sort: 'order' %}
-{% assign sections_size = site.sections | size %}
-{% assign section_count = 0 %}
+{%- assign sections = site.sections | sort: 'order' -%}
+{%- assign sections_size = site.sections | size -%}
+{%- assign section_count = 0 -%}
 {
-{% for chapter in site.chapters %}{% assign ch_section = sections | where: "chapter", chapter.chapter %}
-    {% for section in ch_section %}
-    {% assign section_count = section_count | plus: 1 %}
-    {% if section_count == sections_size %}{% assign tail = "" %}{% else %}{% assign tail = ","%}{% endif %}
-    {% assign section_id=section.url | remove: "/section/" | remove: "/" %}
+{%- for chapter in site.chapters -%}{%- assign ch_section = sections | where: "chapter", chapter.chapter -%}
+  {%- for section in ch_section -%}
+    {%- assign section_count = section_count | plus: 1 -%}
+    {%- if section_count == sections_size -%}
+      {%- assign tail = "" -%}
+    {%- else -%}
+      {%- assign tail = ","-%}
+    {%- endif -%}
+    {%- assign section_id=section.url | remove: "/section/" | remove: "/" -%}
     "{{ section_id }}" : {
       "ch" : "{{ section.chapter }}",
-      {% if chapter.appendix %}"ch_title" : "{{ chapter.title }}",{% else %}"ch_title" : "Chapter {{ chapter.chapter }} - {{ chapter.title }}",{% endif %}
+      {%- if chapter.appendix -%}
+      "ch_title" : "{{ chapter.title }}",
+      {%- else -%}
+      "ch_title" : "Chapter {{ chapter.chapter }} - {{ chapter.title }}",
+      {%- endif -%}
       "content" : "{{ section.content | strip_newlines | xml_escape  }}",
-      {% if section.footnotes %}"footnotes" : [
-        {% for footnote in section.footnotes %}
+      {%- if section.footnotes -%}"footnotes" : [
+        {%- for footnote in section.footnotes -%}
         {
           "num" : {{ footnote.num }},
           "src" : "{{ footnote.src }}"  
-        }{% unless forloop.last %},{% endunless %}
-        {% endfor %}
+        }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
       ],
-      {% endif %}   
-      "next" : "{% if section_count < sections_size %}{{ sections[section_count].url }}{% endif %}",
-      "prev" : "{% assign prev_count = section_count | minus: 2 %}{% if prev_count >= 0 %}{{ sections[prev_count].url }}{% endif %}",
-      "title" : "{{ section_id }} {{ section.title }}"
+      {%- endif -%}   
+      "next" : "{%- if section_count < sections_size -%}{{ sections[section_count].url }}{%- endif -%}",
+      "prev" : "{%- assign prev_count = section_count | minus: 2 -%}{%- if prev_count >= 0 -%}{{ sections[prev_count].url }}{%- endif -%}",
+      "title" : "{{ section.title }}"
     }{{ tail }}
-    {% endfor %}
-{% endfor %}
+  {%- endfor -%}
+{%- endfor -%}
 }

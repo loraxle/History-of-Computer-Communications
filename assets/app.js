@@ -1,41 +1,79 @@
-var refreshed = true;
-if (window.location.hash) { // URL Fragment exists
-  var fragment = decodeURI(window.location.hash).split("#")[1];
-  if (!isNaN(fragment)) { //only using integers for URL fragment
-    refreshed = false;
-    fragment = "section" + fragment;
-    var activeSection = document.getElementsByName(fragment);
-    if (activeSection.length > 0) {
-      uncheck(activeSection[0], 'nav');
-      activeSection[0].checked=true;
-      document.querySelector(".selected").classList.remove("selected");
-      activeSection[0].classList.add("selected");
-      crawlDOM(activeSection[0]);
+var book_data = {};
+function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+
+function setHash(hash, section_id){
+  if (count.hasOwnProperty(hash)) {
+    if (count[hash] == section_id) {
+      var preva = document.getElementById("preva");
+      var prev = preva.pathname;
+      if (preva.href != "") {
+        if (hash > 1) {
+          if (count.hasOwnProperty(hash - 1)) {
+            prev = prev + "#" + (hash - 1);
+            preva.href = prev;
+          }
+        }
+      }
+      var nexta = document.getElementById("nexta");
+      if (nexta.href != "") {
+        if (count.hasOwnProperty(hash + 1)) {
+          var next = nexta.href + "#" + (hash + 1);
+          nexta.href = next;
+        }
+      }
     }
   }
 }
-if (refreshed) {
-  var selected = document.querySelector(".selected");
-  if (selected) {
-    crawlDOM(selected);
-  }
-}
 
-function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
-
-var book_data = {};
+var refreshed = true;
 
 r(function(){
+    var fragment = 0;
+    if (window.location.hash) { // URL Fragment exists
+      fragment = parseInt(window.location.hash.replace("#", ""));
+      if (!isNaN(fragment)) { //only using integers for URL fragment
+        refreshed = false;
+        var select_name = "section" + fragment;
+        var activeSection = document.getElementsByName(select_name);
+        if (activeSection.length > 0) {
+          uncheck(activeSection[0], 'nav');
+          activeSection[0].checked=true;
+          document.querySelector(".selected").classList.remove("selected");
+          activeSection[0].classList.add("selected");
+          crawlDOM(activeSection[0]);
+        } else {
+          refreshed = true;
+        }
+      }
+    }
+    if (refreshed) {
+      var selected = document.querySelector(".selected");
+      if (selected) {
+        crawlDOM(selected);
+      }
+    }
     let sidenav = document.querySelector(".sidenav");
     if (sessionStorage.getItem("scroll")) {
       sidenav.scrollTop = sessionStorage.getItem("scroll");
     }
     sidenav.classList.remove("notready"); 
     sidenav.classList.add("ready");
+    var section_id = window.location.pathname.replace("/History-of-Computer-Communications/section/","").replace("/", "");
+    let currentState = history.state;
+    if (currentState == null) {
+      var scroll = document.querySelector(".sidenav").scrollTop;
+      const state = { 'section': section_id + window.location.hash, 'scroll': scroll };
+      const title = '';
+      url = window.location.href;
+      history.pushState(state, title, url);
+    }
     getJSON()
     .then(JSON.parse)
     .then(function(response) {
         book_data = response;
+        if (fragment) {
+          setHash(fragment, section_id);
+        }
     });
 });
 
@@ -155,19 +193,40 @@ function crawlDOM(elm) {
 }
 
 window.addEventListener('popstate', (event) => {
-  //console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
   if (event.state) {
     if (event.state.section) {
+      var hash = 0;
       var section_id = event.state.section;
-      document.querySelector(".selected").classList.remove("selected");
-      var hash_array = section_id.split("#");
-      if (hash_array.length > 1) {
-        var hashSection = document.getElementsByName("section" + hash_array[1]);
-        if (hashSection.length > 0) {
-          hashSection[0].classList.add("selected");
+      var section_id_array = section_id.split("#");
+      if (section_id_array.length > 1) {
+        section_id = section_id_array[0];
+        if (!isNaN(parseInt(section_id_array[1]))) {
+          hash = parseInt(section_id_array[1]);         
+        }
+      }
+      if (document.querySelector(".selected")) {
+        document.querySelector(".selected").classList.remove("selected");
+      }
+      if (hash) {
+        var select_name = "section" + hash;
+        var activeSection = document.getElementsByName(select_name);
+        if (activeSection.length > 0) {
+          activeSection[0].checked=true;
+          activeSection[0].classList.add("selected");
+          crawlDOM(activeSection[0]);
         }
       } else {
-         document.getElementById(section_id).classList.add("selected");
+        if (!document.getElementById(section_id)) {
+          return false;
+        }
+        document.getElementById(section_id).classList.add("selected");
+        crawlDOM(document.getElementById(section_id));
+      }
+      if (hash) {
+        renderContent(section_id + "#" + hash);
+        setHash(hash, section_id);
+      } else {
+        renderContent(section_id);
       }
     }
     if (event.state.scroll) {
@@ -184,78 +243,165 @@ function decode (str) {
                .replace(/&amp;/g, '&');
 };
 
+function renderContent(section_id) {
+    var hash = 0;
+    var section_id_array = section_id.split("#");
+    if (section_id_array.length > 1) {
+      section_id = section_id_array[0];
+      if (!isNaN(parseInt(section_id_array[1]))) {
+        hash = parseInt(section_id_array[1]);         
+      } 
+    }
+    //console.log(Object.keys(book_data).indexOf(section_id));
+    if (section_id == "History-of-Computer-Communications/") {
+      return false; // handle history popstate on index / other pages
+    }
+    document.querySelector("content").innerHTML = decode(book_data[section_id].content);
+    formatImgs();
+    document.getElementById("chapter-title").innerHTML = book_data[section_id].ch_title;
+    document.getElementById("section-title").innerHTML = section_id + " " + book_data[section_id].title;
+    if (book_data[section_id].prev == "") {
+      document.getElementById("prevwrap").classList.add("hide");  
+      document.getElementById("preva").href = "";
+    }
+    else {
+      var prev = "/History-of-Computer-Communications" + book_data[section_id].prev;
+      document.getElementById("preva").href = prev;
+      document.getElementById("prevwrap").classList.remove("hide");
+    }
+    if (book_data[section_id].next == "") {
+      document.getElementById("nextwrap").classList.add("hide");  
+      document.getElementById("nexta").href = "";
+    }
+    else {
+      var next = "/History-of-Computer-Communications" + book_data[section_id].next;
+      document.getElementById("nexta").href = next;
+      document.getElementById("nextwrap").classList.remove("hide");
+    }            
+    document.getElementById("footnotes").innerHTML = "";
+    if (book_data[section_id].footnotes) {
+      var ul = document.createElement("UL");
+      for (var f=0; f < book_data[section_id].footnotes.length; f++) {
+        var li = document.createElement("LI");
+        var a = document.createElement("A");
+        a.name = "fn" + book_data[section_id].footnotes[f].num;
+        a.href = "#fnloc" + book_data[section_id].footnotes[f].num;
+        a.textContent = "[" + book_data[section_id].footnotes[f].num + "]";
+        var a_str =
+            "<a name='fn" + book_data[section_id].footnotes[f].num +"' href='#fnloc" + book_data[section_id].footnotes[f].num + "'>" + 
+              "[" + book_data[section_id].footnotes[f].num + "]" + 
+            "</a>: " + book_data[section_id].footnotes[f].src;
+        li.innerHTML =  a_str;
+        ul.appendChild(li);
+      }
+      document.getElementById("footnotes").appendChild(ul);
+    }
+}
+
+function handleLink(e) {
+  if (
+    e.ctrlKey || 
+    e.shiftKey || 
+    e.metaKey || // apple
+    (e.button && e.button == 1) // middle click, >IE9 + everyone else
+  ){
+    return; //allow links to open new tabs
+  }
+  var bubbled = e.target.closest("div");
+  var proceed = 0;
+  switch(bubbled.id) {
+    case "nextwrap":
+      proceed = 1;
+      break;
+    case "prevwrap":
+      proceed = 2;
+      break;
+    default:
+      if (e.target.tagName == "A") {
+        proceed = 3;    
+      }
+  }
+  if (proceed) {
+    e.preventDefault();
+    var url = "";
+    var section_id = "";
+    if (document.querySelector(".selected")) {
+      document.querySelector(".selected").classList.remove("selected");
+    }
+    var hash = 0;
+    switch(proceed) {
+      case 1: //Next
+        url = document.getElementById("nexta").href;
+        section_id = document.getElementById("nexta").pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");
+        var hash = parseInt(document.getElementById("nexta").hash.replace("#", ""));
+        if (!isNaN(hash)) {
+          var activeSection = document.getElementsByName("section" + hash);
+          if (activeSection.length > 0) {
+            activeSection[0].checked=true;
+            activeSection[0].classList.add("selected");
+            crawlDOM(activeSection[0]);
+          }
+        } else {
+          document.getElementById(section_id).classList.add("selected");
+          crawlDOM(document.getElementById(section_id));
+          hash = 0;
+        }
+        break;
+      case 2: //Prev
+        url = document.getElementById("preva").href;
+        section_id = document.getElementById("preva").pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");
+        var hash = parseInt(document.getElementById("preva").hash.replace("#", ""));
+        if (!isNaN(hash)) {
+          var activeSection = document.getElementsByName("section" + hash);
+          if (activeSection.length > 0) {
+            activeSection[0].checked=true;
+            activeSection[0].classList.add("selected");
+            crawlDOM(activeSection[0]);
+          }
+        } else {
+          document.getElementById(section_id).classList.add("selected");
+          crawlDOM(document.getElementById(section_id));        
+          hash = 0;
+        }
+        break;
+      case 3: //<a>
+        section_id = e.target.pathname.replace("/History-of-Computer-Communications/section/","").replace("/", "");
+        e.target.classList.add("selected");
+        e.target.blur();    
+        if (e.target.hash) {
+          hash = parseInt(e.target.hash.replace("#", ""));
+          if (isNaN(hash)) {
+            hash = 0;
+          }
+        }
+        url = e.target.href;
+        break;
+      default:
+        return false;
+    }
+    if (hash) {
+      renderContent(section_id + "#" + hash);
+      setHash(hash, section_id);
+    } else {
+      renderContent(section_id);
+    }
+    var scroll = document.querySelector(".sidenav").scrollTop;
+    const state = { 'section': section_id, 'scroll': scroll };
+    const title = '';
+    history.pushState(state, title, url);
+    return false;
+  }
+}
+
+document.getElementById("nextwrap").addEventListener("click", handleLink, false);
+document.getElementById("prevwrap").addEventListener("click", handleLink, false);
+
 var navList = document.querySelector(".nav__list");
 for (var i=0; i < navList.childNodes.length; i++) {
   if (navList.childNodes[i].tagName == "LI") {
     for (var idx=0; idx < navList.childNodes[i].childNodes.length; idx++) {
       if (navList.childNodes[i].childNodes[idx].tagName == "INPUT") {
-        navList.childNodes[i].addEventListener("click", function(e){
-          if (e.target.tagName == "A") {
-            if (
-              e.ctrlKey || 
-              e.shiftKey || 
-              e.metaKey || // apple
-              (e.button && e.button == 1) // middle click, >IE9 + everyone else
-            ){
-              return; //allow links to open new tabs
-            }
-            e.preventDefault();
-            if (document.querySelector(".selected")) {
-              document.querySelector(".selected").classList.remove("selected");
-            }
-            e.target.classList.add("selected");
-            e.target.blur();
-            var section_id = e.target.pathname.replace("/History-of-Computer-Communications/section/", "");
-            section_id = section_id.replace("/", "");
-            document.querySelector("content").innerHTML = decode(book_data[section_id].content);
-            formatImgs();
-            document.getElementById("chapter-title").innerHTML = book_data[section_id].ch_title;
-            document.getElementById("section-title").innerHTML = book_data[section_id].title;
-            if (book_data[section_id].prev == "") {
-              document.getElementById("prevwrap").classList.add("hide");  
-              document.getElementById("preva").href = "";
-            }
-            else {
-              document.getElementById("preva").href = "/History-of-Computer-Communications" + book_data[section_id].prev;
-              document.getElementById("prevwrap").classList.remove("hide");
-            }
-            if (book_data[section_id].next == "") {
-              document.getElementById("nextwrap").classList.add("hide");  
-              document.getElementById("nexta").href = "";
-            }
-            else {
-              document.getElementById("nexta").href = "/History-of-Computer-Communications" + book_data[section_id].next;
-              document.getElementById("nextwrap").classList.remove("hide");
-            }            
-            document.getElementById("footnotes").innerHTML = "";
-            if (book_data[section_id].footnotes) {
-              var ul = document.createElement("UL");
-              for (var f=0; f < book_data[section_id].footnotes.length; f++) {
-                var li = document.createElement("LI");
-                var a = document.createElement("A");
-                a.name = "fn" + book_data[section_id].footnotes[f].num;
-                a.href = "#fnloc" + book_data[section_id].footnotes[f].num;
-                a.textContent = "[" + book_data[section_id].footnotes[f].num + "]";
-                var a_str =
-                    "<a name='fn" + book_data[section_id].footnotes[f].num +"' href='#fnloc" + book_data[section_id].footnotes[f].num + "'>" + 
-                      "[" + book_data[section_id].footnotes[f].num + "]" + 
-                    "</a>: " + book_data[section_id].footnotes[f].src;
-                li.innerHTML =  a_str;
-                ul.appendChild(li);
-              }
-              document.getElementById("footnotes").appendChild(ul);
-            }
-            if (e.target.hash) {
-              section_id = section_id + e.target.hash;
-            }
-            var scroll = document.querySelector(".sidenav").scrollTop;
-            const state = { 'section': section_id, 'scroll': scroll };
-            const title = '';
-            const url = e.target.pathname + e.target.hash;
-            history.pushState(state, title, url)   ;
-            return false;
-          }
-        }, false);
+        navList.childNodes[i].addEventListener("click", handleLink, false);
       }
     } 
   }
