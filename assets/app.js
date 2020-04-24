@@ -211,22 +211,21 @@ for (var i=0; i < navList.childNodes.length; i++) {
             formatImgs();
             document.getElementById("chapter-title").innerHTML = book_data[section_id].ch_title;
             document.getElementById("section-title").innerHTML = book_data[section_id].title;
-            console.log(book_data[section_id]);
-            if (book_data[section_id].prev) {
-              document.getElementById("prevwrap").classList.add("hide");
-              document.getElementById("preva").href = book_data[section_id].prev;
-            }
-            else {
+            if (book_data[section_id].prev == "") {
               document.getElementById("prevwrap").classList.add("hide");  
               document.getElementById("preva").href = "";
             }
-            if (book_data[section_id].next) {
-              document.getElementById("nexta").href = book_data[section_id].prev;
-              document.getElementById("nextwrap").classList.remove("hide");
-            }
             else {
+              document.getElementById("preva").href = "/History-of-Computer-Communications" + book_data[section_id].prev;
+              document.getElementById("prevwrap").classList.remove("hide");
+            }
+            if (book_data[section_id].next == "") {
               document.getElementById("nextwrap").classList.add("hide");  
               document.getElementById("nexta").href = "";
+            }
+            else {
+              document.getElementById("nexta").href = "/History-of-Computer-Communications" + book_data[section_id].next;
+              document.getElementById("nextwrap").classList.remove("hide");
             }            
             document.getElementById("footnotes").innerHTML = "";
             if (book_data[section_id].footnotes) {

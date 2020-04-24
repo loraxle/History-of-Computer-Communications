@@ -14,12 +14,18 @@
             {% else %}
             <h1 id="chapter-title">Chapter {{ chapter.chapter }} - {{ chapter.title }}</h1>
             {% endif %}
-            {% assign sections = site.sections | sort: "order" %}
+            {% assign sections = site.sections | sort: 'order' %}
+            {% assign sections_size = sections | size %}
+            {% assign page_id = page.url | remove: "/section/" | remove: "/" %}
             {% for section in sections %}
               {% if page.chapter == section.chapter %}
-                {% if page.title == section.title %}
+                {% assign section_id = section.url | remove: "/section/" | remove: "/" %}
+                {% if section_id == page_id %}
                   {% assign section_id = section.url | remove: "/section/" | remove: "/" %}
                   <p id="section-title">{{ section_id }} {{ section.title }}</p>
+                  {% if forloop.index < sections_size %}{% assign next = sections[forloop.index].url %}{% else %}{% assign next = "" %}{% endif %}
+                  {% assign prev_count = forloop.index | minus: 2 %}{% if prev_count >= 0 %}{% assign prev = sections[prev_count].url %}{% else %}{% assign prev = "" %}{% endif %}
+                  <h3>{{ sections.index0 }}</h3>
                 {% endif %}
               {% endif %}
             {% endfor %}
@@ -37,8 +43,8 @@
             </div>
           </section>
           <div class="prevnav">
-            <div id="prevwrap" {% if page.previous.url %}{% else %}class="hide"{% endif %}>
-              <a id="preva" href="{% if page.previous.url %}/History-of-Computer-Communications{{page.previous.url}}{% endif %}">
+            <div id="prevwrap" {% if prev == "" %}class="hide"{% endif %}>
+              <a id="preva" href="{% if page.previous.url %}/History-of-Computer-Communications{{ prev }}{% endif %}">
                 <svg version="1.1" id="prev-arrow" width="27px" height="27px" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 27 27" xml:space="preserve">
                   <style>.st0{fill:#535453}</style>
                   <g id="Icon_ionic-ios-arrow-dropright" transform="rotate(180 15.539 15.539)">
@@ -49,8 +55,8 @@
                 <span>&nbsp;Previous</span>
               </a>
             </div>
-            <div id="nextwrap" {% if page.next.url %}{% else %}class="hide"{% endif %}>
-              <a id="nexta" href="{% if page.next.url %}{% else %}/History-of-Computer-Communications{{page.next.url}}{% endif %}">
+            <div id="nextwrap" {% if next == "" %}class="hide"{% endif %}>
+              <a id="nexta" href="{% if page.next.url %}/History-of-Computer-Communications{{ next }}{% endif %}">
                 <span>Next&nbsp;</span>
                 <svg version="1.1" id="next-arrow" width="27px" height="27px" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 27.7 27.7" xml:space="preserve">
                   <style>.st0{fill:#535453}</style>
