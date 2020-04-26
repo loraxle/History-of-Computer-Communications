@@ -429,3 +429,17 @@ function getJSON() {
     req.send();
   });
 }
+
+document.onkeydown = function(e){
+  if (e.code == "ArrowLeft") {
+    if (document.getElementById("preva").href) {
+      console.log(document.getElementById("preva").href);
+    }
+  }
+  if (e.code == "ArrowRight") {
+    if (document.getElementById("nexta").href) {
+      console.log(document.getElementById("nexta").href);
+    }
+  }
+
+};
