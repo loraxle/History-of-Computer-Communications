@@ -259,7 +259,9 @@ function renderContent(section_id) {
     document.querySelector("content").innerHTML = decode(book_data[section_id].content);
     formatImgs();
     document.getElementById("chapter-title").innerHTML = book_data[section_id].ch_title;
-    document.getElementById("section-title").innerHTML = section_id + " " + book_data[section_id].title;
+    //document.getElementById("section-title").innerHTML = section_id + " " + book_data[section_id].title;
+    document.getElementById("section-title-id").innerHTML = section_id
+    document.getElementById("section-title-id").innerHTML = book_data[section_id].title;
     if (book_data[section_id].prev == "") {
       document.getElementById("prevwrap").classList.add("hide");  
       document.getElementById("preva").href = "";

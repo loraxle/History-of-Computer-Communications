@@ -41,7 +41,7 @@
             {%- if page.footnotes -%}
               <ul>
                 {%- for item in page.footnotes -%}
-                <li><a name="fn{{ item.num }}" href="#fnloc{{ item.num }}">[{{ item.num }}]</a>: {{ item.src }}</li>
+                <li><a name="fn{{ item.num }}" href="#fnloc{{ item.num }}">[{{ item.num }}]</a>: {{ item.src | strip | markdownify | strip }}</li>
                 {%- endfor -%}
               </ul>
             {%- endif -%}
