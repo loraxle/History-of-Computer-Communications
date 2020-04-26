@@ -432,13 +432,13 @@ function getJSON() {
 
 document.onkeydown = function(e){
   if (e.code == "ArrowLeft") {
-    if (document.getElementById("preva").href) {
-      console.log(document.getElementById("preva").href);
+    if (!document.getElementById("prevwrap").classList.contains("hide")) {
+      document.getElementById("preva").click();
     }
   }
   if (e.code == "ArrowRight") {
-    if (document.getElementById("nexta").href) {
-      console.log(document.getElementById("nexta").href);
+    if (!document.getElementById("nextwrap").classList.contains("hide")) {
+      document.getElementById("nexta").click();
     }
   }
 
