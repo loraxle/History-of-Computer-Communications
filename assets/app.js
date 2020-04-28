@@ -296,6 +296,8 @@ function renderContent(section_id) {
       }
       document.getElementById("footnotes").appendChild(ul);
     }
+    var canonical = window.location.origin + "/History-of-Computer-Communications/section/" + section_id;
+    document.querySelector("link[rel='canonical']").setAttribute("href", canonical);
 }
 
 function handleLink(e) {
