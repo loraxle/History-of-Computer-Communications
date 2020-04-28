@@ -560,7 +560,7 @@ ul.group-list > li > label.nonum::before {
 
 .nav__list input[type=checkbox]:checked + label + ul {
   /* reset the height when checkbox is checked */
-  max-height: 2000px; /* must be higher than div will expand to work */
+  max-height: 3000px; /* must be higher than div will expand to work */
 }
 
 /**
