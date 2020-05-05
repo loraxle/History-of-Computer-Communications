@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <body>
+    {%- include nav.html -%}
+    <div class="main">
+        {%- if page.name == "index.md" -%}
+          {%- include home.html -%}
+        {%- endif -%}
+      {% comment %}
+      <div id="stickyside">
+        <div id="menutab" onclick="sidemenu();">
+          <div id="burg" class="burg burg--spin">
+            <div class="burg-box">
+              <div class="burg-inner"></div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar">{%- include sidenav.html -%}</div>
+      </div>
+      {% endcomment %}
+
+      <div id="search-results">
+        <div class="closewrap">
+          <div class="closebtn" onclick="hideResults()">×</div>
+        </div>
+        <div id="results"></div>
+      </div>
+
+    </div>
+    {%- include footer.html -%}
+  {% comment %}<script src="{{ site.baseurl}}/assets/app.js"></script>{% endcomment %}
+  </body>
+</html>
+
+

@@ -252,7 +252,14 @@ function renderContent(section_id) {
         hash = parseInt(section_id_array[1]);         
       } 
     }
-    //console.log(Object.keys(book_data).indexOf(section_id));
+    let pagecontent = document.querySelector(".pagecontent");
+    if (pagecontent) {
+      pagecontent.parentElement.removeChild(pagecontent);
+    }
+    if (Object.keys(book_data).indexOf(section_id) == -1) {
+      console.log("Invalid section id");
+      return false; // handle history popstate on index / other pages
+    }
     if (section_id == "History-of-Computer-Communications/") {
       return false; // handle history popstate on index / other pages
     }
@@ -368,6 +375,10 @@ function handleLink(e) {
         break;
       case 3: //<a>
         section_id = e.target.pathname.replace("/History-of-Computer-Communications/section/","").replace("/", "");
+        if (Object.keys(book_data).indexOf(section_id)) {
+          window.location.assign(e.target.pathname);
+          return false;
+        }
         e.target.classList.add("selected");
         e.target.blur();    
         if (e.target.hash) {
@@ -397,6 +408,8 @@ function handleLink(e) {
 
 document.getElementById("nextwrap").addEventListener("click", handleLink, false);
 document.getElementById("prevwrap").addEventListener("click", handleLink, false);
+document.getElementById("expl").addEventListener("click", sidemenu, false);
+document.getElementById("srch").addEventListener("click", showResults, false);
 
 var navList = document.querySelector(".nav__list");
 for (var i=0; i < navList.childNodes.length; i++) {

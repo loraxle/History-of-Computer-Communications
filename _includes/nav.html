@@ -6,8 +6,8 @@
     </a>
     <div class="nav">
       <div class="navbar">
-        <a href="javascript:void(0)" title="Home">Home</a>    
-        <a href="javascript:void(0)" class="active" onclick="sidemenu();" title="Explore">Explore</a>    
+        <a href="{{ site.baseurl }}/" {%- if page.name == "index.md" -%} class="active" {%- endif -%} title="Home">Home</a>    
+        <a {% if page.name == "index.md" %} href="{{ site.baseurl }}/explore.html"{% else %} href="javascript:void(0)" class="active"{% endif %} id="expl" title="Explore">Explore</a>    
         <a href="javascript:void(0)"  title="Contribute">Contribute</a>    
       </div>
       <div class="search">
@@ -21,9 +21,10 @@
           </defs>
           <path fill="url(#grad1)" d="M0.4,0L0.4,0L1,20.2L0.4,41l0,0L0,20.4L0.4,0z"/>
         </svg>
-        <img id="srch" onclick="showResults();" src="{{ site.baseurl}}/assets/img/search.svg">
+        <img id="srch" src="{{ site.baseurl}}/assets/img/search.svg">
         <input type="text" name="search" placeholder="Search...">
       </div>
     </div>
   </div>
 </nav>
+

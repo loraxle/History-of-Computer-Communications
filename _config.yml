@@ -37,9 +37,9 @@ defaults:
   -
     scope:
       path: ""
-      type: "sections"
+      type: sections
     values:
-      layout: "explore"
+      layout: template
 
 include:
   - _chapters

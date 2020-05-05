@@ -768,7 +768,7 @@ blockquote p {
   line-height: 25px;
   position: relative;
 }
-blockquote p:before {
+blockquote p::before {
   color: var(--bg-blue);
   content: open-quote;
   font-family: zenon,sans-serif;
@@ -843,7 +843,7 @@ footer img.vertsep {
   width: 1.47px;
   height: 148px;
 }
-a#preorder {
+a.preorder {
   background-color: #EB9426;
   border-radius: 3px;
   font-size: 16px;
@@ -944,6 +944,281 @@ ul.sub-sub-group-list {
 ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-list {
   padding-right: 20px;    
 }
+/* page conent */
+.pagecontent {
+  max-width: 740px;
+}
+.pagecontent > h1 {
+  width: 100%;
+  border-bottom: 4px solid #03485C;
+  color: #03485C;
+  font-family: acumin-pro, sans-serif;
+  font-style: normal;
+  font-size: 37px;
+  font-weight: 700;
+  line-height: 27px;
+  padding-bottom: 9px;
+  margin: 0 0 18px;
+}
+.pagecontent > h2 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #414141;
+  line-height: 30px;
+  font-size: 24px;
+}
+.pagecontent > h3 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 27px;
+  font-size: 24px;
+  color: #03485C;
+  border-bottom: 2px solid #03485C;
+  margin: 18px 0px;
+}
+.pagecontent > h4 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 27px;
+  font-size: 16px;
+  color: #414141;
+  margin: 0 0 18px 0;
+}
+.pagecontent > p {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #414141;
+  line-height: 27px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+.pagecontent > p > a {
+  color: #03485C;
+}
+.pagecontent > p > a.smt {
+  font-weight: 600;
+  font-style: italic;
+}
+.pagecontent > ul {
+  list-style: none;
+}
+.pagecontent > ul.mrkt li::before {
+  content: "\25A0";
+  color: #03485C;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+.pagecontent > ul > li {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #414141;
+  line-height: 27px;
+  font-size: 16px;
+}
+.pagecontent > ul.mrkt > li {
+  line-height: 24px;
+  font-size: 15px;
+}
+.pagecontent > ul > li > span {
+  font-weight: 700;
+  color: #03485C;
+}
+.pagecontent > ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #03485C;
+}
+.pagecontent > p a.noul {
+  text-decoration: none;
+  font-weight: 600;
+}
+/* end page content */
+/* home content */
+#homecontent {
+  width: 100%;
+}
+#hometopwrap {
+  position: relative;
+  width: 100%;
+  height: 437px;
+  background-color: rgba(255,255,255,1);
+  overflow: hidden;
+}
+#Rectangle_12_h {
+  opacity: 0.339;
+}
+.Rectangle_12_h {
+  position: absolute;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+}
+#Rectangle_58_j {
+	opacity: 0.132;
+}
+.Rectangle_58_j {
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+#hometop {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hometopbox {
+  background-color: #03485C;
+  color: #fff;
+  max-height: 294px;
+  max-width: 550px;
+  padding: 23px 28px;
+}
+#hometopbox > h2 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 22px;
+  margin: 0;
+}
+#hometopbox > p {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.15px;
+  margin: 10px 0; 
+}
+#homequote {
+  max-width: 348px;
+  margin-left: 36px;
+}
+#homequote blockquote p {
+  display: inline;
+  font-family: zenon,sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gray-darker);
+  font-size: 19px;
+  line-height: 27px;
+  position: relative;
+}
+#homequote blockquote p::before,
+#homequote blockquote p::after {
+  color: rgba(3,72,93,0.45);
+  font-family: zenon,sans-serif;
+  font-weight: 400;
+  font-size: 87px;
+  line-height: 0.1em;
+  position:absolute;
+}
+#homequote blockquote p::before {
+  content: open-quote;
+  top: 16px;
+  left: -42px;
+}
+#homequote blockquote p::after {
+  content: close-quote;
+  bottom: -14px;
+  right: -35px;
+}
+#belowquote {
+  text-align: center;
+  margin-top: 15px;
+  font-family: acumin-pro, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+#homemid {
+  position: relative;
+  top: 0;
+}
+#homemid > #homebook {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+}
+#homemid > #homebook > img {
+  max-width: 606px;
+  max-height: 455px;
+  pointer-events: none;
+  margin: -65px 0 0 -175px;
+}
+#homemid > #homebook > div {
+  margin: 40px 0 0 -100px;
+  max-width: 400px;
+}
+#homemid > #homebook > div > h2 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 42px;
+  font-size: 28px;
+  color: #03485C;
+  margin: 0;
+}
+#homemid > #homebook > div > h3 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 22px;
+  font-size: 18px;
+  color: #03485C;
+}
+#homemid > #homebook > div > p {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #2F2F2F;
+  line-height: 22px;
+  margin: 0;
+}
+#homemid > #homebook > div > a.preorder {
+  margin-top: 0;
+  font-size: 26px;
+  line-height: 24px;
+  border-radius: 9px;
+  padding: 14px 22px;
+}
+#homebtm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+}
+#homebtm > p {
+  max-width: 470px;
+  font-family: acumin-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 24px;
+  font-size: 16px;
+}
+#homebtm > p:first-child {
+  margin-right: 16px;
+}
+#homebtm > p:last-child {
+  font-weight: 700;
+}
+/* end home content */
 @media screen and (min-width: 768px) {
   nav {
     height: 75px;
