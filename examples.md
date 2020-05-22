@@ -71,7 +71,7 @@ Link - [text that you want to be the link](https://www.example.com)
 
 Ready to get fancy? Here is a [link](https://www.example.com) in a paragraph.
 
-Image -	![alt text](../assets/img/modem-example.jpg)
+Image -	![alt text](assets/img/modem-example.jpg)
 
 Tables:
 
