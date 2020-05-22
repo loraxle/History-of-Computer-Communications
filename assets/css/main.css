@@ -1219,6 +1219,29 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-weight: 700;
 }
 /* end home content */
+
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+td,th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--bg-blue);
+  color: #fff;
+}
+
 @media screen and (min-width: 768px) {
   nav {
     height: 75px;
