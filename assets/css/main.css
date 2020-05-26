@@ -1146,12 +1146,17 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   letter-spacing: -0.15px;
   margin: 10px 0; 
 }
+#hometopbox > p > b > i {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
 #homequote {
   max-width: 348px;
-  margin-left: 36px;
+  margin-left: 0px;
 }
 #homequote blockquote p {
-  display: inline;
+  display: inline-block;
   font-family: zenon,sans-serif;
   font-weight: 500;
   font-style: italic;
@@ -1159,6 +1164,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-size: 19px;
   line-height: 27px;
   position: relative;
+  text-align: center;
 }
 #homequote blockquote p::before,
 #homequote blockquote p::after {
@@ -1172,12 +1178,12 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 #homequote blockquote p::before {
   content: open-quote;
   top: 16px;
-  left: -42px;
+  left: -20px;
 }
 #homequote blockquote p::after {
   content: close-quote;
   bottom: -14px;
-  right: -35px;
+  right: 55px;
 }
 #belowquote {
   text-align: center;
@@ -1266,17 +1272,22 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 ul.homelist {
   list-style: none;
   padding: 0 0 0 20px;
+}
+ul.homelist > li {
+  font-family: acumin-pro, sans-serif;
   font-weight: 700;
+  font-style: normal;
+  line-height: 24px;
+  font-size: 16px;  
 }
 ul.homelist > li::before {
-  content: "\2022";
+  content: "\25CF";
   color: #2F2F2F;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   display: inline-block; 
   width: 1em;
   margin-left: -1em;
-
 }
 /* end home content */
 
@@ -1395,6 +1406,9 @@ th {
   #homemid > #homebook > img {
     margin: -70px auto 0 auto;
   }
+  #homebtm {
+    padding: 0 0 65px;
+  }
   footer {
     display: flex;
   }
@@ -1420,6 +1434,9 @@ th {
   #hometop {
     flex-direction: row;
   }
+  #homequote {
+    margin-left: 36px;
+  }
   #hometopbox {
     max-height: 294px;
   }
@@ -1437,7 +1454,7 @@ th {
     padding: 0;
   }
   #homebtm {
-    padding: 0;
+    padding: 0 0 75px;
   }
 }
 @media screen and (min-width: 1100px) {
