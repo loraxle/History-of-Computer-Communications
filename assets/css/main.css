@@ -1088,9 +1088,9 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 #hometopwrap {
   position: relative;
   width: 100%;
-  height: 437px;
+  min-height: 437px;
   background-color: rgba(255,255,255,1);
-  overflow: hidden;
+  padding: 30px 0 50px;
 }
 #Rectangle_12_h {
   opacity: 0.339;
@@ -1121,11 +1121,11 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 #hometopbox {
   background-color: #03485C;
   color: #fff;
-  max-height: 294px;
   max-width: 550px;
   padding: 23px 28px;
 }
@@ -1195,24 +1195,28 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 #homemid > #homebook {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   background: #fff;
 }
 #homemid > #homebook > img {
+  width: 100%;
   max-width: 606px;
   max-height: 455px;
   pointer-events: none;
-  margin: -65px 0 0 -175px;
+  margin: -55px auto 0 auto;
 }
 #homemid > #homebook > div {
-  margin: 40px 0 0 -100px;
+  margin: -35px auto 0;
+  width: 100%;
   max-width: 400px;
+  padding: 10px;
 }
 #homemid > #homebook > div > h2 {
   font-family: acumin-pro, sans-serif;
   font-weight: 700;
   font-style: normal;
   line-height: 42px;
-  font-size: 28px;
+  font-size: 30px;
   color: #03485C;
   margin: 0;
 }
@@ -1222,7 +1226,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-style: normal;
   line-height: 22px;
   font-size: 18px;
-  color: #03485C;
+  color: #0E6989;
 }
 #homemid > #homebook > div > p {
   font-family: acumin-pro, sans-serif;
@@ -1230,6 +1234,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-style: italic;
   color: #2F2F2F;
   line-height: 22px;
+  font-weight: 18px;
   margin: 0;
 }
 #homemid > #homebook > div > a.preorder {
@@ -1244,20 +1249,34 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   justify-content: center;
   align-items: center;
   padding-bottom: 70px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #2F2F2F;
+  padding: 0 10px 30px 10px;
 }
 #homebtm > p {
-  max-width: 470px;
   font-family: acumin-pro, sans-serif;
   font-weight: 500;
   font-style: normal;
   line-height: 24px;
   font-size: 16px;
 }
-#homebtm > p:first-child {
-  margin-right: 16px;
-}
-#homebtm > p:last-child {
+ul.homelist {
+  list-style: none;
+  padding: 0 0 0 20px;
   font-weight: 700;
+}
+ul.homelist > li::before {
+  content: "\2022";
+  color: #2F2F2F;
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+
 }
 /* end home content */
 
@@ -1373,6 +1392,9 @@ th {
     font-size: 18.3px;
     line-height: 29px;
   }
+  #homemid > #homebook > img {
+    margin: -70px auto 0 auto;
+  }
   footer {
     display: flex;
   }
@@ -1389,6 +1411,33 @@ th {
   }
   footer img.vertsep {
     margin: 0px 39px;
+  }
+  #hometopwrap {
+    height: 437px;
+    overflow: hidden;
+    padding: 0;
+  }
+  #hometop {
+    flex-direction: row;
+  }
+  #hometopbox {
+    max-height: 294px;
+  }
+  #homemid > #homebook {
+    flex-direction: row;
+  }
+  #homemid > #homebook > img {
+    max-width: 606px;
+    max-height: 455px;
+    margin: -65px 0 0 -175px;
+  }
+  #homemid > #homebook > div {
+    margin: 40px 0 0 -100px;
+    max-width: 400px;
+    padding: 0;
+  }
+  #homebtm {
+    padding: 0;
   }
 }
 @media screen and (min-width: 1100px) {
