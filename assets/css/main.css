@@ -657,9 +657,15 @@ label > svg {
   align-content: center;
   flex-direction: column;
 }
+.fn-spacer {
+  width: 100%;
+  border-bottom: 1px solid #707070;
+  margin: 33px 0px 24px;   
+}
 .prevnav {
   display:flex;
   justify-content: space-between;
+  margin-top: 33px;
 }
 .prevnav > a svg {
   width: 27px;
@@ -682,7 +688,7 @@ label > svg {
   text-decoration: none;
   color: var(--gray-darker);
   font-size: 15px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 .prevnav a span {
   margin-top:-3px;
@@ -716,11 +722,18 @@ section > p#section-title {
   font-style: normal;
 }
 section a[name^="fnloc"] {
-  color: var(--bg-blue);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
-  vertical-align: super;
+  /*vertical-align: super;*/
+  color: var(--gray-darker);
+  margin-left: 2px;
+}
+section a[name^="fnloc"]:before {
+  content: "[";    
+}
+section a[name^="fnloc"]:after {
+  content: "]";
 }
 /*section p img[src*="-l"] { }*/
 section p div.imgl {
@@ -742,16 +755,44 @@ section p div.imgl h3 {
   text-align: center;
   font-family: acumin-pro, sans-serif;
   font-style: normal;
-  font-weight: 700px;
+  font-weight: 700;
   line-height: 21px;
   font-size: 16px;
+}
+content > p {
+  color: var(--gray-darker);
+  line-height: 25px;
+}
+#footnotes {
+  font-family: acumin-pro, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--gray-darker);
+}
+div#footnotes > ul {
+  padding: 0;
+  list-style-type: none;
+}
+#footnotes > ul > li {
+  display: flex;
+}
+#footnotes > ul > li > p {
+  margin: 0;
+  line-height: 22px;
+  font-size: 14px;
+}
+div.semi {
+  margin: 0 4px 0 2px;
 }
 #footnotes > ul > li > a {
   color: var(--bg-blue);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 2px; 
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+#footnotes > ul > li > a:after { 
+  content: ":",
 }
 blockquote {
   margin: 0 0 0 25px;
@@ -964,7 +1005,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-family: acumin-pro, sans-serif;
   font-weight: 600;
   font-style: normal;
-  color: #414141;
+  color: var(--gray-darker);
   line-height: 30px;
   font-size: 24px;
 }
@@ -984,14 +1025,14 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-style: normal;
   line-height: 27px;
   font-size: 16px;
-  color: #414141;
+  color: var(--gray-darker);
   margin: 0 0 18px 0;
 }
 .pagecontent > p {
   font-family: acumin-pro, sans-serif;
   font-weight: 500;
   font-style: normal;
-  color: #414141;
+  color: var(--gray-darker);
   line-height: 27px;
   margin: 0;
   padding: 0;
@@ -1018,7 +1059,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-family: acumin-pro, sans-serif;
   font-weight: 500;
   font-style: normal;
-  color: #414141;
+  color: var(--gray-darker);
   line-height: 27px;
   font-size: 16px;
 }
