@@ -282,22 +282,19 @@ svg#vertical {
   height: 100%;
   pointer-events: none;
 }
-#stickyside.slide-in-left {
-  left: 0px;
-  top: 0px;
-  opacity: 1;
-}
 .sidebar {
   position: absolute;
   top: 0;
   left: -330px;
   width: 100%;
   height: 100%;
-  transition: 0.4s;
   opacity: 0;
   background-color: var(--sidebar-bg) !important;
   box-shadow: none;
   pointer-events: all;
+}
+.animated {
+  transition: 0.4s;  
 }
 .sidebar.slide-in-left  {
   left: 0;
@@ -363,6 +360,16 @@ svg#vertical {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline
+}
+.sidenav li.subtitle {
+  padding: 10px 0px 8px 0px;
+  margin: 0 0px 8px 58px;
+  color: #000;
+  border-bottom: 2px solid #313131;
+  font-weight: 600;
+}
+.sidenav li.subsection {
+  margin-left: 10px;
 }
 .sidenav ol,
 .sidenav ul {
@@ -725,9 +732,11 @@ section a[name^="fnloc"] {
   text-decoration: none;
   font-weight: 400;
   font-size: 16px;
-  /*vertical-align: super;*/
-  color: var(--gray-darker);
+  vertical-align: super;
   margin-left: 2px;
+  color: var(--bg-blue);
+  font-weight: 700;
+  line-height: 25px;
 }
 section a[name^="fnloc"]:before {
   content: "[";    
@@ -762,6 +771,9 @@ section p div.imgl h3 {
 content > p {
   color: var(--gray-darker);
   line-height: 25px;
+}
+content img {
+  max-width: 100%;
 }
 #footnotes {
   font-family: acumin-pro, sans-serif;
@@ -1379,6 +1391,9 @@ th {
   .sidenav li > label > a > div {
     padding-right: 25px;
   }
+  .sidenav li.subtitle {
+    margin: 0 34px 8px 58px;
+  }
   .hr {
     max-width: 385px;
   }
@@ -1459,14 +1474,26 @@ th {
 }
 @media screen and (min-width: 1100px) {
   #menutab {
-    opacity: 0;
-    pointer-events: none;
+    /*opacity: 0;
+    pointer-events: none;*/
   }
   .sidebar {
-   left: 0px !important;
+   /*left: 0px !important;*/
+   left: -400px;
    opacity: 1;
-   box-shadow: 6px -1px 12px rgba(0,0,0,0.16);
+   /*box-shadow: 6px -1px 12px rgba(0,0,0,0.16);*/
   }
+  .sidebar.slide-in-left  {
+    left: 0;
+    opacity: 1;
+    box-shadow: 6px -1px 12px rgba(0,0,0,0.16);
+  }
+  /*
+  .sidebar.desktop {
+    left: 0px;
+    box-shadow: 6px -1px 12px rgba(0,0,0,0.16);
+  }
+  */
   .client-content {
     margin: 46px 146px 100px 455px;
   }
