@@ -1,0 +1,21 @@
+---
+chapter: Interviews
+title: "Paul Baran"
+order: 
+---
+
+### Charlie Bass
+
+![Charlie Bass]({{ site.baseurl }}/assets/img/charlie-bass.jpg)
+
+Charles “Charlie” Bass made an auspicious decision in 1968: after earning his masters degree in Electrical Engineering from the University of Miami, he elected to pursue his PhD at the University of Hawaii (UH). In 1967, UH received a THEMIS ARPA grant that would have important implications for both the University and Bass. For Bass, over the next four years, Principal Investigators and ARPA personnel would be frequent visitors to UH, introducing Bass to some of the best young research scientists of the day. The THEMIS funding meant UH could attract more faculty and students, such as Bass and John Davidson, who became friends and life-long colleagues. A third important event was in 1972, when Robert Metcalfe came to UH to study the ALOHAnet in order to finish his thesis. Metcalfe, Bass and Davidson became friends. Consequently, Bass was no stranger to the people and events of his day.
+
+When Bass received his Ph.D in Electrical Engineering in 1972, he accepted a teaching position at the University of California, Berkeley. Happy though he was in academia, in 1975, a mutual friend introduced him to Ralph Ungermann who was co-founding Zilog Inc. with Federico Faggin and substantial financial backing from Exxon Enterprises. Bass decided to join Zilog and began teaching at Stanford University. When Ungermann had a falling out with Exxon during the latter half of 1978, and was fired at year-end, Ungermann and Bass had grown closer, to the extent that when Ungermann began contemplating his future, he invited Bass to join him. After months of deliberation, they founded Ungermann-Bass (UB) in July 1979, and settled on a local area networking, or LAN, product able to connect from eight to thirty-two terminals to host computers over Ethernet using the XNS protocol, named the NIU-1. Bass recounts these days in absorbing detail; up through his hoping to create a “home run” product with IBM. He also describes learning in 1984 that IBM had committed to MAP, the Manufacturing Automation Protocol, and thus OSI, or Open System Interconnection protocols. Bass had convinced Ungermann; then GE came looking for a partner and INI was created. MAP proved to be a false hope. Bass confesses it was “the biggest flaw in his crystal ball ever.”
+
+By the spring of 1985, Bass began feeling “disenfranchised” within UB and resigned. As he weighed his alternatives, he unexpectedly received a call from Steve Schwartz, Assistant Group Executive for Telecommunication Products for IBM, offering him a consulting assignment assisting IBM to determine their telecommunication strategy. He was soon “wandering the hallways of IBM.” Nearly a year later, in late 1986, Bass returned to California and rejoined the UB Board of Directors. UB had become a very different company, however: “it was drifting” until the stock market crash of October 1987, when DCA suddenly put the company into financial “play.” Bass had had enough and resigned again. In 1989 Tandem acquired UB for $274 million. That same year, Bass launched his venture capital fund, Bass Ventures.
+
+Although this interview was conducted after 1988, Bass remembers in detail the events of the day, many of which are supported by the interviews of others. Stories of particular importance include; the product planning meetings at Zilog; UB’s struggle to settle on a company strategy; how Sytek became UB’s arch rival; the drama surrounding UB’s Ethernet chip; how Bass closed a deal to develop IBM’s token ring bridge; the acquisitions of both Amdax and Pyramid; and how UB won the Texas Instruments contract to build a PC and how it led to the next generation Terminal Server.
+
+Keywords: UH; Zilog, Inc.; Sytek; Ungermann-Bass, Inc. (UB); NIU-1; Schwartz, Steve; Texas Instruments, Inc. (TI)
+
+[Charlie Bass Interviewed by James Pelkey 8/16/94](https://archive.computerhistory.org/resources/access/text/2018/03/102738753-05-01-acc.pdf)
