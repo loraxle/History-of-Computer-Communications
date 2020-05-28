@@ -14,4 +14,4 @@ Bell also gave me a valuable introduction to Stu Wecker, the creator of DECnet, 
 
 Keywords: Digital Equipment Corporation (DEC), PDP-1, UART chip, PDP-4, PDP-6, VAX
 
-[Gordon Bell Interviewed by James Pelkey 6/17/94](https://archive.computerhistory.org/resources/access/text/2013/05/102746646-05-01-acc.pdf)
+[Gordon Bell Interviewed by James Pelkey 6/17/88](https://archive.computerhistory.org/resources/access/text/2013/05/102746646-05-01-acc.pdf)
