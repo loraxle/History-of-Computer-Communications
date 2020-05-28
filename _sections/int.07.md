@@ -6,6 +6,8 @@ order:
 
 ### Edward Botwinick
 
+![Edward Botwinick]({{ site.baseurl }}/assets/img/edward-botwinick.jpg)
+
 Edward Botwinick is best known for building Timeplex (TIX) from a struggling restart into a successful public company into a dominate Data Communication and Internetworking company before being acquired by Unisys Corporation in November 1987 for over $300 million. Less known is that Botwinick was a serial entrepreneur and venture capitalist. After graduating from the Columbia School of Engineering with a BSEE in 1958, he worked for US Semiconductor Corp. He then co-founded Silicon Transistor Corp. in 1960 that after going public, was acquired in 1963. Between 1963 and 1967, he served as President and principal shareholder of Quantum Inc. Next he joined Goldman Sachs, a leading investment bank, as vice-president of high-technology investment research and venture capital. There he learned of an investment opportunity in American Data Systems (ADS), the company that innovated the time-division multiplexer, or TDM. Although deciding to invest, he followed the success of ADS and the rapid growth of the TDM market.
 
 So when he read of a team of Western Union and Bell Lab engineers seeking capital to launch a TDM company, he became an investor, even qualifying as a founder, and member of the Board of Directors. In anticipation of a sale of stock to the public in September 1972, Botwinick resigned from the Board. TIX was one of the last technology companies to go public before a market crash of technology stocks. He rejoined the Board in May 1977, was elected chairman in June, and became full-time chairman and CEO on July 1st.
