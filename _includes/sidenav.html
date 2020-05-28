@@ -20,15 +20,16 @@
               </svg>
             </label>
         {% if site.chapters %}
+          {% assign sections = site.sections | sort: 'order' %}
             <ul class="group-list">
           {% for chapter in site.chapters %}
             {% assign has_sections = '0' %}
-            {% assign sections = site.sections | sort: 'order' %}
             {% for section in sections %}
               {% if section.chapter == chapter.chapter %}
                 {% capture has_sections %}{{ has_sections = has_sections | plus: '1'}}{% endcapture %}
               {% endif %}
             {% endfor %}
+            {% assign prevsubtitle = '' %}
               <li>
                 <input id="chapter-{{chapter.chapter}}" type="checkbox" name="subnav" {% comment %}{% if page.chapter == chapter.chapter %} checked {% endif %}{% endcomment %} hidden />
                 <label for="chapter-{{chapter.chapter}}" {% if chapter.appendix %}class="nonum"{% endif %}>
@@ -41,7 +42,15 @@
                 <ul class="sub-group-list">
               {% for section in sections %}
                 {% if section.chapter == chapter.chapter %}
-                  <li><a href="{{ site.baseurl }}{{section.url}}" id="{{ section.id | remove: '/section/' }}" {% if section.url == page.url %}class="selected"{% endif %}>{{section.title}}</a></li>
+                  {%- if section.subtitle -%}
+                    {%- if section.subtitle != prevsubtitle -%}
+                      {%- assign prevsubtitle=section.subtitle -%}
+                  <li class="subtitle">{{ section.subtitle }}</li>
+                    {%- endif -%}
+                  <li class="subsection"><a href="{{ site.baseurl }}{{section.url}}" id="{{ section.id | remove: '/section/' }}" {% if section.url == page.url %}class="selected"{% endif %}>{{section.title}}</a></li>
+                  {%- else -%}
+                  <li><a href="{{ site.baseurl }}{{section.url}}" id="{{ section.id | remove: '/section/' }}" {% if section.url == page.url %}class="selected"{% endif %}>{{section.title}}</a></li>                  
+                  {%- endif -%}
                 {% endif %}
               {% endfor %}
                 </ul>
