@@ -1,0 +1,19 @@
+---
+chapter: Interviews
+title: "Edward Botwinick"
+order: 
+---
+
+### Edward Botwinick
+
+Edward Botwinick is best known for building Timeplex (TIX) from a struggling restart into a successful public company into a dominate Data Communication and Internetworking company before being acquired by Unisys Corporation in November 1987 for over $300 million. Less known is that Botwinick was a serial entrepreneur and venture capitalist. After graduating from the Columbia School of Engineering with a BSEE in 1958, he worked for US Semiconductor Corp. He then co-founded Silicon Transistor Corp. in 1960 that after going public, was acquired in 1963. Between 1963 and 1967, he served as President and principal shareholder of Quantum Inc. Next he joined Goldman Sachs, a leading investment bank, as vice-president of high-technology investment research and venture capital. There he learned of an investment opportunity in American Data Systems (ADS), the company that innovated the time-division multiplexer, or TDM. Although deciding to invest, he followed the success of ADS and the rapid growth of the TDM market.
+
+So when he read of a team of Western Union and Bell Lab engineers seeking capital to launch a TDM company, he became an investor, even qualifying as a founder, and member of the Board of Directors. In anticipation of a sale of stock to the public in September 1972, Botwinick resigned from the Board. TIX was one of the last technology companies to go public before a market crash of technology stocks. He rejoined the Board in May 1977, was elected chairman in June, and became full-time chairman and CEO on July 1st.
+
+In the years to follow he had to solve financial problems, out-maneuver other shareholders to take ownership control, before launching a succession of increasingly successful statistical multiplexer products beginning in 1980; culminating in the LINK family of T-1 multiplexers. As successful as TIX is against its traditional competitors -- General DataComm and Infotron –- one new startup, Network Equipment Technologies (NET), not bound by an installed base of products, gained an insurmountable lead that motivated TIX into merging with Unisys in November 1987. He then became President of Unisys Networks.
+
+I interviewed Botwinick in his old Timeplex executive offices in Woodcliff Lake, New Jersey. Since Montgomery Securities had been involved with three rounds of public financing for TIX, Botwinick expected me to be better prepared for the interview than I was. So there we sat, me uncomfortable, and him unyielding. When I finally forged forward, asking him about the early days of TIX, he gave details about the evolution of the company and their successful line of TDM’s and statistical multiplexers, but I did not have time to ask him about the more recent history of the company, including their line of T-1 Multiplexers. Botwinick led the company successfully for over a decade.
+
+Keywords: Timeplex, Time Division Multiplexer, LINK multiplexers, UNISYS Corporation
+
+[Edward Botwinick Interviewed by James Pelkey 3/10/88](https://archive.computerhistory.org/resources/access/text/2018/02/102738718-05-01-acc.pdf)
