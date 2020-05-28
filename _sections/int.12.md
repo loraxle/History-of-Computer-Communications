@@ -1,0 +1,23 @@
+---
+chapter: Interviews
+title: "Dave Clark"
+order: 
+---
+
+### Dave Clark
+
+![Dave Clark]({{ site.baseurl }}/assets/img/dave-clark.jpg)
+
+David “Dave” Clark graduated from Swarthmore College in 1966, and received his Masters and Engineers degrees in Electrical Engineering from MIT in 1968, where he worked on the I/O Architecture of Multics, under Jerry Saltzer, that would become the subject of his thesis. He received his Ph.D. in Electrical Engineering in 1973. When Clark became involved in the Internet protocol activities in the mid-1970’s, the organization was known first as the Arpanet Working Group, then as the Internet Working Group. Vint Cerf chaired these groups, and as a way to keep the number of people attending manageable, they changed the group names and never convened the group known by the prior name. In 1979, the name became even more obscure: the Internet Configuration Control Board, or the ICCB. In 1981 the name was changed again to the Internet Activities Board, or the IAB. That September, Clark became the acting chief architect of the Internet protocols as well as Chairmen of the IAB, replacing Cerf. In 1986, in a practice known as “sub-dividing,” the IAB created the Internet Engineering Task Force (IETF) and the Internet Research Task Force (IRTF). Clark tells of these convolutions and the logic behind them in this interview.
+
+Clark explains that when DARPA learned that the computer scientists at MIT were not enthusiastic about using TCP/IP, they requested a meeting where Dave Reed presented his Data Stream Protocol (DSP). They also discussed the option of using Xerox PARC’s XNS. DARPA persuaded MIT personnel to both join the process of improving TCP/IP, and to investigate importing the token ring LAN developed at UC Irvine. MIT imported the token ring, only to find that re-engineering it turned out to be more than they had planned for, and would include multiple contracts to Proteon, Inc.
+
+Earlier, when Clark began looking at the TCP/IP code with some of his students, they felt they could do a better job. So did others. To contest the complaints that TCP/IP was too big and messy, Clark coded a scaled down version to operate on a personal computer (PC). He proved his point and when others learned of his accomplishment they requested a version of his code; that leads to another fascinating set of stories.
+
+Lastly, the subject turns to how did he think IBM obtained the token ring technology from MIT, or did they get it from elsewhere? Professor Saltzer discusses this issue in his interview, as do Clark and Ken Pogran in theirs. This issue is one of the most important to understanding the history of local area networking, and of the evolution of the NETWORKING market sector.
+
+I first met Professor Clark at Proteon Board Meetings; he had been a member of the Board since 1984, whereas I began attending after the Montgomery investment in 1987. He wasn’t very vocal, but he obviously held the respect of Howard Salwen, the founder, and the other engineers who made presentations to the Board. Clark was not only a technical force, but created a link to other talent and resources at MIT. Knowing him from these board meetings helped create a sense of comradeship for this interview. There is no doubt he will have a long, successful career.
+
+Keywords: Arpanet, Internet Working Group, ICCB, TCP/IP, DSP, Proteon Inc.
+
+[Dave Clark Interviewed by James Pelkey 3/7/88](https://archive.computerhistory.org/resources/access/text/2018/02/102738738-05-01-acc.pdf)
