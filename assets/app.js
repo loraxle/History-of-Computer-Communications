@@ -1,11 +1,10 @@
 var book_data = {};
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 
-var preva = document.getElementById("preva");
-var nexta = document.getElementById("nexta");
 function setHash(hash, section_id){
   if (count.hasOwnProperty(hash)) {
     if (count[hash] == section_id) {
+      var preva = document.getElementById("preva");
       var prev = preva.pathname;
       if (preva.href != "") {
         if (hash > 1) {
@@ -15,6 +14,7 @@ function setHash(hash, section_id){
           }
         }
       }
+      var nexta = document.getElementById("nexta");
       if (nexta.href != "") {
         if (count.hasOwnProperty(hash + 1)) {
           var next = nexta.href + "#" + (hash + 1);
@@ -106,61 +106,24 @@ searchbar.onfocus = function(e){
   showResults();
 }
 
-var mq = window.matchMedia("(min-width: 1100px)");
 var menu = document.querySelector(".sidebar");
 
-function desktopMenu(mq) {
-  
-  if (mq.matches) {
-    //document.getElementById("burg").classList.add("is-active");
-    /*
-    if (!document.getElementById("burg").classList.contains("is-active")) {
-      document.getElementById("burg").classList.add("is-active");
-    }
-    if (!menu.classList.contains("slide-in-left")) {
-      menu.classList.add("slide-in-left");
-    }
-    */
-  } else {
-    sidemenu();
-    if (document.getElementById("burg").classList.contains("is-active")) {
-      document.getElementById("burg").classList.remove("is-active");
-      if (menu.classList.contains("slide-in-left")) {
-        console.log(menu.classList.contains("slide-in-left"));
-      }
-    }
-  }
-}
-
-desktopMenu(mq);
-//mq.addListener(desktopMenu);
-var searchResults = document.getElementById("search-results");
-
 function sidemenu() {
-  if (mq.matches) {
-    if (menu.classList.contains("slide-in-left")) {
-      menu.classList.remove("slide-in-left");
-      document.getElementById("burg").classList.remove("is-active");
-    }
-    else {
-      menu.classList.add("slide-in-left");
-      document.getElementById("burg").classList.add("is-active");   
-    }
-  } else {
-    //if (searchResults.classList.contains("slide-in-right")) {
-    //  searchResults.classList.remove("slide-in-right");
-    //  document.getElementById("burg").classList.remove("is-active");
-    //}
-    if (menu.classList.contains("slide-in-left")) {
-      menu.classList.remove("slide-in-left");
-      document.getElementById("burg").classList.remove("is-active");
-    }
-    else {
-      menu.classList.add("slide-in-left");
-      document.getElementById("burg").classList.add("is-active");   
-    }
+  if (searchResults.classList.contains("slide-in-right")) {
+    searchResults.classList.remove("slide-in-right");
+    document.getElementById("burg").classList.remove("is-active");
+  }
+  if (menu.classList.contains("slide-in-left")) {
+    menu.classList.remove("slide-in-left");
+    document.getElementById("burg").classList.remove("is-active");
+  }
+  else {
+    menu.classList.add("slide-in-left");
+    document.getElementById("burg").classList.add("is-active");   
   }
 }
+
+var searchResults = document.getElementById("search-results");
 
 function showResults() {
   const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -306,20 +269,20 @@ function renderContent(section_id) {
     document.getElementById("section-title").innerHTML = section_id + " " + book_data[section_id].title;
     if (book_data[section_id].prev == "") {
       document.getElementById("prevwrap").classList.add("hide");  
-      preva.href = "";
+      document.getElementById("preva").href = "";
     }
     else {
       var prev = "/History-of-Computer-Communications" + book_data[section_id].prev;
-      preva.href = prev;
+      document.getElementById("preva").href = prev;
       document.getElementById("prevwrap").classList.remove("hide");
     }
     if (book_data[section_id].next == "") {
       document.getElementById("nextwrap").classList.add("hide");  
-      nexta.href = "";
+      document.getElementById("nexta").href = "";
     }
     else {
       var next = "/History-of-Computer-Communications" + book_data[section_id].next;
-      nexta.href = next;
+      document.getElementById("nexta").href = next;
       document.getElementById("nextwrap").classList.remove("hide");
     }            
     document.getElementById("footnotes").innerHTML = "";
@@ -377,10 +340,9 @@ function handleLink(e) {
     var hash = 0;
     switch(proceed) {
       case 1: //Next
-        window.scrollTo(0,0); //scroll to top
-        url = nexta.href;
-        section_id = nexta.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");
-        var hash = parseInt(nexta.hash.replace("#", ""));
+        url = document.getElementById("nexta").href;
+        section_id = document.getElementById("nexta").pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");
+        var hash = parseInt(document.getElementById("nexta").hash.replace("#", ""));
         if (!isNaN(hash)) {
           var activeSection = document.getElementsByName("section" + hash);
           if (activeSection.length > 0) {
@@ -395,10 +357,9 @@ function handleLink(e) {
         }
         break;
       case 2: //Prev
-        window.scrollTo(0,0); //scroll to top
-        url = preva.href;
-        section_id = preva.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");
-        var hash = parseInt(preva.hash.replace("#", ""));
+        url = document.getElementById("preva").href;
+        section_id = document.getElementById("preva").pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");
+        var hash = parseInt(document.getElementById("preva").hash.replace("#", ""));
         if (!isNaN(hash)) {
           var activeSection = document.getElementsByName("section" + hash);
           if (activeSection.length > 0) {
@@ -487,12 +448,13 @@ function getJSON() {
 document.onkeydown = function(e){
   if (e.code == "ArrowLeft") {
     if (!document.getElementById("prevwrap").classList.contains("hide")) {
-      preva.click();
+      document.getElementById("preva").click();
     }
   }
   if (e.code == "ArrowRight") {
     if (!document.getElementById("nextwrap").classList.contains("hide")) {
-      nexta.click();
+      document.getElementById("nexta").click();
     }
   }
+
 };

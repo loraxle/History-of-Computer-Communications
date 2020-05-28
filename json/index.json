@@ -5,7 +5,7 @@ layout: null
 {%- assign sections_size = site.sections | size -%}
 {%- assign section_count = 0 -%}
 {
-{%- for chapter in site.chapters -%}{%- assign ch_section = sections | where: "chapter", chapter.chapter | sort: 'order' -%}
+{%- for chapter in site.chapters -%}{%- assign ch_section = sections | where: "chapter", chapter.chapter -%}
   {%- for section in ch_section -%}
     {%- assign section_count = section_count | plus: 1 -%}
     {%- if section_count == sections_size -%}
