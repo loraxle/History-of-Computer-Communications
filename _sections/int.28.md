@@ -1,0 +1,19 @@
+---
+chapter: Interviews
+title: "Robbie Forkish"
+order: 
+---
+
+### Robbie Forkish
+
+Robbie Forkish was a software engineering manager for Tymnet from 1978 to 1982. Forkish was instrumental in developing Tymnet’s networking software for its public data network. The network was initially designed to service users connecting terminals to hosts, but in the early ‘80s, Tymnet began to offer customers their own private networks. As Tymnet began designing and supporting larger networks, Forkish began to investigate distributed networking architectures. He was also intrigued with the challenge of combining voice and data services over private networks, and in 1982, Forkish joined Bell Northern Research (BNR) in their Mountainview lab. At BNR he managed a team of software developers working on ‘packetizing’ voice transmission. At the time, Forkish believed, as did many in the emerging networking industry, that the PBX was going to offer a competitive alternative to local area networking solutions like Ethernet and token ring.
+
+It was while he was at BNR that former co-workers from Tymnet, Audrey Maclean, Roger Chrisman and Sarah Schlinger, met with him to convince him to jump ship and join their ‘crazy startup’ as Forkish remembers referring to their company at the time. Maclean knew that Forkish had the experience they needed to develop software for distributed voice and data networks. Although Forkish was happy with his job at BNR, after discussing the opportunity with his wife and confident that his former co-workers would be able to raise the capital they needed, he decided to make the jump. He joined the team in February 1983, well before they received their first round of funding in August. In May they incorporated Network Equipment Technologies (NET) and began to develop their initial product, a T1 networking switch that could handle multiple T1 lines.
+
+In the six months between the time he started at NET and the time they received their financing and could hire a team of developers, Forkish produced a 50 page document outlining the architecture and functionality of the networking application. After bringing on the software team, many of whom Forkish had worked with at BNR and Tymnet, they hit the ground running, and within 6 months, they were close to completion. For Forkish, “it was one of the most satisfying efforts I've been involved in.” Product development involved close collaboration between the software team, led by Forkish and hardware development, led by Chrisman. In addition, co-founder Walt Gill, a former chief engineer at Avantek, provided essential understanding of common carrier transmission requirements. This thorough product planning proved essential to the reliability and power of the product. Introduced in January of ’85, NET’s IDNX T1 switch was an immediate success.
+
+In this interview, Forkish describes the detailed planning and development that went into NET’s first product and the impact it had on the industry. Having previously interviewed Maclean and Smith, key executives at NET, I was looking for perspective from the engineering side of the company, so I went back to NET to get the story from Forkish. 
+
+Keywords: Tymnet, Networking Equipment Technologies, T1 multiplexer, IDNX
+
+[Robbie Forkish Interviewed by James Pelkey 7/7/94](https://archive.computerhistory.org/resources/access/text/2020/03/102792034-05-01-acc.pdf)
