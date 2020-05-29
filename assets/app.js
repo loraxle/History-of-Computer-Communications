@@ -1,6 +1,7 @@
 var book_data = {};
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 
+var menu = document.querySelector(".sidebar");
 var preva = document.getElementById("preva");
 var nexta = document.getElementById("nexta");
 function setHash(hash, section_id){
@@ -58,6 +59,7 @@ r(function(){
     }
     sidenav.classList.remove("notready"); 
     sidenav.classList.add("ready");
+    menu.classList.add("animated");
     var section_id = window.location.pathname.replace("/History-of-Computer-Communications/section/","").replace("/", "");
     let currentState = history.state;
     if (currentState == null) {
@@ -107,7 +109,6 @@ searchbar.onfocus = function(e){
 }
 
 var mq = window.matchMedia("(min-width: 1100px)");
-var menu = document.querySelector(".sidebar");
 
 function desktopMenu(mq) {
   
