@@ -1,0 +1,19 @@
+---
+chapter: Interviews
+title: "Bert Nordin"
+order: 
+---
+
+### Bert Nordin
+
+Bert Nordin joined Digital Communications Associates (DCA) in February of 1981, taking on the role of CEO as part of a $3.5 million financing with NEA and four other venture firms. At the time, DCA was doing roughly $3-4 million in sales from a small line of communications processors, mainly for DEC computers.
+
+Nordin’s first order of business as CEO was to stop shipment of their product in order to fix a high percentage of faulty units. Within the first year he also replaced and rebuilt the sales and marketing teams, investing heavily in both, and by the end of fiscal year ’83 had brought revenues up to $14 million. By late ’82 the market for tech companies, particularly in the communications sector, was heating up and DCA capitalized on the trend with an initial public offering in February ’83. Soon after the IPO, DCA acquired Technical Analysis Corporation (TAC), a company that manufactured a board that enabled a personal computer to emulate an IBM terminal. Nordin had initially thought that adding expertise in IBM communications protocols would enhance their front-end processor products, but the explosion of the PC market provided a wave of demand which they rode throughout the ‘80s.
+
+Nordin’s goal was to build DCA into a major competitor in networking and data communications and to this end he sought to acquire startups with expertise across a wide range of communications products. After the acquisition of TAC, DCA attempted to acquire Rixon, the modem manufacturer that also sold stat muxes from the British firm, CASE. DCA was eager to acquire their direct sales force, one with the technical experience of selling stat muxes, but the deal fell through over threats of a lawsuit from CASE. In ’86 DCA acquired Forte Communications and in ’87, Microstuf Inc, both competitors in the PC to mainframe terminal emulator market. In August of ’87, after unsuccessfully courting leading LAN companies 3Com and Ungermann-Bass, they acquired Fox Research and created the independent subsidiary 10Net Communications to market Fox’s LAN product. Seeking a foothold in the market for networking T1 multiplexers, DCA sought to acquire NET, but balked at the $200 million price tag NET was asking. In September of ’87, DCA acquired NET competitor Cohesive Network, after a legal battle with NET.
+
+In this interview, Nordin describes the steps he and DCA management took to achieve this goal of establishing the company for the long haul. In his words, “Our feeling was at the time that if you're going to be one of the longer term players, you better put together a pretty broad spectrum of data communications products and become pretty large or you're not going to be one of the survivors. So that's essentially what we did.”
+
+Keywords: Digital Communications Associates (DCA), Forte Communications, Microstuf Inc, CASE
+
+[Bert Nordin Interviewed by James Pelkey 10/29/88](https://archive.computerhistory.org/resources/access/text/2020/03/102792036-05-01-acc.pdf)
