@@ -732,11 +732,13 @@ section a[name^="fnloc"] {
   text-decoration: none;
   font-weight: 400;
   font-size: 16px;
-  vertical-align: super;
   margin-left: 2px;
   color: var(--bg-blue);
   font-weight: 700;
   line-height: 25px;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
 }
 /*section p img[src*="-l"] { }*/
 section p div.imgl {
