@@ -1,0 +1,19 @@
+---
+chapter: Interviews
+title: "Jerry Mulvenna"
+order: 
+---
+
+### Jerry Mulvenna
+
+Jerry Mulvenna was working on a message switching and processing system for the Navy when he was hired by the National Bureau of Standards (NBS) in 1980. One of his first jobs was contributing to the development of the OSI messaging protocol, X.400. In March of ’81 Mulvenna attended the first meeting on X.400 by the International Telegraph and Telephone Consultative Committee (CCITT) held in The Hague. This was a continuation of work on X.400 which had originated in the International Federation for Information Processing (IFIP).
+
+As NBS began to promote the adoption of OSI standards to ensure compatibility between government agencies acquiring networking and internetworking products, Mulvenna helped to organize NBS sponsored OSI implementors workshops. These were meetings of industry representatives with NBS to establish agreements on implementations of OSI compliant products.
+
+When John Heafner left NBS, Mulvenna took over management of OSINET and GOSIP. OSINET was the NBS project in which vendors could install and test their products on an OSI compliant network. The Government OSI Profile (GOSIP) specified a series of OSI implementation agreements as the basis for federal OSI standards, which eventually led to a Federal Information Processing Standard.
+
+In this interview Mulvenna describes the early attempts NBS made to promote its version of the X.400 messaging protocol and the challenges of working in the CCITT with proponents of other versions, specifically around the issue of syntax. He also gives a detailed description of OSINET. Readers interested in the history of the federal government and OSI should also read the interviews of James White, John Heafner and Robert Rosenthal. 
+
+Keywords: OSI, X.400, Government OSI Profile (GOSIP), OSINET, National Bureau of Standards (NBS)
+
+[Jerry Mulvenna Interviewed by James Pelkey 2/23/88](https://archive.computerhistory.org/resources/access/text/2020/04/102792039-05-01-acc.pdf)
