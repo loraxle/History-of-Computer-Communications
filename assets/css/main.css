@@ -738,12 +738,6 @@ section a[name^="fnloc"] {
   font-weight: 700;
   line-height: 25px;
 }
-section a[name^="fnloc"]:before {
-  content: "[";    
-}
-section a[name^="fnloc"]:after {
-  content: "]";
-}
 /*section p img[src*="-l"] { }*/
 section p div.imgl {
   border: 1px solid #E6E6E6;
