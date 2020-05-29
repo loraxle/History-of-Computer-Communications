@@ -1,0 +1,19 @@
+---
+chapter: Interviews
+title: "Dan Lynch"
+order: 
+---
+
+### Dan Lynch
+
+![Dan Lynch]({{ site.baseurl }}/assets/img/dan-lynch.jpg)
+
+Many individuals had roles in conceiving and making real the TCP/IP protocols: an innovation needed to transform the Arpanet into but one network in a diverse number of networks, or an internetwork. After proving to the ARPA community that the TCP/IP protocols were ready, came the task of replacing the original, and still functioning, NCP protocols with TCP/IP. This undertaking was comparable to the initial effort by Larry Roberts to convince the early sites to attach their Host computers to the Arpanet. Only this time, from 1980-1983, the designated manager was Dan Lynch. Dan graduated with a Masters in Mathematics from UCLA a few years before the graduate students who implemented the Arpanet. Dan’s expertise would not be as a research scientist, but as a manager of computing facilities, skilled in integrating new programs and equipment with existing facilities and keeping everything running smoothly. In 1973, he was manager of the computing laboratory for the Artificial Intelligence Center at Stanford Research Institute, or SRI. By the mid 70’s, he was Director of Computing Facilities at SRI International where he performed initial development of the TCP/IP protocols in conjunction with Bolt, Beranek and Newman (BBN). From 1980 to 1983, he was Director of the Information Processing Division for the Information Sciences Institute in Marina del Rey (USC-ISI) while also leading the team that made sure all Arpanet sites successfully transitioned off the NCP protocols onto the TCP/IP protocols. He next sought freedom, but realized the business world misunderstood the significance of TCP/IP to internetworking. So he organized a series of workshops in Monterey, CA that then led to his founding of Interop.
+
+I can still see myself getting out of my car in Dan’s driveway and hearing the sound of voices in heated exchange. So I walked to the back of the house, entered a kitchen that was buried under piles of ConneXions magazines and introduced myself. After explaining why I was there, Dan and Ole Jacobson led the way to a picnic table sheltered from the sun – their conference table. Dan’s enthusiasm and energy was contagious and after the interview we agreed to get together again, and again, until we became good friends. I treasure our relationship that has survived the years. His Monterey workshops were crucial to the historical evolution of computer communications.
+
+Ole Jacobson joined the interview with Dan Lynch.
+
+Keywords: Arpanet, TCP/IP, SRI
+
+[Dan Lynch Interviewed by James Pelkey 2/16/88](https://archive.computerhistory.org/resources/access/text/2016/02/102717120-05-01-acc.pdf)
