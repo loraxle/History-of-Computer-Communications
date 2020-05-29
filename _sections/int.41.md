@@ -1,0 +1,21 @@
+---
+chapter: Interviews
+title: "Bill Krause"
+order: 
+---
+
+### Bill Krause
+
+![Bill Krause]({{ site.baseurl }}/assets/img/bill-krause.jpg)
+
+In March 1981, Bill Krause joined 3Com as president, coming to the young startup to facilitate its 2nd round of funding. Before joining 3Com, Krause spent 14 years in marketing and general management at Hewlett-Packard (HP). As a product manager, he helped guide HP’s minicomputer, the HP 3000, from a struggling product with “negative revenues” due to product returns, to over $1 billion in sales in less than 5 years. Krause then became general manager of HP’s personal computer division, where he reasoned that large corporate customers would be more likely to buy PCs in significant numbers if they could be networked together. To do this, HP select Ethernet to interconnect their PCs, and this experience gave Krause a glimpse of the potential for networked personal computing. When Gib Myers, general partner of Mayfield Fund, learned that 3Com was looking for a president as part of a financing, he immediately thought of Krause, who he knew from working at HP. Myers introduced Robert Metcalfe to Krause and the pair soon discovered that they both shared a similar vision for the future of Ethernet – networking PCs. Krause became CEO of 3Com the following year and served as chairman from ’87 to ’93.
+
+3Com’s first products and services networked minicomputers and workstations, but Krause realized that to be successful in the PC market, they would need to develop a lower-cost version of their Ethernet adapter, which initially consisted of multiple boards and sold for more than a PC itself. 3Com soon became one of the first vendors, along with UB, Xerox & DEC, to develop an Ethernet controller chip, an important step in reducing the costs and the footprint of the adapter. Other companies would eventually develop their own Ethernet PC adapters, but it was Krause & Metcalfe who recognized the future of PC networking early on and decided to divert cash from their profitable lines of minicomputer and workstation products to help fund development of Ethernet products for the PC market. 3Com would further distinguish themselves by selling directly to retail distributers, establishing a deal with Businessland within a month of introducing their first Ethernet adapter for the PC. With affordable products and a market for PCs that was about to explode, 3Com grew rapidly and soon dominated the market for PC LAN hardware.
+
+Krause describes 3Com’s growth in the early years of the LAN market as they focused on PC hardware and eventually expanded into LAN management software and applications, in competition with the rapid success of companies like Novell and Lotus. He recounts their merger with Bridge Communications in 1987 and the challenges that followed as Metcalfe and Carrico held differing opinions as to what strategy the company should pursue. This issue of whether to be a computing company or a communications company would plague them well into the late ‘80’s and early ‘90’s.
+
+I arranged for this interview to get an additional point of view on 3Com after my interview with Bob Metcalfe. As with many of the companies I researched, it was helpful to get an additional perspective on the formative issues of the entrepreneurs’ journey, especially with such an iconic tech company as 3Com.
+
+Keywords: MIT, UCLA, Arpanet, network topology
+
+[Bill Krause Interviewed by James Pelkey 8/19/94](https://www.computerhistory.org/collections/catalog/102740543)
