@@ -18,4 +18,4 @@ I arranged for this interview to get an additional point of view on 3Com after m
 
 Keywords: MIT, UCLA, Arpanet, network topology
 
-[Bill Krause Interviewed by James Pelkey 8/19/94](https://www.computerhistory.org/collections/catalog/102740543)
+[Bill Krause Interviewed by James Pelkey 8/19/94](https://archive.computerhistory.org/resources/access/text/2020/01/102740543-05-01-acc.pdf)
