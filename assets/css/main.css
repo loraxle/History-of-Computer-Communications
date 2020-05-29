@@ -363,10 +363,11 @@ svg#vertical {
 }
 .sidenav li.subtitle {
   padding: 10px 0px 8px 0px;
-  margin: 0 0px 8px 58px;
-  color: #000;
-  border-bottom: 2px solid #313131;
+  color: color: var(--gray-dark);
   font-weight: 600;
+}
+.sidenav li.subtitle:hover {
+  color: color: var(--gray-dark) !important;
 }
 .sidenav li.subsection {
   margin-left: 10px;
