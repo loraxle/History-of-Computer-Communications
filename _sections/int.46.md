@@ -12,6 +12,6 @@ Loughry, along with Graube and Robert Rosenthal of the NBS, moved instead to est
 
 In this interview, Loughry relates his experience maneuvering through the meetings of the 802 committee and the 802.3 CSMA/CD subcommittee. He describes the many challenges of bringing the standard proposed by DIX in the first ‘Blue Book’ in line with the needs of other proponents of Ethernet; testing various implementations, especially concerning the transceiver; and finding consensus on what to make standard and what to leave unspecified. Loughry was still serving on committee 802 at the time of this interview, which took place at his office at HP. 
 
-Keywords: DIX (Digital Equipment Corporation—Intel—Xerox), Xerox PARC (Palo Alto Research Center), Ethernet, Arpanet, Stanford Research Institute (SRI)
+Keywords: Hewlett-packard (HP), IEEE 488 committee, IEEE 802 committee, Ethernet, CSMA/CD
 
 [Don Loughry Interviewed by James Pelkey 7/6/88](https://archive.computerhistory.org/resources/access/text/2020/04/102792044-05-01-acc.pdf)
