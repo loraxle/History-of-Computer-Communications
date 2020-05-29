@@ -1,0 +1,19 @@
+---
+chapter: Interviews
+title: "Phil Nyborg"
+order: 
+---
+
+### Phil Nyborg
+
+Phillip (Phil) Nyborg received his JD from the University of Michigan Law School and from ’75 to ’78 was the head of the Washington, DC office of the American Federation of Information Processing Services (AFIPS). In 1978 he became general counsel of the Computer & Communication Industry Association (CCIA). CCIA represented computer and data communications vendors working to promote industry competition in the shadows of major incumbents AT&T and IBM. Its members included founders and CEOs of many of the datacom startups, including Chuck Johnson of General DataComm and John Alderman of DCA.
+
+As CCIA general counsel, Nyborg testified in congress in hearings on The Consumer Communications Reform Act of 1976, otherwise known as “The Bell Bill,” a bill proposed by AT&T to reassert the monopoly position of the Bell System. He also represented CCIA in testimony regarding the FCC’s Computer Inquiry II, which sought to further define the division between the telecommunications and data communications markets. Nyborg presented the position of independent data communications startups selling innovative products for communicating data over telephone lines. The fear of these small companies was that AT&T would introduce competing products, such as its Dataspeed 40/4 data terminal, and drive the startups out of business by cross-subsidizing these products.
+
+In 1981, Nyborg joined MCI as vice president for regulation and industry relations. At that time MCI was involved in the appeals to its antitrust suit against AT&T. Evidence in the MCI case was used in the government’s own antitrust case against AT&T which eventually led to the breakup of the Bell System.
+
+This interview took place at Nyborg’s office at MCI and was one of my first interviews. He was very helpful in giving me background on trade organizations and legal issues in the early data communications market. Unfortunately, the recording of the interview was cut off before the end of the interview. Readers interested in the story of the FCC and AT&T should read the interviews of Bernard Strassburg, Manley Irwin and Michael Slomin.
+
+Keywords: American Federation of Information Processing Services (AFIPS), Computer & Communication Industry Association (CCIA), The Consumer Communications Reform Act of 1976, MCI
+
+[Phil Nyborg Interviewed by James Pelkey 1/25/88](https://archive.computerhistory.org/resources/access/text/2020/04/102792043-05-01-acc.pdf)
