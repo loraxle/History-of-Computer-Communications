@@ -1,0 +1,17 @@
+---
+chapter: Interviews
+title: "Roger Evans"
+order: 
+---
+
+### Roger Evans
+
+![Roger Evans]({{ site.baseurl }}/assets/img/roger-evans.jpg)
+
+In 1969, Roger Evans helped found Case, an important United Kingdom distributor of Data Communication products, including over time those of American Data Systems (ADS), Micom, Timeplex, and Paradyne. When ADS encountered financial problems, Case, led by Evans, came to the aid of ADS multiple times and, eventually, supported Bill Norred in his founding of Micom out of the bankruptcy of ADS. When Evans and Norred realized that for Micom to be successful, a full time marketing executive was needed, Evans left Case and joined Micom. It was his interactions with customers that led to the insight that the unique needs of minicomputer users was stimulating the growth of a new market niche for statistical multiplexers. In January 1978, Micom introduced their Micro800 Data Concentrator and in few years they became a public company and a leading Data Communication firm. But being a public company created pressure to grow, and in March 1985, Micom finally entered the Networking market by acquiring Interlan. In the spring of 1987, Evans succeeded Norred and became President of Micom. Before the end of the year, Evans led the purchase of the Internetworking company: Spectrum Digital. But 1988 would become a nightmare for Roger.
+
+I had always admired Roger Evans as a marketing genus, but it was when I took the consulting assignment to run ComDesign from Bob Dolan in 1982 that my respect for the company Roger and Bill had built grew enormously. So you might imagine my heightened anticipation as I drove to Simi Valley to interview Roger. Only I lost my way. I arrived with less than 30 minutes left on the time Roger had made available for me. Graciously, he said he would stay later but that he did have a prior engagement and had to leave. His answers to the questions I asked took him back to an exciting time in his life. He took multiple telephone calls, saying that he would be home soon and he returned to our conversation. I recommend that any reader interested in how a company can escape the grips of defeat and become a very successful company read this interview. I will always find it stirring and shall ever be thankful to Roger for adjusting his schedule for this interview. I can still see his office with the shelves in the corner holding framed copies of Micom’s famous Orange Juice Can ads.
+
+Keywords: Case, ADS, Micom, Interlan, Spectrum Digital, Micro800 Data Concentrator
+
+[Roger Evans Interviewed by James Pelkey 1/15/88](https://archive.computerhistory.org/resources/access/text/2015/09/102737975-05-01-acc.pdf)
