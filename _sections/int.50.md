@@ -1,0 +1,17 @@
+---
+chapter: Interviews
+title: "Jerry McDowell"
+order: 
+---
+
+### Jerry McDowell
+
+Throughout Jerry McDowell’s early career in network management and product planning, he was exposed to many different technologies in the local area networking industry, from proprietary niche products to the adoption of standards for the dominant LAN technologies. In 1975 he landed a job as a network manager for Databank, a collaboration of New Zealand Banks established to share the expense of implementing computerized transactions and accounting. McDowell helped Databank connect their network of bank offices using single cable, point-to-point connections. The experience served McDowell well for his next job as a product planning manager at Paradyne, which he started in 1978. At Paradyne, he was responsible for planning future network management products and, in an effort to stay current with the latest in networking technology, he joined the IEEE 802 committee on networking standards as one of its original members.
+
+McDowell was an early proponent of LAN technology and in an effort to convince Paradyne to develop LAN products, he arranged for Bob Metcalfe to give a presentation on Ethernet to management. Paradyne, a market leader in modems at the time, chose not to partner with Metcalfe and 3Com and instead, to develop their PIX network management system to support their strong base of modem customers. McDowell faced a similar response when he tried to convince his next employer, Systems Engineering Laboratories (SEL), a subsidiary of Gould Electronics, to enter the LAN business. He arranged for another presentation by Metcalfe, which also fell on the deaf ears of SEL management. Convinced of the future of the LAN industry, in 1982 McDowell took a job in product marketing at Wang Laboratories, joining them just after they had introducing WangNet. As a representative of Wang, McDowell gave frequent presentations on the broadband transmission of WangNet, often at the same events where Metcalfe or Liddle were presenting the baseband architecture of Ethernet
+
+After leaving Wang in ’83, McDowell worked as a consultant and then as an analyst for Dataquest, which is where I sat with him for this interview. Jerry was full of inside perspectives on the early LAN industry, particularly from his involvement in the 802 committee. He had a wealth of information on the early developments of LAN standards, from the initial meeting at the Jack Tar hotel in San Francisco, to the adoption of the industry dominant standard for Ethernet on twisted pair wiring. For someone who is interested in gaining a perspective on the developments in the LAN business and the standards making process, this interview offers a unique look at the many key events and players involved.
+
+Keywords: Paradyne, IEEE 802 committee, Wang Computers, WangNet
+
+[Jerry McDowell Interviewed by James Pelkey 4/10/92](https://archive.computerhistory.org/resources/access/text/2020/01/102740544-05-01-acc.pdf)
