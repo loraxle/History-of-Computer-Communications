@@ -1,0 +1,19 @@
+---
+chapter: Interviews
+title: "Robert Donnan"
+order: 
+---
+
+### Robert Donnan
+
+In this interview, Robert Donnan describes his experience as an IBM employee working on new products and in standards committees for local area networking. Donnan describes coordination across different IBM sites in Raleigh, North Carolina; La Gaude, France; Zurich, Switzerland; and elsewhere. He recalls the internal governance and structural changes within the IEEE 802 committee, as well as difficulties implementing committee standards in company products such as IBM’s SNA.
+
+As much reservation as I had to hearing IBM’s point-of-view on standards making in local area networking, I realized it was essential to the fabric of this history to get their perspective. Fortunately, Robert Donnan was not the expected “white-shirt” or “Big Blue is always right executive.” We had breakfast together that helped ease my concerns before we went to my room for the interview. Two questions I hoped to find answers to were: how and why did IBM select Token Ring as its local area networking technology, and the circumstances around IBM aligning itself with the token bus advocates in the IEEE 802 committee to thwart the momentum of Ethernet becoming the sole IEEE 802 standard? I was not as successful as I hoped I would be in finding answers to both questions, but neither had I failed. Donnan believed the commitment to Token Ring came from the Zurich Labs and the arrangement with token bus in IEEE 802 was short lived.
+
+I arranged a second interview with an IBM engineer/manager, Dan Warmenhoven, who was in Raleigh in 1980 and shares the complexity of product development within IBM, including Token Ring.
+
+The interested reader of the events of Ethernet and Token Ring should also read the [Gordon Bell](/int.05.md) interview.
+
+Keywords: IBM, token ring, token bus, IEEE 802 committee, Systems Network Architecture (SNA),
+
+[Robert Donnan Interviewed by James Pelkey 7/12/88](https://archive.computerhistory.org/resources/access/text/2016/04/102738111-05-01-acc.pdf)
