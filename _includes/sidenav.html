@@ -6,6 +6,7 @@
         {% endif %}
       {% endfor %}
     {% endif %}
+    {% assign sections = site.sections | sort: 'order' %}
       <div class="sidenav notready">
         <input type="hidden" id="custId" value="">
         <h1>Explore</h1>
@@ -20,7 +21,6 @@
               </svg>
             </label>
         {% if site.chapters %}
-          {% assign sections = site.sections | sort: 'order' %}
             <ul class="group-list">
           {% for chapter in site.chapters %}
             {% assign has_sections = '0' %}
@@ -98,7 +98,7 @@
                   {% if item.sub-sections %}
                     <ul class="sub-sub-group-list">
                     {% for section in item.sub-sections %}
-                      {% for s in site.sections %}
+                      {% for s in sections %}
                         {% assign section_id = s.id | remove: "/section/" %}
                         {% if section_id == section %}
                           {% assign uid = uid | plus: 1 %}
@@ -153,7 +153,7 @@
                   {% if item.sub-sections %}
                     <ul class="sub-sub-group-list">
                     {% for section in item.sub-sections %}
-                      {% for s in site.sections %}
+                      {% for s in sections %}
                         {% assign section_id = s.id | remove: "/section/" %}
                         {% if section_id == section %}
                           {% assign uid = uid | plus: 1 %}
@@ -178,7 +178,7 @@
                         </label>
                         <ul class="sub-sub-group-list">
                         {% for section in nested.nested-sections %}
-                          {% for s in site.sections %}
+                          {% for s in sections %}
                             {% if s.id %}
                               {% assign section_id = s.id | remove: "/section/" %}
                               {% if section_id == section %}

@@ -31,7 +31,8 @@ collections:
     companies:
         output: false
     interview_transcripts:
-        output: false
+        output: true
+        permalink: /interview/:path/
 
 defaults:
   -

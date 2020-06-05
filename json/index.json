@@ -2,16 +2,15 @@
 layout: null
 ---
 {%- assign sections = site.sections | sort: 'order' -%}
-{%- assign sections_size = site.sections | size -%}
+{%- assign sections_size = sections | size -%}
 {%- assign section_count = 0 -%}
 {
 {%- for chapter in site.chapters -%}{%- assign ch_section = sections | where: "chapter", chapter.chapter | sort: 'order' -%}
   {%- for section in ch_section -%}
     {%- assign section_count = section_count | plus: 1 -%}
-    {%- if section_count == sections_size -%}
+    {%- assign tail = ","-%}
+    {%- if section_count >= sections_size -%}
       {%- assign tail = "" -%}
-    {%- else -%}
-      {%- assign tail = ","-%}
     {%- endif -%}
     {%- assign section_id=section.url | remove: "/section/" | remove: "/" -%}
     "{{ section_id }}" : {
@@ -34,7 +33,7 @@ layout: null
       "next" : "{%- if section_count < sections_size -%}{{ sections[section_count].url }}{%- endif -%}",
       "prev" : "{%- assign prev_count = section_count | minus: 2 -%}{%- if prev_count >= 0 -%}{{ sections[prev_count].url }}{%- endif -%}",
       "title" : "{{ section.title }}"
-    }{{ tail }}
+    }{%- unless forloop.last -%}{{ tail }}{%- endunless -%}
   {%- endfor -%}
 {%- endfor -%}
 }
