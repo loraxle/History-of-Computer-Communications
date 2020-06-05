@@ -296,6 +296,7 @@ function renderContent(section_id) {
     }
     if (Object.keys(book_data).indexOf(section_id) == -1) {
       console.log("Invalid section id");
+      console.log(section_id);
       return false; // handle history popstate on index / other pages
     }
     if (section_id == "History-of-Computer-Communications/") {

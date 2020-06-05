@@ -33,7 +33,7 @@ layout: null
       "next" : "{%- if section_count < sections_size -%}{{ sections[section_count].url }}{%- endif -%}",
       "prev" : "{%- assign prev_count = section_count | minus: 2 -%}{%- if prev_count >= 0 -%}{{ sections[prev_count].url }}{%- endif -%}",
       "title" : "{{ section.title }}"
-    }{%- unless forloop.last -%}{{ tail }}{%- endunless -%}
+    }{{ tail }}
   {%- endfor -%}
 {%- endfor -%}
 }
