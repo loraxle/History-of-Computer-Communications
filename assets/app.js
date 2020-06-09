@@ -50,6 +50,7 @@ r(function(){
     if (refreshed) {
       var selected = document.querySelector(".selected");
       if (selected) {
+        console.log(selected.id);
         crawlDOM(selected);
       }
     }
@@ -296,7 +297,6 @@ function renderContent(section_id) {
     }
     if (Object.keys(book_data).indexOf(section_id) == -1) {
       console.log("Invalid section id");
-      console.log(section_id);
       return false; // handle history popstate on index / other pages
     }
     if (section_id == "History-of-Computer-Communications/") {
@@ -305,7 +305,11 @@ function renderContent(section_id) {
     document.querySelector("content").innerHTML = decode(book_data[section_id].content);
     formatImgs();
     document.getElementById("chapter-title").innerHTML = book_data[section_id].ch_title;
-    document.getElementById("section-title").innerHTML = section_id + " " + book_data[section_id].title;
+    var section_title = section_id + " " + book_data[section_id].title;
+    if (section_id.includes("int")) {
+      section_title = book_data[section_id].title;
+    }
+    document.getElementById("section-title").innerHTML = section_title;
     if (book_data[section_id].prev == "") {
       document.getElementById("prevwrap").classList.add("hide");  
       preva.href = "";
@@ -381,7 +385,11 @@ function handleLink(e) {
       case 1: //Next
         window.scrollTo(0,0); //scroll to top
         url = nexta.href;
-        section_id = nexta.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");
+        if (nexta.pathname.includes("interview")) {
+          section_id = "int" + nexta.pathname.replace("/History-of-Computer-Communications/interview/","").replace("/","");
+        } else {
+          section_id = nexta.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");            
+        } 
         var hash = parseInt(nexta.hash.replace("#", ""));
         if (!isNaN(hash)) {
           var activeSection = document.getElementsByName("section" + hash);
@@ -399,7 +407,11 @@ function handleLink(e) {
       case 2: //Prev
         window.scrollTo(0,0); //scroll to top
         url = preva.href;
-        section_id = preva.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");
+        if (preva.pathname.includes("interview")) {
+          section_id = "int" + preva.pathname.replace("/History-of-Computer-Communications/interview/","").replace("/","");
+        } else {
+          section_id = preva.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");            
+        } 
         var hash = parseInt(preva.hash.replace("#", ""));
         if (!isNaN(hash)) {
           var activeSection = document.getElementsByName("section" + hash);

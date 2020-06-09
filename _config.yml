@@ -30,15 +30,23 @@ collections:
         output: false
     companies:
         output: false
-    interview_transcripts:
+    interviews:
         output: true
         permalink: /interview/:path/
+    interview_organizations:
+        output: false
 
 defaults:
   -
     scope:
       path: ""
       type: sections
+    values:
+      layout: template
+  -
+    scope:
+      path: ""
+      type: interviews
     values:
       layout: template
 
