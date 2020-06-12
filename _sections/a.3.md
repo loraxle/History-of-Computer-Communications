@@ -1,10 +1,10 @@
 ---
 chapter: 16
-title: "Product Revenues 1970-1988"
+title: "Computer Communications Market"
 order: 
 subtitle: "Appendix A: Market Research"
 ---
 
-**COMPUTER Communications Market**| 
+**COMPUTER COMMUNICATIONS MARKET**| 
 
 ![Computer Communications Market]({{ site.baseurl }}/assets/img/a.3.jpg)

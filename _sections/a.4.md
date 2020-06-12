@@ -1,6 +1,6 @@
 ---
 chapter: 16
-title: "Product Revenues 1970-1988"
+title: "Computer Communications Revenues Reconcilliation"
 order: 
 subtitle: "Appendix A: Market Research"
 ---
