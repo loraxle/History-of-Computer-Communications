@@ -5,4 +5,4 @@ order:
 subtitle: "Appendix A: Market Research"
 ---
 
-![Financial Histories Aligned by IPO Year]({{ site.baseurl }}/assets/img/a.11.jpg)
+![Financial Histories Aligned by IPO Year]({{ site.baseurl }}/assets/img/a.12.jpg)

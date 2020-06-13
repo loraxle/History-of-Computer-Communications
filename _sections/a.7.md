@@ -1,8 +1,8 @@
 ---
 chapter: 16
-title: "Timing of Start-Up Financing"
+title: "Computer Communications Market-Structure Consolodation"
 order: 
 subtitle: "Appendix A: Market Research"
 ---
 
-![Timing of Start-Up Financing]({{ site.baseurl }}/assets/img/a.7.png)
+![Computer Communications Market-Structure Consolodation]({{ site.baseurl }}/assets/img/a.8.png)
