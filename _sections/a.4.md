@@ -1,8 +1,8 @@
 ---
 chapter: 16
-title: "Computer Communications Start-Ups"
+title: "Computer Communications Revenues Reconcilliation"
 order: 
 subtitle: "Appendix A: Market Research"
 ---
 
-![Computer Communications Start-Ups]({{ site.baseurl }}/assets/img/a.6.png)
+![Computer Communications Revenues Reconcilliation]({{ site.baseurl }}/assets/img/a.4.png)

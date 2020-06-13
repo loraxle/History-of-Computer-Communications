@@ -1,53 +1,32 @@
 ---
 chapter: 16
-title: "Balance Sheet Analysis"
+title: "Income Statement Analysis"
 order: 
 subtitle: "Appendix A: Market Research"
 ---
 
-The two corporate financial statements that contain most of the information used in this investigation are the Income Statement and Balance Sheet. Data is publically available unless stated otherwise.
+The two corporate financial statements that contain most of the information used in this investigation are the Income Statement and Balance Sheet. Data is publicly available unless stated otherwise.
 
-The Balance Sheet summarizes the financial transactions of a company from one moment in time to a next. All the transactions of the Income Statement will be summarized into the Balance Sheet. Profit, hence capital, is reported as Net Worth. Insolvency is when Liabilities are greater than Assets. An important measure of organization success is having a Fair Market Value many times larger than Net Worth.
+The Income Statement reports period sales and expenses and calculates whether profits have been earned. Profits are essential, for if the company is not profitable, it is not generating new capital. Growth requires additional capital and, if the company is not generating the needed capital, it either has to raise more capital by selling stock (or potentially borrowing money) or deplete its existing capital. Once expenses cannot be covered by either profits or capital, the company is insolvent.
 
-**Assets = Liabilities + Net Worth**
+**Revenue Less Expenses = Profit or Loss**
 
-**Assets**: A growing company has to build assets to support increasing revenues. Assets can be one of three types: Current, Fixed or Other. All Assets are valued at the lower of cost or Fair Market Value.
+**Revenue**: Revenue is usually recognized when product is shipped or service has been performed. Revenue that has been recognized, but for which payment has not been received, is classified as Accounts Receivable (See Balance Sheet).
 
-**Current Assets**: All Assets with an expected life of one year or less. The major categories of Current Assets are:
+**Expenses**: All period expenses for this investigation will be defined as follows: Costs and expenses are synonymous. All expenses other than Direct Costs are often called Overhead and, in this convention, would be the sum of Technological Innovation, Buying Demand and Organization expenses.
 
-- **Cash and Marketable Securities**: The most liquid Assets. A critical buffer to protect against cash flow problems.
+- **Direct Costs**: All expenses that are directly related to product shipped or services performed. Material costs, direct labor, allocated production overhead and shipping costs are the major Direct Cost categories.
 
-- **Accounts Receivable**: Uncollected Revenues. Accounts Receivable are always reduced by a reserve for Receivables judged uncollectable..
+- **Technological Innovation**: Usually labeled Engineering or Research and Development, Technological Innovation expenses represent those period costs associated with innovating new and improving existing products. Companies often amortize some development costs over the life of the product rather than report costs as incurred.
 
-- **Inventory**: Direct Costs on hand to meet incoming orders. There are three broad categories of Inventory: Raw Material, Work-in-Process and Finished Goods. The values of Work-in-Process and Finished Goods include the costs of Direct Labor incurred and an estimate of other indirect production costs called Burden. The inventory policy of a company depends on how fast a company wants to ship Product after receipt of customer orders.
+- **Buying Demand**: All Sales and Marketing expenses. Unfortunately, over time accounting conventions have changed and some Buying Demand costs have been combined with Organization expenses. Likewise, commissions paid on sales are often reported as Direct Costs rather than as Overhead.
 
-**Fixed Assets**: Plant, property and equipment. Net Fixed Assets are Assets reduced by Depreciation, the period expense of writing off the value of an Asset over its estimated useful life. Land is also a Fixed Asset but is not depreciated.
+- **Organization**: Normally referred to as General Expenses, Organization costs are those not directly tied to either innovating or selling product. Executive management, accounting, finance and facilities expenses constitute the bulk of Organization expenses. Interest expense, or income, is usually reported as a separate line item.
 
-**Other Assets**: A catch all category for all Assets other than Current and Fixed Assets. Ignorable in this investigation.
+**Profit or Loss**: Generally called Net Income, and is Revenue less all expenses. Most companies report both an Operating Income as well as Net Income. Operating Income is Revenue less all Expenses other than Interest and Extraordinary expenses, where Extraordinary are one-time write-offs due to corporate re-organizations or changes in business practice.
 
-**Liabilities**: As with Assets, Liabilities are sub-divided into Liabilities that must be settled in less than one year, Current Liabilities, and those with a maturity of greater than one year, Long Term Liabilities.
+**Gross Margin = Revenue Less Direct Costs**. Gross Margin is a very important indicator of the value of a company's product as well as the pricing freedom a company has. The higher the Gross Margin the more value provided and freedom in pricing. As a general rule, companies that sell systems direct to end user customers will have a Gross Margin of 65% or more whereas companies that sell product through distribution have difficulty maintaining a Gross Margin of 50%.
 
-- Current Liabilities: For our purposes, Current Liabilites will be one of four   types.
+**The Cycle of Investment and Profits**: When a company first starts out, its challenge is to innovate product. Having no sales, it raises risk, or venture, capital, to fund product development and begin building its distribution system. This start-up stage generally lasts from one to two years. Once the company begins to sell and service product, additional financing is required to fund organization ramp-up, including the acquisition of Fixed Assets and Inventory and financing of Accounts Receivable (See Balance Sheet). If the company is successful, by its third or fourth year, it will be generating profits that finance continued company growth and eventually earn a return for those equity - venture capital - investors who supported the company in its earlier years.
 
-**Accounts Payable**: Amounts owed to vendors. Favorable terms from vendors is an important source of financing.
-
-- **Employee Costs Payable**: All Employee costs owed but not paid. Includes payroll, commissions, vacations, payroll taxes and sick leave.
-
-- **Taxes Payable**: Federal and State corporate tax liability not paid.
-
-- **Debt Payable**: Bank or other borrowings that must be paid within one year.
-
-**Long Term Liabilities**: Liabilities that do not come due in less than one year.
-
-**Net Worth**: There are two sources of Net Worth or Capital: the sale of stock or Profits. All shareholders are motivated to minimize the sale of stock and look to the company to earn Capital through earnings; the less stock sold, the more of the company owned by existing shareholders. Net Worth is minimally reported as one of three categories:
-
-- **Capital Stock**: The par value of all outstanding shares of Common and Preferred Stock. The par value represents a minimum value placed on the stock by the company. Par value of common stock is usually $.01 per share.
-
-- **Capital Surplus**: The value actually received by a company for the stock it sells or distributes less its par value. The sum of Capital Stock and Capital Surplus equals the value of the Capital raised by the company from selling or distributing stock.
-
-- **Retained Earnings**: Retained earnings are the cumulative Profits and Losses of the company. In the early years, when a company pays expenses from capital raised from selling stock, Retained Earnings will be a negative number. If the negative Retained Earnings grow to be greater than the Capital Stock and Surplus, the company is insolvent.
-
-**Working Capital**:  Working Capital = Current Assets - Current Liabilities
-A measure of the Capital required to finance the growth of Current Assets to grow the business. The essential relationship within Working Capital is: Accounts Receivable + Inventory - Accounts Payable - Debt Payable. A company that grows rapidly must grow its Working Capital to sustain its ability to ship Product.
-
-**Company Value**: The primary method used to value companies in this investigation is the extension of the number of shares of stock outstanding times the current fair market value of a share of stock. The greater the company value to the Capital Stock and Surplus, the better the company has been as an investment.
+**The Initial Public Offering (IPO)**: For the successful company, the ideal way to raise both inexpensive capital to fund growth as well as provide a mechanism for investors to realize a return without forcing the company to distribute Net Income, is to sell shares of stock in a public offering. Once a company is public, all investors, subject to certain rules of course, can sell and buy stock without the company having to do anything other than comply with disclosure and reporting requirements. If the demand for the company's shares of stock is strong, the price per share will go up. If so, the company can benefit by selling more shares and raise even more capital at a lower price.
