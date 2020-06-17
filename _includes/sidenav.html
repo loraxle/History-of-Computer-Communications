@@ -48,6 +48,25 @@
                   <li class="subtitle">{{ section.subtitle }}</li>
                     {%- endif -%}
                   <li class="subsection"><a href="{{ site.baseurl }}{{section.url}}" id="{{ section.id | remove: '/section/' }}" {% if section.url == page.url %}class="selected"{% endif %}>{{section.title}}</a></li>
+                  {%- elsif section.nested-title -%}
+                    {%- if section.nested-index == 'first' -%}
+                  <li>
+                    <input id="nested{{ section.id | replace: '/section/' }}" type="checkbox" hidden />
+                    <label for="nested{{ section.id | replace: '/section/' }}">
+                      <div>{{ section.nested-title }}</div>
+                      <svg xmlns="http://www.w3.org/2000/svg" >
+                        <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
+                      </svg>
+                    </label>
+                    <ul class="sub-sub-group-list">
+                      <li><a id="{{ section.id | remove: '/section/' }}" href="{{ site.baseurl }}{{ section.id }}/" {% if section.url == page.url %}class="selected"{% endif %}>{{ section.title }}</a></li>
+                    {%- elsif section.nested-index == 'last' -%}
+                      <li><a id="{{ section.id | remove: '/section/' }}" href="{{ site.baseurl }}{{ section.id }}/" {% if section.url == page.url %}class="selected"{% endif %}>{{ section.title }}</a></li>
+                    </ul>
+                  </li>
+                    {%- else -%}
+                      <li><a id="{{ section.id | remove: '/section/' }}" href="{{ site.baseurl }}{{ section.id }}/" {% if section.url == page.url %}class="selected"{% endif %}>{{ section.title }}</a></li>
+                    {%- endif -%}
                   {%- else -%}
                   <li><a href="{{ site.baseurl }}{{section.url}}" id="{{ section.id | remove: '/section/' }}" {% if section.url == page.url %}class="selected"{% endif %}>{{section.title}}</a></li>                  
                   {%- endif -%}
