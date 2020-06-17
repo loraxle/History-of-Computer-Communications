@@ -10,7 +10,7 @@
       <div class="content">
         <div class="client-content">
           <section>
-        {%- if page.title == "How To Explore This Site" -%}
+        {%- if page.name == "explore.md" -%}
           {%- include explore.html -%}
         {%- endif -%}
         {%- assign chapterTitle = "" -%}
@@ -97,7 +97,7 @@
                 </a>
               </div>
             </div>
-            <div class="fn-spacer"></div>
+            <div class="fn-spacer{% if page.name == "explore.md" %} hide{% endif %}"></div>
             <div id="footnotes">
             {%- if page.footnotes -%}
               <ul>

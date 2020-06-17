@@ -666,7 +666,11 @@ label > svg {
 .fn-spacer {
   width: 100%;
   border-bottom: 1px solid #707070;
-  margin: 33px 0px 24px;   
+  margin: 33px 0px 24px;
+  display: block;
+}
+.fn-spacer.hide {
+  display: none;
 }
 .prevnav {
   display:flex;
@@ -1092,6 +1096,18 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 .pagecontent > p a.noul {
   text-decoration: none;
   font-weight: 600;
+}
+.pagecontent > div#fbgroup {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 15%;
+}
+.pagecontent > div#fbgroup img {
+  width: 100%;
+  max-width: 369px;
+  height: auto;
 }
 /* end page content */
 /* home content */

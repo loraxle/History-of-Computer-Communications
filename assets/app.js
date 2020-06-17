@@ -330,7 +330,12 @@ function renderContent(section_id) {
       var next = "/History-of-Computer-Communications" + book_data[section_id].next;
       nexta.href = next;
       document.getElementById("nextwrap").classList.remove("hide");
-    }            
+    }
+    if (document.querySelector(".fn-spacer")) {
+      if (document.querySelector(".fn-spacer").classList.contains("hide")) {
+        document.querySelector(".fn-spacer").classList.remove("hide");
+      }
+    }
     document.getElementById("footnotes").innerHTML = "";
     if (book_data[section_id].footnotes) {
       var ul = document.createElement("UL");

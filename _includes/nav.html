@@ -7,8 +7,8 @@
     <div class="nav">
       <div class="navbar">
         <a href="{{ site.baseurl }}/" {%- if page.name == "index.md" -%} class="active" {%- endif -%} title="Home">Home</a>    
-        <a {% if page.name == "index.md" %} href="{{ site.baseurl }}/explore.html"{% else %} href="javascript:void(0)" class="active"{% endif %} id="expl" title="Explore">Explore</a>    
-        <a href="javascript:void(0)"  title="Contribute">Contribute</a>    
+        <a {% if page.name == "index.md" or page.name == "contribute.md" %} href="{{ site.baseurl }}/explore.html"{% else %} href="javascript:void(0)" class="active"{% endif %} id="expl" title="Explore">Explore</a>    
+        <a href="{{ site.baseurl }}/contribute.html" {%- if page.name == "contribute.md" -%} class="active" {%- endif -%} title="Contribute">Contribute</a>    
       </div>
       <div class="search">
         <svg id="vertical" version="1.1" x="0px" y="0px" xml:space="preserve">
