@@ -1,8 +1,7 @@
 ---
-chapter: 16
+chapter: 15
 title: "Income Statement Analysis"
-order: 
-subtitle: "Appendix A: Market Research"
+order: 1509
 ---
 
 The two corporate financial statements that contain most of the information used in this investigation are the Income Statement and Balance Sheet. Data is publicly available unless stated otherwise.

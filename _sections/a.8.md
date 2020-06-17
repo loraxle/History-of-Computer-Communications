@@ -1,8 +1,7 @@
 ---
-chapter: 16
+chapter: 15
 title: "Computer Communications Market-Structure Consolodation"
-order: 
-subtitle: "Appendix A: Market Research"
+order: 1508
 ---
 
 ![Computer Communications Market-Structure Consolodation]({{ site.baseurl }}/assets/img/a.8.png)

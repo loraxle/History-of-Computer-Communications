@@ -1,11 +1,8 @@
 ---
-chapter: 16
+chapter: 15
 title: "Product Categories and Firms"
-order: 
-subtitle: "Appendix A: Market Research"
+order: 1505
 ---
-
-**PRODUCT CATEGORIES AND FIRMS**
 
 **Product Category**| |**Firm**
 :-----:|:-----:|:-----:
@@ -14,7 +11,7 @@ subtitle: "Appendix A: Market Research"
 ||Personal Computer|Hayes, Microcom and Telebit
 **Multiplexer**|  Time Division|Codex, ADS, Timeplex, and GDC
 ||  Statistical|Codex, Micom, Timeplex, GDC, Comdesign and DCA Associates
-||T-1|Codex, Micom,Timeplex, GDC, Milgo and DCA Associates. Start-ups: NET, NSS, Cohesive, Newbridge and Stratacom
+||T-1|Codex, Micom, Timeplex, GDC, Milgo and DCA Associates. Start-ups: NET, NSS, Cohesive, Newbridge and Stratacom
 **Data PBX**| |Micom, Equinox, Metapath, Gandalf, Codex and Bridge
 **Local Area Network**|Ethernet|3Com, UB, Bridge, Interlan, Excelan
 ||Terminal Servers|UB, Bridge and DEC

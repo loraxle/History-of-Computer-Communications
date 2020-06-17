@@ -271,7 +271,7 @@
                             {% assign section_id = i.id | remove: "/interview/" %}
                             {% if section_id == interview %}
                               {% assign uid = uid | plus: 1 %}
-                          <li><a name="int{{ uid }}" href="{{ site.baseurl }}{{ s.id }}/#{{ uid }}">{{ i.title }}</a></li>
+                          <li><a name="int-{{ uid }}" href="{{ site.baseurl }}{{ s.id }}/#{{ uid }}">{{ i.title }}</a></li>
                             {% endif %}
                           {% endfor %}
                         {% endfor %}
@@ -297,7 +297,7 @@
                                   {% assign section_id = i.id | remove: "/interview/" %}
                                   {% if section_id == interview %}
                                     {% assign uid = uid | plus: 1 %}
-                              <li><a name="int{{ uid }}" href="{{ site.baseurl }}{{ i.id }}/#{{ uid }}">{{ i.title }}</a></li>
+                              <li><a name="int-{{ uid }}" href="{{ site.baseurl }}{{ i.id }}/#{{ uid }}">{{ i.title }}</a></li>
                                   {% endif %}
                                 {% endif %}
                               {% endfor %}

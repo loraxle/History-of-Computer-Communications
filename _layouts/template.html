@@ -19,8 +19,10 @@
         {%- assign next = "" -%}
         {%- for chapter in site.chapters -%}
           {%- if page.chapter == chapter.chapter -%}
+            {% assign appendix = 'false' %}
             {%- if chapter.appendix -%}
               {%- assign chapterTitle = chapter.title -%}
+              {% assign appendix = 'true' %}
             {%- else -%}
               {%- assign chapterTitle = "Chapter " | append: chapter.chapter | append: " - " | append: chapter.title  -%}
             {%- endif -%}
@@ -31,7 +33,11 @@
               {%- if page.chapter == section.chapter -%}
                 {%- assign section_id = section.url | remove: "/section/" | remove: "/" -%}
                 {%- if section_id == page_id -%}
-                  {%- assign sectionTitle = section_id | append: " " | append: section.title -%}
+                  {%- if appendix == 'true' -%}
+                    {%- assign sectionTitle = section.title -%}
+                  {%- else -%}
+                    {%- assign sectionTitle = section_id | append: " " | append: section.title -%}
+                  {%- endif -%}
                   {%- if forloop.index < sections_size -%}{%- assign next = sections[forloop.index].url -%}{%- else -%}{%- assign next = "" -%}{%- endif -%}
                   {%- assign prev_count = forloop.index | minus: 2 -%}{%- if prev_count >= 0 -%}{%- assign prev = sections[prev_count].url -%}{%- else -%}{%- assign prev = "" -%}{%- endif -%}
                 {%- endif -%}

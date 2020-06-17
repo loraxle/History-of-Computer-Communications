@@ -661,6 +661,7 @@ label > svg {
   display: flex;
   align-content: center;
   flex-direction: column;
+  overflow: hidden;
 }
 .fn-spacer {
   width: 100%;

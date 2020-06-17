@@ -50,7 +50,7 @@ r(function(){
     if (refreshed) {
       var selected = document.querySelector(".selected");
       if (selected) {
-        console.log(selected.id);
+        //console.log(selected.id);
         crawlDOM(selected);
       }
     }
@@ -306,7 +306,10 @@ function renderContent(section_id) {
     formatImgs();
     document.getElementById("chapter-title").innerHTML = book_data[section_id].ch_title;
     var section_title = section_id + " " + book_data[section_id].title;
-    if (section_id.includes("int")) {
+    if (book_data[section_id].appendix == "true") {
+      section_title = book_data[section_id].title;
+    }
+    if (section_id.startsWith("int-")) {
       section_title = book_data[section_id].title;
     }
     document.getElementById("section-title").innerHTML = section_title;
@@ -386,7 +389,7 @@ function handleLink(e) {
         window.scrollTo(0,0); //scroll to top
         url = nexta.href;
         if (nexta.pathname.includes("interview")) {
-          section_id = "int" + nexta.pathname.replace("/History-of-Computer-Communications/interview/","").replace("/","");
+          section_id = "int-" + nexta.pathname.replace("/History-of-Computer-Communications/interview/","").replace("/","");
         } else {
           section_id = nexta.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");            
         } 
@@ -408,7 +411,7 @@ function handleLink(e) {
         window.scrollTo(0,0); //scroll to top
         url = preva.href;
         if (preva.pathname.includes("interview")) {
-          section_id = "int" + preva.pathname.replace("/History-of-Computer-Communications/interview/","").replace("/","");
+          section_id = "int-" + preva.pathname.replace("/History-of-Computer-Communications/interview/","").replace("/","");
         } else {
           section_id = preva.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");            
         } 

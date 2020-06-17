@@ -1,8 +1,7 @@
 ---
-chapter: 16
+chapter: 15
 title: "Computer and Terminal Forecasts 1968-1988"
-order: 
-subtitle: "Appendix A: Market Research"
+order: 1502
 ---
 
 **COMPUTER AND TERMINAL FORECASTS 1968-1988**| 

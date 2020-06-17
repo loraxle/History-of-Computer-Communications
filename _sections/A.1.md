@@ -1,8 +1,7 @@
 ---
-chapter: 16
+chapter: 15
 title: "Product Revenues 1970-1988"
-order: 
-subtitle: "Appendix A: Market Research"
+order: 1501
 ---
 
 **COMPUTER COMMUNICATIONS PRODUCT REVENUES 1970-1988 ($MILLIONS)**| 

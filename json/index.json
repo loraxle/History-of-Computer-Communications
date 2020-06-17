@@ -26,8 +26,10 @@ layout: null
       "ch" : "{{ section.chapter }}",
       {%- if chapter.appendix -%}
       "ch_title" : "{{ chapter.title }}",
+      "appendix" : "true",
       {%- else -%}
       "ch_title" : "Chapter {{ chapter.chapter }} - {{ chapter.title }}",
+      "appendix" : "false",
       {%- endif -%}
       "content" : "{{ section.content | strip_newlines | xml_escape  }}",
       {%- if section.footnotes -%}"footnotes" : [

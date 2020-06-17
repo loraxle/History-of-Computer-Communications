@@ -1,8 +1,7 @@
 ---
-chapter: 16
+chapter: 15
 title: "Computer Communications Start-Ups"
-order: 
-subtitle: "Appendix A: Market Research"
+order: 1506
 ---
 
 ![Computer Communications Start-Ups]({{ site.baseurl }}/assets/img/a.6.png)
