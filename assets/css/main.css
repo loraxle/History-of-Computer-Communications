@@ -1214,6 +1214,12 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   bottom: -14px;
   right: 55px;
 }
+blockquote > blockquote > p {
+  margin-left: -3rem;
+}
+blockquote > blockquote > p::before {
+  display: none;
+}
 #belowquote {
   text-align: center;
   margin-top: 15px;
