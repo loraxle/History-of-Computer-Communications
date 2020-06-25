@@ -435,9 +435,28 @@ function handleLink(e) {
         }
         break;
       case 3: //<a>
-        section_id = e.target.pathname.replace("/History-of-Computer-Communications/section/","").replace("/", "");
-        if (Object.keys(book_data).indexOf(section_id)) {
-          window.location.assign(e.target.pathname);
+        var pathname = e.target.pathname;
+        if ( pathname.startsWith("/History-of-Computer-Communications/section/")) {
+          section_id = pathname.replace("/History-of-Computer-Communications/section/","").replace("/", "");
+        }
+        else if (pathname.startsWith("/History-of-Computer-Communications/interview/")){
+          section_id = pathname.replace("/History-of-Computer-Communications/interview/","").replace("/", "");
+          section_id = "int" + section_id;
+          if (!window.location.pathname.startsWith("/History-of-Computer-Communications/interview/")) {
+            window.open(pathname, "_blank");
+            return false;
+          }
+        }
+        else { // remove this
+          console.log("####################");
+          console.log("Invalid section id / pathname");
+          console.log(pathname);
+          console.log("####################");
+          return false;
+        } 
+        if (Object.keys(book_data).indexOf(section_id) == -1) {
+          console.log('redirecting to ' + pathname);
+          window.location.assign(pathname);
           return false;
         }
         e.target.classList.add("selected");
