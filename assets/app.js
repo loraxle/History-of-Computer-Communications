@@ -442,18 +442,7 @@ function handleLink(e) {
         else if (pathname.startsWith("/History-of-Computer-Communications/interview/")){
           section_id = pathname.replace("/History-of-Computer-Communications/interview/","").replace("/", "");
           section_id = "int" + section_id;
-          if (!window.location.pathname.startsWith("/History-of-Computer-Communications/interview/")) {
-            window.open(pathname, "_blank");
-            return false;
-          }
         }
-        else { // remove this
-          console.log("####################");
-          console.log("Invalid section id / pathname");
-          console.log(pathname);
-          console.log("####################");
-          return false;
-        } 
         if (Object.keys(book_data).indexOf(section_id) == -1) {
           console.log('redirecting to ' + pathname);
           window.location.assign(pathname);
