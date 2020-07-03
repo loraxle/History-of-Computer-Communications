@@ -1,4 +1,5 @@
 var book_data = {};
+var search_array = Object.entries(book_data);
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 
 var menu = document.querySelector(".sidebar");
@@ -74,6 +75,7 @@ r(function(){
     .then(JSON.parse)
     .then(function(response) {
         book_data = response;
+        search_array = Object.entries(book_data);
         if (fragment) {
           setHash(fragment, section_id);
         }
@@ -100,14 +102,14 @@ searchbar.onkeypress = function(e){
     if (!e) e = window.event;
     var keyCode = e.keyCode || e.which;
     if (keyCode == '13'){
-      showResults();
+      //showResults();
       return false;
     }
 }
 
-searchbar.onfocus = function(e){
-  showResults();
-}
+//searchbar.onfocus = function(e){
+//  showResults();
+//}
 
 var mq = window.matchMedia("(min-width: 1100px)");
 
@@ -172,7 +174,9 @@ function showResults() {
       document.getElementById("burg").classList.remove("is-active");
     }    
   }
-  searchResults.classList.toggle("slide-in-right");
+  if (searchResults.className != "slide-in-right") {
+    searchResults.classList.add("slide-in-right");
+  }
 }
 
 function hideResults() {

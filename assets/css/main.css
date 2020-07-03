@@ -651,8 +651,22 @@ label > svg {
 #search-results .closebtn:hover {
   color: #f1f1f1;
 }
+.search-content {
+  padding: 10px;
+}
+#search-results > div > h1,
+#search-results > div > h2,
+#search-results > div > h3 {
+}
+mark {
+  background-color: var(--bg-blue);
+  color: #fff;
+}
 #results {
   position: relative;
+  overflow: scroll;
+  height: 100%;
+  padding: 10px;
 }
 .client-content {
   margin: 67px 24px 37px;
@@ -707,7 +721,12 @@ label > svg {
 #nextwrap.hide {
   visibility: hidden;
 }
-section > h1 {
+a.search-item {
+  text-decoration: none;
+  color: var(--gray-darker);
+}
+section > h1,
+.search-item > h1 {
   color: var(--gray-darker);
   font-size: 22px;
   font-family: acumin-pro, sans-serif;
@@ -715,23 +734,27 @@ section > h1 {
   font-style: normal;
   line-height: 27px;
 }
-section > h1:first-child {
+section > h1:first-child,
+.search-item > h1:first-child {
   margin-top: 0;
 }
-section > p {
+section > p,
+.search-item > p {
   color: var(--gray-darker);
   font-size: 16px;
   font-family: zenon,sans-serif;
   font-weight: 500;
   line-height: 25px;
 }
-section > p#section-title {
+section > p#section-title,
+.search-item > p#section-title {
   font-size: 16px;
   font-family: acumin-pro, sans-serif;
   font-weight: 600;
   font-style: normal;
 }
-section a[name^="fnloc"] {
+section a[name^="fnloc"],
+.search-item a[name^="fnloc"] {
   text-decoration: none;
   font-weight: 400;
   font-size: 16px;
@@ -744,7 +767,8 @@ section a[name^="fnloc"] {
   top: -0.4em;
 }
 /*section p img[src*="-l"] { }*/
-section p div.imgl {
+section p div.imgl,
+.search-item p div.img {
   border: 1px solid #E6E6E6;
   float: left;
   margin-right: 10px;
@@ -754,10 +778,12 @@ section p div.imgl {
   width: 100%;
   max-width: 281px;
 }
-section p div.imgl img {
+section p div.imgl img,
+.search-item p div.imgl img {
   max-width: 263px;
 }
-section p div.imgl h3 {
+section p div.imgl h3,
+.search-item p div.imgl h3 {
   margin: 8px 0 0 0;
   padding: 0;
   text-align: center;
@@ -1437,14 +1463,17 @@ th {
     margin: 79px 59px 70px;
     /*max-width: 750px;*/
   }
-  section > h1 {
+  section > h1,
+  .search-item > h1 {
     font-size: 26px;
   }
-  section > p {
+  section > p,
+  .search-item > p {
     font-size: 18px;
     line-height: 29px;
   }
-  section > p#section-title {
+  section > p#section-title,
+  .search-item > p#section-title {
     font-size: 18px;
   }
   blockquote p {
@@ -1534,14 +1563,17 @@ th {
   .client-content > .prevnav {
     max-width: 750px;
   }
-  section > h1 {
+  section > h1,
+  .search-item > h1 {
     font-size: 24px;
   }
-  section > p {
+  section > p,
+  .search-item > p {
     font-size: 16px;
     line-height: 25px;
   }
-  section > p#section-title {
+  section > p#section-title,
+  .search-item > p#section-title {
     font-size: 20px;
   }
   blockquote p {
