@@ -82,10 +82,19 @@ function srch(item, searchText) {
   } else {
     ch_title="<h1>" + item[1].ch_title + "</h1>";
   }
-  var content = highlight(item[1].content, searchText);
+  var content = decode(item[1].content);
+  content = highlight(content, searchText);
   if (content) {
     matched = true;
-    content = decode(content);
+    //content = decode(content);
+    var re = /<p><img.*?src="(.*?)"[^\>]+><\/p>/g;
+    var myArray = content.match(re);
+    if (myArray) {
+      for (var i = 0; i < myArray.length; i++) {
+        var formatted = myArray[i].replace(/<mark>/g, "").replace(/<\/mark>/g, "");
+        content = content.replace(myArray[i], formatted);
+      }   
+    }
     content = "<div class='search-content'>" + content + "</div>";
   } else {
     content = "";
