@@ -245,7 +245,7 @@
               {% assign last_name = fullname[-1] %}        
               {% assign first_name = fullname | pop %}
               {% assign first_name = first_name | join: " " %}
-                  <li><a href="{{ site.baseurl }}{{ interview.id }}/" rel="noopener noreferrer" id="int{{ interview.id | remove: '/interview/' }}" {% if interview.url == page.url %}class="selected"{% endif %}>{{ last_name | append: ", " | append: first_name }}</a></li>
+                  <li><a href="{{ site.baseurl }}{{ interview.id }}/" target="_blank" rel="noopener noreferrer" id="int{{ interview.id | remove: '/interview/' }}" {% if interview.url == page.url %}class="selected"{% endif %}>{{ last_name | append: ", " | append: first_name }}</a></li>
             {% endfor %}
                 </ul>
               </li>
