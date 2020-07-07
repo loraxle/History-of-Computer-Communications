@@ -2,6 +2,20 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include_cached head.html -%}
   <body>
+    {%- if page.name == "contribute.md" -%}
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0" nonce="Z3rH4fbG"></script>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=258645622118315&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    {%- endif -%}
     {%- include nav.html -%}
     <div class="main">
         {%- if page.name == "index.md" -%}
@@ -37,5 +51,3 @@
   <script src="{{ site.baseurl}}/assets/search.js"></script>
   </body>
 </html>
-
-

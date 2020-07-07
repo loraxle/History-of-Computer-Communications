@@ -1130,11 +1130,6 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   align-items: center;
   margin: 20px 0 15%;
 }
-.pagecontent > div#fbgroup img {
-  width: 100%;
-  max-width: 369px;
-  height: auto;
-}
 /* end page content */
 /* home content */
 #homecontent {
