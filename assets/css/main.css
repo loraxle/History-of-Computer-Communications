@@ -1003,11 +1003,6 @@ footer a#footfbmobile > img  {
   margin-left: 15px;
 }
 footer #footfb > #footfbdesk {
-  width: 190px;
-  height: 200px;
-  border-radius: 4px;
-  padding: 5px;
-  background-color: #fff;
   display: none;
 }
 footer #footright {
@@ -1641,8 +1636,6 @@ th {
   }
   footer #footfb > #footfbdesk {
     display: flex;
-    justify-content: center;
-    align-items: center;
   }
   footer img#chm {
     width: 130px;
