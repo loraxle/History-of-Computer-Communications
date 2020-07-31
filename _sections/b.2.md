@@ -19,4 +19,3 @@ Manley Irwin worked as a staff economist for Bernard Strassburg at the FCC Commo
 6) [Summary of Strassburg speech given at American University October 1965]({{ site.baseurl }}/assets/pdf/Manley Irwin - Summary of Strassburg Speech at American University Oct. 1965.pdf)
 
 7) [The Computer Utility: Competition or Regulation?]({{ site.baseurl }}/assets/pdf/Manley Irwin - The Computer Utility_ Competition or Regulation_.pdf)
-   
