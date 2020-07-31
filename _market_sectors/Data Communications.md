@@ -77,5 +77,6 @@ nav:
       - "11.23"
   - heading: Reports/Analysis
     sub-sections:
-      - "1.0"
+      - "a.18"
+      - "c.1"
 ---
