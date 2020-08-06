@@ -8,6 +8,6 @@ Bolt Beranek & Newman (BBN) were awarded a contract by the US government's Advan
 
 The documents collected here have been graciously shared by former BBN software engineer and manager, David Walden ([personal website](https://www.walden-family.com/dave/)){target="_blank"}.
 
-1) [ARPA Request for Quotations]({{ site.baseurl }}/assets/pdf/arpanet-rfq.pdf){target="_blank"}
+1) [ARPA Request for Quotations]({{ site.baseurl }}/assets/pdf/arpanet-rfq.pdf){:target="_blank"}
 
 2) [BBN Winning Bid]({{ site.baseurl }}/assets/pdf/bbn-arpanet-prop-ocr.pdf){target="_blank"}
