@@ -2,7 +2,35 @@
 order: 02
 title: Networking
 nav:
-  - heading: Gestation
+  - heading: Evolution of Packet Switching
+    sub-sections:
+      - "4.0"
+      - "4.1"
+      - "4.2"
+      - "4.3"
+      - "4.4"
+      - "4.5"
+      - "4.6"
+      - "4.7"
+      - "4.8"
+      - "4.9"
+  - heading: Arpanet
+    sub-sections:
+      - "6.0"
+      - "6.1"
+      - "6.2"
+      - "6.3"
+      - "6.4"
+      - "6.5"
+      - "6.6"
+      - "6.7"
+      - "6.8"
+      - "6.9"
+      - "6.10"
+      - "6.11"
+      - "6.12"
+      - "6.13"
+- heading: Gestation
     sub-sections:
       - "8.0"
       - "8.1"
