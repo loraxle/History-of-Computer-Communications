@@ -94,4 +94,8 @@ nav:
   - heading: Reports/Analysis
     sub-sections:
       - "a.17"
+      - "a.20"
+      - "a.21"
+      - "a.22"
+      - "a.23"
 ---

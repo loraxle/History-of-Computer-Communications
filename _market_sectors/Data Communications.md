@@ -68,5 +68,6 @@ nav:
   - heading: Reports/Analysis
     sub-sections:
       - "a.18"
-      - "c.1"
+      - "a.19"
+      - "a.23"
 ---
