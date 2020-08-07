@@ -6,17 +6,22 @@ nav:
     sub-sections: 
       - "10"
       - "14"
-      - "37"
-      - "44"
+      - "41"
+      - "48"
+      - "67"
+      - "77"
   - heading: Computer & Communication Industry Association (CCIA)
     sub-sections:
-      - "56"
+      - "60"
   - heading: FCC - Common Carrier Bureau (CCB)
     sub-sections:
-      - ""
+      - "72"
+      - "76"
   - heading: IEEE 802 Committee
     sub-sections:
-      - ""
+      - "32"
+      - "50"
+      - "68"
   - heading: International Standards Organization (ISO)
     sub-sections:
       - "2"
