@@ -32,6 +32,7 @@ searchbar.onkeypress = function(e){
 }
 
 var searchResults = document.getElementById("search-results");
+var menu = document.querySelector(".sidebar");
 
 function showResults() {
   const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;

@@ -65,7 +65,7 @@ nav:
       - "11.21"
       - "11.22"
       - "11.23"
-    - heading: Adaptation
+  - heading: Adaptation
     sub-sections:
       - "13.0"
       - "13.1"

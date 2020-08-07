@@ -30,7 +30,7 @@ nav:
       - "6.11"
       - "6.12"
       - "6.13"
-- heading: Gestation
+  - heading: Gestation
     sub-sections:
       - "8.0"
       - "8.1"

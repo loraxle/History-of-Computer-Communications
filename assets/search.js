@@ -42,13 +42,13 @@ function srch(item, searchText) {
   if (section) {
     matched = true;
     if (item[0].startsWith("int")) {
-      section = "<h1>Interview: " + section.replace("int", "") + "</h1>";    
+      section = "<h1>Interview: " + section.replace("int", "") + "</h1>";
     } else {
       section = "<h1>Section: " + section + "</h1>";
     }
   } else {
     if (item[0].startsWith("int")) {
-      section = "<h1>Interview: " + item[0].replace("int", "") + "</h1>";    
+      section = "<h1>Interview: " + item[0].replace("int", "") + "</h1>";
     } else {
       section = "<h1>Section: " + item[0] + "</h1>";
     }
@@ -82,11 +82,17 @@ function srch(item, searchText) {
   } else {
     ch_title="<h1>" + item[1].ch_title + "</h1>";
   }
+  console.log(decode(item[1].content));
+  var cntnt = item[1].content;
+  cntnt = cntnt.toLowerCase();
+  var content_index = cntnt.indexOf("https://archive.computerhistory.org/");
+  //console.log(content_index); 
+  //<a href="https://archive.computerhistory.org/resources/access/text/2013/05/102746645-05-01-acc.pdf">Norm Abramson Interviewed by James Pelkey 10/13/88</a>
   var content = highlight(item[1].content, searchText);
   if (content) {
     matched = true;
-    content = decode(content);
-    content = "<div class='search-content'>" + content + "</div>";
+    //content = decode(content);
+    //content = "<div class='search-content'>" + content + "</div>";
   } else {
     content = "";
   }
@@ -96,7 +102,6 @@ function srch(item, searchText) {
         ${ch_title}
         ${section}
         ${title}
-        ${content}
       </a>`;
     return html;
   }

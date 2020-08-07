@@ -666,7 +666,7 @@ mark {
   position: relative;
   overflow: scroll;
   height: 100%;
-  padding: 10px;
+  padding: 25px 10px 10px;
 }
 .client-content {
   margin: 67px 24px 37px;
