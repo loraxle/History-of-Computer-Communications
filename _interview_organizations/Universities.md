@@ -6,10 +6,10 @@ nav:
     sub-sections:
       - "12"
       - "13"
-      - "48"
-      - "55"
-      - "67"
-      - "69"
+      - "49"
+      - "56"
+      - "68"
+      - "70"
   - heading: University of California Irvine
     sub-sections:
       - "25"
@@ -18,15 +18,15 @@ nav:
       - "10"
       - "11"
       - "14"
-      - "44"
-      - "63"
+      - "45"
+      - "64"
   - heading: University of California Santa Barbara
     sub-sections:
       - "20"
-      - "81"
+      - "82"
   - heading: University of Hawai’i 
     sub-sections:
       - "1"
       - "4"
-      - "55"
+      - "56"
 ---

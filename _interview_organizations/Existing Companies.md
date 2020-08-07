@@ -4,33 +4,33 @@ title: "Existing Companies"
 nav:
   - heading: Bolt Beranek & Newman
     sub-sections:
-      - "34"
-      - "41"
-      - "62"
+      - "35"
+      - "42"
+      - "63"
   - heading: DEC
     sub-sections:
       - "5"
-      - "71"
-      - "80"
+      - "72"
+      - "81"
   - heading: HP
     sub-sections:
-      - "45"
-      - "50"
+      - "46"
+      - "51"
   - heading: IBM
     sub-sections:
-      - "21"
-      - "79"
+      - "22"
+      - "80"
   - heading: INTEL
     sub-sections:
-      - "42"
+      - "43"
   - heading: Prime Computers
     sub-sections:
       - "26"
-      - "71"
+      - "72"
   - heading: Xerox PARC
     sub-sections:
       - "15"
-      - "49"
-      - "55"
-      - "77"
+      - "50"
+      - "56"
+      - "78"
 ---
