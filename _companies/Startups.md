@@ -6,10 +6,15 @@ nav:
     nested-nav:
       - nested-heading: American Data Systems
         nested-sections:
-          - "1.0"
+          - "3.9"
+          - "5.5"
+          - "5.7"
+          - "5.11"
+          - "7.6"
       - nested-heading: Codex
         nested-sections:
-          - "1.0"
+          - "3.1"
+          - ""
       - nested-heading: Concord Data Systems
         nested-sections:
           - "1.0"
