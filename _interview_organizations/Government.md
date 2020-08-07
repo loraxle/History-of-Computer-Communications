@@ -25,42 +25,22 @@ nav:
   - heading: International Standards Organization (ISO)
     sub-sections:
       - "2"
-      - "18"
-      - "60"
+      - "19"
+      - "64"
+      - "81"
+      - "84"
   - heading: Interop
     sub-sections:
-      - "47"
-  - heading: Massachusetts Institute of Technology (MIT)
-    sub-sections:
-      - "12"
-      - "13"
-      - "44"
+      - "51"
   - heading: MITRE Corporation
     sub-sections:
-      - "43"
+      - "47"
   - heading: National Bureau of Standards (NBS)
     sub-sections:
-      - "53"
+      - "33"
+      - "57"
+      - "68"
   - heading: National Physical Laboratory (NPL)
     sub-sections:
-      - "16"
-  - heading: Network Associates
-    sub-sections:
-      - "30"
-  - heading: University of California Irvine
-    sub-sections:
-      - "25"
-  - heading: University of California Los Angeles
-    sub-sections:
-      - "10"
-      - "11"
-      - "14"
-      - "40"
-      - "59"
-  - heading: University of California Santa Barbara
-    sub-sections:
-      - "19"
-  - heading: University of Hawai’i 
-    sub-sections:
-      - "1"
+      - "18"
 ---
