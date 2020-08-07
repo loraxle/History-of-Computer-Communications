@@ -22,13 +22,15 @@ nav:
       - "79"
   - heading: INTEL
     sub-sections:
-      - "38"
+      - "42"
   - heading: Prime Computers
     sub-sections:
       - "26"
-  - heading: Xerox
+      - "71"
+  - heading: Xerox PARC
     sub-sections:
-      - "45"
-      - "51"
       - "15"
+      - "49"
+      - "55"
+      - "77"
 ---
