@@ -10,55 +10,60 @@ nav:
       - nested-heading: Codex
         nested-sections:
           - "8"
-          - "18"
+          - "19"
           - "29"
-          - "32"
-          - "52"
+          - "36"
+          - "56"
       - nested-heading: ComDesign
         nested-sections:
-          - "19"
+          - "20"
       - nested-heading: Concord Data Systems
         nested-sections:
-          - "52"
+          - "56"
       - nested-heading: Digital Communications Associates
         nested-sections:
-          - "33"
-          - "54"
+          - "37"
+          - "58"
       - nested-heading: Equinox
         nested-sections:
-          - "22"
+          - "16"
       - nested-heading: General Datacom
         nested-sections:
-          - ""
+          - "75"
       - nested-heading: Infotron
         nested-sections:
-          - "22"
+          - "16"
       - nested-heading: Intertel
         nested-sections:
-          - "32"
+          - "36"
       - nested-heading: Metapath
         nested-sections:
-          - "34"
+          - "38"
       - nested-heading: Micom
         nested-sections:
           - "24"
-          - "55"
+          - "31"
+          - "59"
+          - "71"
       - nested-heading: Microcom
         nested-sections:
-          - "21"
+          - "22"
       - nested-heading: Milgo
         nested-sections:
-          - "22"
-          - "39"
+          - "16"
+          - "43"
+      - nested-heading: Network Analysis Corporation
+        nested-sections:
+          - "30"
       - nested-heading: Paradyne
         nested-sections:
-          - "31"
-          - "50"
+          - "35"
+          - "82"
       - nested-heading: Telebit
         nested-sections:
           - "3"
-          - "35"
-          - "36"
+          - "39"
+          - "40"
       - nested-heading: Timeplex
         nested-sections:
           - "7"
