@@ -4,19 +4,22 @@ title: "Existing Companies"
 nav:
   - heading: Bolt Beranek & Newman
     sub-sections:
-      - "37"
-      - "58"
+      - "34"
+      - "41"
+      - "62"
   - heading: DEC
     sub-sections:
       - "5"
-      - "26"
+      - "71"
+      - "80"
   - heading: HP
     sub-sections:
-      - "41"
-      - "46"
+      - "45"
+      - "50"
   - heading: IBM
     sub-sections:
-      - "20"
+      - "21"
+      - "79"
   - heading: INTEL
     sub-sections:
       - "38"
