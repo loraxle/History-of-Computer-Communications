@@ -13,7 +13,26 @@ nav:
           - "7.6"
       - nested-heading: Codex
         nested-sections:
+          - "c.1"
           - "3.1"
+          - "3.5"
+          - "3.8"
+          - "5.4"
+          - "5.6"
+          - "5.10"
+          - "5.12"
+          - "7.3"
+          - "7.5"
+          - "7.8"
+          - "7.11"
+          - "9.13"
+          - "10.11"
+          - "12.10"
+          - "12.22"
+          - "13.7"
+          - "13.25"
+          - "14.12"
+          - 
       - nested-heading: Concord Data Systems
         nested-sections:
           - "1.0"
