@@ -41,16 +41,25 @@ nav:
           - "14.19"
       - nested-heading: Digital Communications Associates
         nested-sections:
-          - "1.0"
+          - "13.9"
+          - "13.23"
+          - "14.15"
       - nested-heading: General Datacomm
         nested-sections:
-          - "1.0"
+          - "5.1"
+          - "7.9"
+          - "13.5"
+          - "13.28"
       - nested-heading: Infotron
         nested-sections:
-          - "1.0"
+          - "5.1"
+          - "7.9"
+          - "13.14"
+          - "13.28"
       - nested-heading: Intertel
         nested-sections:
-          - "1.0"
+          - "5.4"
+          - "7.9"
       - nested-heading: Micom
         nested-sections:
           - "1.0"
