@@ -446,10 +446,6 @@ function handleLink(e) {
         else if (pathname.startsWith("/History-of-Computer-Communications/interview/")){
           section_id = pathname.replace("/History-of-Computer-Communications/interview/","").replace("/", "");
           section_id = "int" + section_id;
-          if (!window.location.pathname.startsWith("/History-of-Computer-Communications/interview/")) {
-            window.open(pathname, "_blank");
-            return false;
-          }
         }
         else { // remove this
           console.log("####################");
@@ -486,6 +482,7 @@ function handleLink(e) {
     const state = { 'section': section_id, 'scroll': scroll };
     const title = '';
     history.pushState(state, title, url);
+    window.scrollTo(0,0); //scroll to top
     return false;
   }
 }

@@ -14,7 +14,6 @@ nav:
       - nested-heading: Codex
         nested-sections:
           - "3.1"
-          - ""
       - nested-heading: Concord Data Systems
         nested-sections:
           - "1.0"

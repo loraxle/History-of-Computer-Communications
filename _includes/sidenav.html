@@ -146,6 +146,7 @@
             </label>
             <ul class="group-list">
             {% assign idx = 0 %}
+            {% assign idx4 = 0 %}
             {% assign companies = site.companies | sort: 'order' %}
             {% for company in companies %}
               {% assign idx = idx | plus: 1 %}
@@ -186,10 +187,11 @@
                     <ul class="sub-sub-group-list">
                     {% assign idx3 = 0 %}
                     {% for nested in item.nested-nav %}
+                      {% assign idx4 = idx4 | plus: 1 %}
                       {% assign idx3 = idx3 | plus: 1 %}
                       <li>
-                        <input id="sub-sub-sub-group-{{ idx }}-{{ idx3 }}" type="checkbox" hidden />
-                        <label for="sub-sub-sub-group-{{ idx }}-{{ idx3 }}">
+                        <input id="sub-sub-sub-group-{{ idx4 }}-{{ idx }}-{{ idx3 }}" type="checkbox" hidden />
+                        <label for="sub-sub-sub-group-{{ idx4 }}-{{ idx }}-{{ idx3 }}">
                           <div>{{ nested.nested-heading }}</div>
                           <svg xmlns="http://www.w3.org/2000/svg" >
                             <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
@@ -242,10 +244,15 @@
             {%- assign interviews = site.interviews | sort: 'order' -%}
             {% for interview in interviews %}
               {% assign fullname = interview.title | split: " " %}
-              {% assign last_name = fullname[-1] %}        
-              {% assign first_name = fullname | pop %}
-              {% assign first_name = first_name | join: " " %}
-                  <li><a href="{{ site.baseurl }}{{ interview.id }}/" target="_blank" rel="noopener noreferrer" id="int{{ interview.id | remove: '/interview/' }}" {% if interview.url == page.url %}class="selected"{% endif %}>{{ last_name | append: ", " | append: first_name }}</a></li>
+              {% if fullname[2] and fullname[2] == '&' %}
+                {% assign heading = fullname[1] | append: ", " | append: fullname[0] | append: " & " | append: fullname[4] | append: ", " | append: fullname[3] %}
+              {% else %}
+                {% assign last_name = fullname[-1] %}        
+                {% assign first_name = fullname | pop %}
+                {% assign first_name = first_name | join: " " %}
+                {% assign heading = last_name | append: ", " | append: first_name %}
+              {% endif %}
+                  <li><a href="{{ site.baseurl }}{{ interview.id }}/" id="int{{ interview.id | remove: '/interview/' }}" {% if interview.url == page.url %}class="selected"{% endif %}>{{ heading }}</a></li>
             {% endfor %}
                 </ul>
               </li>
@@ -260,6 +267,7 @@
                 </label>
                 <ul class="group-list">
                 {% assign idx = 0 %}
+                {% assign idx4 = 0 %}
                 {% assign interview_orgs = site.interview_organizations | sort: 'order' %}
                 {% for org in interview_orgs %}
                   {% assign idx = idx | plus: 1 %}
@@ -290,7 +298,7 @@
                             {% assign section_id = i.id | remove: "/interview/" %}
                             {% if section_id == interview %}
                               {% assign uid = uid | plus: 1 %}
-                          <li><a name="int{{ uid }}" href="{{ site.baseurl }}{{ s.id }}/#{{ uid }}">{{ i.title }}</a></li>
+                          <li><a name="int{{ uid }}" href="{{ site.baseurl }}{{ i.id }}/#{{ uid }}">{{ i.title }}</a></li>
                             {% endif %}
                           {% endfor %}
                         {% endfor %}
@@ -300,10 +308,11 @@
                         <ul class="sub-sub-group-list">
                         {% assign idx3 = 0 %}
                         {% for nested in item.nested-nav %}
+                          {% assign idx4 = idx4 | plus: 1 %}
                           {% assign idx3 = idx3 | plus: 1 %}
                           <li>
-                            <input id="sub-sub-sub-group-0{{ idx }}-{{ idx3 }}" type="checkbox" hidden />
-                            <label for="sub-sub-sub-group-0{{ idx }}-{{ idx3 }}">
+                            <input id="sub-sub-sub-group-0{{ idx4 }}-{{ idx }}-{{ idx3 }}" type="checkbox" hidden />
+                            <label for="sub-sub-sub-group-0{{ idx4 }}-{{ idx }}-{{ idx3 }}">
                               <div>{{ nested.nested-heading }}</div>
                               <svg xmlns="http://www.w3.org/2000/svg" >
                                 <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
