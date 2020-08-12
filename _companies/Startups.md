@@ -62,7 +62,16 @@ nav:
           - "7.9"
       - nested-heading: Micom
         nested-sections:
-          - "1.0"
+          - "7.6"
+          - "7.10"
+          - "7.12"
+          - "9.12"
+          - "10.10"
+          - "12.11"
+          - "12.23"
+          - "13.8"
+          - "13.26"
+          - "14.13"
       - nested-heading: Milgo
         nested-sections:
           - "1.0"
