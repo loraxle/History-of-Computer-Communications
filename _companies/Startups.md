@@ -74,13 +74,28 @@ nav:
           - "14.13"
       - nested-heading: Milgo
         nested-sections:
-          - "1.0"
+          - "3.1"
+          - "3.5"
+          - "3.8"
+          - "5.9"
+          - "5.13"
+          - "7.9"
+          - "7.11"
+          - "13.28"
       - nested-heading: Paradyne
         nested-sections:
-          - "1.0"
+          - "5.1"
+          - "5.13"
+          - "7.9"
+          - "10.12"
+          - "12.1"
+          - "13.15"
+          - "13.28"
       - nested-heading: Timeplex
         nested-sections:
-          - "1.0"
+          - "5.1"
+          - 
+          - "13.6"
       - nested-heading: Universal Data Systems
         nested-sections:
           - "1.0"
