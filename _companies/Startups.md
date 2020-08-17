@@ -100,10 +100,12 @@ nav:
           - "13.27"
       - nested-heading: Universal Data Systems
         nested-sections:
-          - "1.0"
+          - "5.1"
       - nested-heading: Vadic
         nested-sections:
-          - "1.0"
+          - "5.1"
+          - "5.13"
+          - "7.6"
   - heading: Networking
     nested-nav:
       - nested-heading: 3Com
