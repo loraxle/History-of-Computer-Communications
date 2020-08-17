@@ -94,8 +94,10 @@ nav:
       - nested-heading: Timeplex
         nested-sections:
           - "5.1"
-          - 
+          - "7.12"
+          - "12.1"
           - "13.6"
+          - "13.27"
       - nested-heading: Universal Data Systems
         nested-sections:
           - "1.0"
