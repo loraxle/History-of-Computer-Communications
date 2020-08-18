@@ -1063,7 +1063,6 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   line-height: 27px;
   font-size: 24px;
   color: #03485C;
-  border-bottom: 2px solid #03485C;
   margin: 18px 0px;
 }
 .pagecontent > h4 {
@@ -1137,23 +1136,133 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 .pagecontent > div.about-author {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 40px;
 }
 .pagecontent > div.about-author > img {
   object-fit: cover;
-  max-width: 240px;
-  max-height: 100%;
+  width: 129px;
+  height: 179px;
 }
-.pagecontent > div.about-author > p {
+.pagecontent > div.about-author > div {
+  margin: 0;
+}
+.pagecontent > div.about-author > div > h3 {
   font-family: acumin-pro, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 27px;
-  padding: 0 1em 0 2em;
+  color: #03485c;
+  margin: 0;
+}
+.pagecontent > div.about-author > div > p {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 0 1em 0 0;
+  margin: 10px 0px;
+  color: var(--gray-darker);
 }
 
 /* end page content */
+/* contact */
+.content.contact {
+  background-color: #FAFAFA;
+}
+.contactcontent {
+  max-width: 740px;
+}
+.contactcontent > h1 {
+  width: 100%;
+  border-bottom: 4px solid #03485C;
+  color: #03485C;
+  font-family: acumin-pro, sans-serif;
+  font-style: normal;
+  font-size: 37px;
+  font-weight: 700;
+  line-height: 27px;
+  padding-bottom: 9px;
+  margin: 0 0 18px;
+}
+.contactcontent > form[name="contact"] {
+  display: flex;
+  flex-direction: column;
+}
+.contactcontent > form[name="contact"] > div {
+  width: 100%;
+}
+.contactcontent > form[name="contact"] > div > div {
+}
+
+.contactcontent > form[name="contact"] > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contactcontent > form[name="contact"] label {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+  color: #03485c;
+}
+.contactcontent > form[name="contact"] input {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 500;
+  color: var(--gray-darker);
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  padding: 6px 10px;
+}
+.contactcontent > form[name="contact"] > div > div input {
+  margin-bottom: 14px;
+}
+.contactcontent > form[name="contact"] textarea {
+  width: 100%;
+  height: 124px;
+  resize: none;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  padding: 6px 10px;
+  font-family: acumin-pro, sans-serif;
+  font-weight: 500;
+  color: var(--gray-darker);
+}
+.contactcontent > form[name="contact"] button {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  background: #03485c;
+  border: 1px solid #d9d9d9;
+  color: #fff;
+  font-size: 16px;
+  font-family: acumin-pro, sans-serif;
+  font-weight: 500;
+  line-height: 27px;
+}
+@media screen and (min-width: 768px) {
+  .contactcontent > form[name="contact"] {
+    flex-direction: row;
+  }
+  .contactcontent > form[name="contact"] > div {
+    width: 50%;
+  }
+  .contactcontent > form[name="contact"] input {
+    width: calc(100% - 42px);
+  }
+  .contactcontent > form[name="contact"] > div > div:not(:last-child) input {
+    margin-bottom: 14px;
+  }
+}
+/* end contact */
 /* home content */
 #homecontent {
   width: 100%;
@@ -1509,7 +1618,18 @@ th {
   }
   .pagecontent > div.about-author {
     flex-direction: row;
-    align-items: flex-start;
+    margin-bottom: 60px;
+  }
+  .pagecontent > div.about-author > div {
+    margin: 0 0 0 53px;
+  }
+  .pagecontent > div.about-author > div > h3 {
+    font-size: 22px;
+  }
+  .pagecontent > div.about-author > div > p {
+    font-size: 16px;
+    line-height: 27px;
+    margin: 16px 0px;
   }
   footer {
     display: flex;
