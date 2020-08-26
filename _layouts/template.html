@@ -70,7 +70,7 @@
             <content>{{ content }}</content>
             <div class="prevnav">
               <div id="prevwrap" {%- if prev == "" -%}class="hide"{%- endif -%}>
-                <a id="preva" href="{%- if prev != '' -%}/History-of-Computer-Communications{{ prev }}{%- endif -%}">
+                <a id="preva" href="{%- if prev != '' -%}{{ prev }}{%- endif -%}">
                   <svg version="1.1" id="prev-arrow" width="27px" height="27px" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 27 27" xml:space="preserve">
                     <style>.st0{fill:#535453}</style>
                     <g id="Icon_ionic-ios-arrow-dropright" transform="rotate(180 15.539 15.539)">
@@ -82,7 +82,7 @@
                 </a>
               </div>
               <div id="nextwrap" {%- if next == "" -%}class="hide"{%- endif -%}>
-                <a id="nexta" href="{%- if next != '' -%}/History-of-Computer-Communications{{ next }}{%- endif -%}">
+                <a id="nexta" href="{%- if next != '' -%}{{ next }}{%- endif -%}">
                   <span>Next&nbsp;</span>
                   <svg version="1.1" id="next-arrow" width="27px" height="27px" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 27.7 27.7" xml:space="preserve">
                     <style>.st0{fill:#535453}</style>
@@ -116,7 +116,7 @@
             </div>
           </div>
         </div>
-        <div class="sidebar slide-in-left">{%- include sidenav.html -%}</div>
+        <div class="sidebar slide-in-left">{%- include_cached sidenav.html -%}</div>
       </div>
 
       <div id="search-results">
@@ -128,9 +128,8 @@
 
     </div>
     {%- include_cached footer.html -%}
-  <script src="{{ site.baseurl}}/assets/app.js"></script>
-  <!--<script src="{{ site.baseurl}}/assets/search.js"></script>-->
+  <script src="/assets/app.js"></script>
+  <!--<script src="/assets/search.js"></script>-->
   </body>
 </html>
-
 

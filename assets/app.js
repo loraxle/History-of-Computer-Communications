@@ -48,10 +48,18 @@ r(function(){
         }
       }
     }
+    var section_id = window.location.pathname;
+    if (section_id.startsWith("/section/")) {
+      section_id = section_id.replace("/section/","").replace("/", "");
+    }
+    else if (section_id.startsWith("/interview/")) {
+      section_id = "int" + section_id.replace("/interview/","").replace("/", "");
+    }
     if (refreshed) {
-      var selected = document.querySelector(".selected");
+      //var selected = document.querySelector(".selected");
+      var selected = document.getElementById(section_id);
       if (selected) {
-        //console.log(selected.id);
+        selected.classList.add("selected");
         crawlDOM(selected);
       }
     }
@@ -62,7 +70,7 @@ r(function(){
     sidenav.classList.remove("notready"); 
     sidenav.classList.add("ready");
     menu.classList.add("animated");
-    var section_id = window.location.pathname.replace("/History-of-Computer-Communications/section/","").replace("/", "");
+    //var section_id = window.location.pathname.replace("/section/","").replace("/", "");
     let currentState = history.state;
     if (currentState == null) {
       var scroll = document.querySelector(".sidenav").scrollTop;
@@ -218,7 +226,7 @@ function crawlDOM(elm) {
   do {
     if (elm.className) {
       if (elm.classList.contains("nav__list")) {
-        crawling = false;          
+        crawling = false;
       }
     }
     elm = elm.parentNode;
@@ -303,7 +311,7 @@ function renderContent(section_id) {
       console.log("Invalid section id");
       return false; // handle history popstate on index / other pages
     }
-    if (section_id == "History-of-Computer-Communications/") {
+    if (section_id == "/") {
       return false; // handle history popstate on index / other pages
     }
     document.querySelector("content").innerHTML = decode(book_data[section_id].content);
@@ -322,7 +330,7 @@ function renderContent(section_id) {
       preva.href = "";
     }
     else {
-      var prev = "/History-of-Computer-Communications" + book_data[section_id].prev;
+      var prev = book_data[section_id].prev;
       preva.href = prev;
       document.getElementById("prevwrap").classList.remove("hide");
     }
@@ -331,7 +339,7 @@ function renderContent(section_id) {
       nexta.href = "";
     }
     else {
-      var next = "/History-of-Computer-Communications" + book_data[section_id].next;
+      var next = book_data[section_id].next;
       nexta.href = next;
       document.getElementById("nextwrap").classList.remove("hide");
     }
@@ -358,7 +366,7 @@ function renderContent(section_id) {
       }
       document.getElementById("footnotes").appendChild(ul);
     }
-    var canonical = window.location.origin + "/History-of-Computer-Communications/section/" + section_id;
+    var canonical = window.location.origin + "/section/" + section_id;
     document.querySelector("link[rel='canonical']").setAttribute("href", canonical);
 }
 
@@ -398,9 +406,9 @@ function handleLink(e) {
         window.scrollTo(0,0); //scroll to top
         url = nexta.href;
         if (nexta.pathname.includes("interview")) {
-          section_id = "int" + nexta.pathname.replace("/History-of-Computer-Communications/interview/","").replace("/","");
+          section_id = "int" + nexta.pathname.replace("/interview/","").replace("/","");
         } else {
-          section_id = nexta.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");            
+          section_id = nexta.pathname.replace("/section/","").replace("/","");
         } 
         var hash = parseInt(nexta.hash.replace("#", ""));
         if (!isNaN(hash)) {
@@ -411,6 +419,18 @@ function handleLink(e) {
             crawlDOM(activeSection[0]);
           }
         } else {
+          try {
+            document.getElementById(section_id).classList.add("selected");
+            crawlDOM(document.getElementById(section_id));
+            hash = 0;
+          }
+          catch(err) {
+            console.log(err);
+            section_id = section_id.replace("/","")
+            document.getElementById(section_id).classList.add("selected");
+            crawlDOM(document.getElementById(section_id));
+            hash = 0;
+          }
           document.getElementById(section_id).classList.add("selected");
           crawlDOM(document.getElementById(section_id));
           hash = 0;
@@ -420,9 +440,9 @@ function handleLink(e) {
         window.scrollTo(0,0); //scroll to top
         url = preva.href;
         if (preva.pathname.includes("interview")) {
-          section_id = "int" + preva.pathname.replace("/History-of-Computer-Communications/interview/","").replace("/","");
+          section_id = "int" + preva.pathname.replace("/interview/","").replace("/","");
         } else {
-          section_id = preva.pathname.replace("/History-of-Computer-Communications/section/","").replace("/","");            
+          section_id = preva.pathname.replace("/section/","").replace("/","");            
         } 
         var hash = parseInt(preva.hash.replace("#", ""));
         if (!isNaN(hash)) {
@@ -440,11 +460,11 @@ function handleLink(e) {
         break;
       case 3: //<a>
         var pathname = e.target.pathname;
-        if ( pathname.startsWith("/History-of-Computer-Communications/section/")) {
-          section_id = pathname.replace("/History-of-Computer-Communications/section/","").replace("/", "");
+        if ( pathname.startsWith("/section/")) {
+          section_id = pathname.replace("/section/","").replace("/", "");
         }
-        else if (pathname.startsWith("/History-of-Computer-Communications/interview/")){
-          section_id = pathname.replace("/History-of-Computer-Communications/interview/","").replace("/", "");
+        else if (pathname.startsWith("/interview/")){
+          section_id = pathname.replace("/interview/","").replace("/", "");
           section_id = "int" + section_id;
         }
         else { // remove this
@@ -506,7 +526,7 @@ for (var i=0; i < navList.childNodes.length; i++) {
 function getJSON() {
   return new Promise(function(resolve, reject) {
     var req = new XMLHttpRequest();
-    req.open("GET", "/History-of-Computer-Communications/json/");
+    req.open("GET", "/json/index.json");
 
     req.onload = function() {
       if (req.status == 200) {

@@ -4,4 +4,4 @@ title: "Internetworking Sector Income Statements"
 order: 1524
 ---
 
-![Internetworking Sector Income Statements]({{ site.baseurl }}/assets/img/InternetworkingSectorIncomeStatements.png)
+![Internetworking Sector Income Statements](/assets/img/InternetworkingSectorIncomeStatements.png)

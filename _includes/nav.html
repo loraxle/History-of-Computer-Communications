@@ -11,15 +11,15 @@
 </script>
 <nav>
   <div class="navwrap">
-    <a class="logo" href="{{ site.baseurl }}/">
+    <a class="logo" href="/">
       <div class="mobile-up">The History Of <br />Computer Communications</div>
       <div class="mobile-only">The History Of Computer Communications</div>
     </a>
     <div class="nav">
       <div class="navbar">
-        <a href="{{ site.baseurl }}/" {%- if page.name == "index.md" or page.name == "about.md" or page.name == "contact.md" -%} class="active" {%- endif -%} title="Home">Home</a>    
-        <a {% if page.name == "index.md" or page.name == "contribute.md" or page.name == "about.md" or page.name == "contact.md" %} href="{{ site.baseurl }}/explore.html"{% else %} href="javascript:void(0)" class="active"{% endif %} id="expl" title="Explore">Explore</a>    
-        <a href="{{ site.baseurl }}/contribute.html" {%- if page.name == "contribute.md" -%} class="active" {%- endif -%} title="Contribute">Contribute</a>    
+        <a href="/" {%- if page.name == "index.md" or page.name == "about.md" or page.name == "contact.md" -%} class="active" {%- endif -%} title="Home">Home</a>    
+        <a {% if page.name == "index.md" or page.name == "contribute.md" or page.name == "about.md" or page.name == "contact.md" %} href="/explore.html"{% else %} href="javascript:void(0)" class="active"{% endif %} id="expl" title="Explore">Explore</a>    
+        <a href="/contribute.html" {%- if page.name == "contribute.md" -%} class="active" {%- endif -%} title="Contribute">Contribute</a>    
       </div>
       <div class="search">
         <svg id="vertical" version="1.1" x="0px" y="0px" xml:space="preserve">
@@ -32,7 +32,7 @@
           </defs>
           <path fill="url(#grad1)" d="M0.4,0L0.4,0L1,20.2L0.4,41l0,0L0,20.4L0.4,0z"/>
         </svg>
-        <img id="srch" src="{{ site.baseurl}}/assets/img/search.svg">
+        <img id="srch" src="/assets/img/search.svg">
         <input id="search" type="text" name="search" placeholder="Search...">
       </div>
     </div>

@@ -4,4 +4,4 @@ title: "Market Research Forecasting Uncertainties"
 order: 1515
 ---
 
-![Market Research Forecasting Uncertainties]({{ site.baseurl }}/assets/img/a.15.png)
+![Market Research Forecasting Uncertainties](/assets/img/a.15.png)

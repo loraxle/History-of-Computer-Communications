@@ -4,4 +4,4 @@ title: "Networking Market-Structure Analysis"
 order: 1521
 ---
 
-![Networking Market-Structure Analysis]({{ site.baseurl }}/assets/img/NetworkingMarketStructureAnalysis.png)
+![Networking Market-Structure Analysis](/assets/img/NetworkingMarketStructureAnalysis.png)

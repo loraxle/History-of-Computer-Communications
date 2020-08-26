@@ -17,8 +17,7 @@ title: History of Computer Communications
 email:  jimhistory@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A History of Computer Communications from the Development 
-  of the Modem to the Early Years of the Internet. By James Pelkey. 
-baseurl: "/History-of-Computer-Communications"
+  of the Modem to the Early Years of the Internet. By James Pelkey.
 url: ""
 collections:
     sections:
@@ -60,7 +59,7 @@ theme: minima
 plugins:
   - jekyll-include-cache
 
-encoding: UTF-8
+encoding: utf-8
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

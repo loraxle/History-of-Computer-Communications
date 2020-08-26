@@ -31,18 +31,18 @@ layout: null
       "ch_title" : "Chapter {{ chapter.chapter }} - {{ chapter.title }}",
       "appendix" : "false",
       {%- endif -%}
-      "content" : "{{ section.content | strip_newlines | xml_escape  }}",
+      "content" : "{{- section.content | strip_newlines | xml_escape  -}}",
       {%- if section.footnotes -%}"footnotes" : [
         {%- for footnote in section.footnotes -%}
         {
           "num" : {{ footnote.num }},
-          "src" : "{{ footnote.src | strip | markdownify | strip }}"  
+          "src" : "{{- footnote.src | strip | markdownify | strip -}}"  
         }{%- unless forloop.last -%},{%- endunless -%}
         {%- endfor -%}
       ],
       {%- endif -%}   
-      "next" : "{%- if section_count < sections_size -%}{{ sections[section_count].url }}{% else %}{{ first_interview }}{%- endif -%}",
-      "prev" : "{%- assign prev_count = section_count | minus: 2 -%}{%- if prev_count >= 0 -%}{{ sections[prev_count].url }}{% else %}{{ last_interview }}{%- endif -%}",
+      "next" : "{%- if section_count < sections_size -%}{{ sections[section_count].url }}{%- else -%}{{ first_interview }}{%- endif -%}",
+      "prev" : "{%- assign prev_count = section_count | minus: 2 -%}{%- if prev_count >= 0 -%}{{ sections[prev_count].url }}{%- else -%}{{ last_interview }}{%- endif -%}",
       "title" : "{{ section.title }}"
     }{{ tail }}
   {%- endfor -%}
@@ -54,35 +54,35 @@ layout: null
       {%- assign tail = "" -%}
     {%- endif -%}
     {%- assign section_id=interview.url | remove: "/interview/" | remove: "/" -%}
-    {% assign fullname = interview.title | split: " " %}
-    {% assign last_name = fullname[-1] %}        
-    {% assign first_names = fullname | pop %}
-    {% assign first_name = first_names | join: " " %}
-    {% assign next_interview = "" %}
+    {%- assign fullname = interview.title | split: " " -%}
+    {%- assign last_name = fullname[-1] -%}        
+    {%- assign first_names = fullname | pop -%}
+    {%- assign first_name = first_names | join: " " -%}
+    {%- assign next_interview = "" -%}
     {%- if interview_count < interviews_size -%}
-      {% assign next_interview = interviews[interview_count].url %}
+      {%- assign next_interview = interviews[interview_count].url -%}
     {%- else -%}
-      {% assign next_interview = first_section %}
+      {%- assign next_interview = first_section -%}
     {%- endif -%}
-    {% assign prev_interview = "" %}
+    {%- assign prev_interview = "" -%}
     {%- assign prev_count = interview_count | minus: 2 -%}
     {%- if prev_count >= 0 -%}
-      {% assign prev_interview = interviews[prev_count].url %}
+      {%- assign prev_interview = interviews[prev_count].url -%}
     {%- else -%}
-      {% assign prev_interview = last_section %}
+      {%- assign prev_interview = last_section -%}
     {%- endif -%}
     "int{{ section_id }}" : {
-      "ch" : "interview",
+      "ch" : "Interviews",
       "ch_title" : "",
       "first" : "{{ first_name }}",
       "last" : "{{ last_name }}",
       "fullname" : "{{ last_name | append: ", " | append: first_name }}",
-      "content" : "{{ interview.content | strip_newlines | xml_escape  }}",
+      "content" : "{{- interview.content | strip_newlines | xml_escape -}}",
     {%- if interview.footnotes -%}"footnotes" : [
       {%- for footnote in interview.footnotes -%}
         {
           "num" : {{ footnote.num }},
-          "src" : "{{ footnote.src | strip | markdownify | strip }}"  
+          "src" : "{{- footnote.src | strip | markdownify | strip -}}"  
         }{%- unless forloop.last -%},{%- endunless -%}
       {%- endfor -%}
       ],

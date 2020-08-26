@@ -4,4 +4,4 @@ title: "Computer Communications Market-Structure Consolodation"
 order: 1508
 ---
 
-![Computer Communications Market-Structure Consolodation]({{ site.baseurl }}/assets/img/a.8.png)
+![Computer Communications Market-Structure Consolodation](/assets/img/a.8.png)

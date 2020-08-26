@@ -6,4 +6,4 @@ order: 1502
 
 **COMPUTER AND TERMINAL FORECASTS 1968-1988**| 
 
-![Computer and Terminal Forecasts 1968-1988]({{ site.baseurl }}/assets/img/a.2.png)
+![Computer and Terminal Forecasts 1968-1988](/assets/img/a.2.png)

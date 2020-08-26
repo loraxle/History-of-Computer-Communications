@@ -1,5 +1,5 @@
 ---
-layout: template
+layout: page
 title: "Mardown Examples"
 footnotes:
   - num: 1

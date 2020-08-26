@@ -1,3 +1,11 @@
+    {%- assign contents_checked = '' -%}
+    {%- if site.chapters -%}
+      {%- for chapter in site.chapters -%}
+        {%- if page.chapter == chapter.chapter -%}
+          {%- assign contents_checked = 'checked' -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
     {%- assign sections = site.sections | sort: 'order' -%}
       <div class="sidenav notready">
         <input type="hidden" id="custId" value="">
@@ -5,7 +13,7 @@
         <div class="hr"></div>
         <ul class="nav__list" >
           <li>
-            <input id="table-of-contents" type="checkbox" name="nav" hidden />
+            <input id="table-of-contents" type="checkbox" name="nav" {%- comment -%}{{- contents_checked -}}{%- endcomment -%} hidden />
             <label for="table-of-contents">
               <div>Table Of Contents</div>
               <svg xmlns="http://www.w3.org/2000/svg" >
@@ -23,7 +31,7 @@
             {%- endfor -%}
             {%- assign prevsubtitle = '' -%}
               <li>
-                <input id="chapter-{{chapter.chapter}}" type="checkbox" name="subnav" hidden />
+                <input id="chapter-{{chapter.chapter}}" type="checkbox" name="subnav" {%- comment -%}{%- if page.chapter == chapter.chapter -%} checked {%- endif -%}{%- endcomment -%} hidden />
                 <label for="chapter-{{chapter.chapter}}" {%- if chapter.appendix -%}class="nonum"{%- endif -%}>
                   <div>{{chapter.title}}</div>
                   <svg xmlns="http://www.w3.org/2000/svg" >
@@ -39,7 +47,7 @@
                       {%- assign prevsubtitle=section.subtitle -%}
                   <li class="subtitle">{{- section.subtitle -}}</li>
                     {%- endif -%}
-                  <li class="subsection"><a href="{{section.url}}" id="{{- section.id | remove: '/section/' -}}" >{{section.title}}</a></li>
+                  <li class="subsection"><a href="{{section.url}}" id="{{- section.id | remove: '/section/' -}}" {%- if section.url == page.url -%}class="selected"{%- endif -%}>{{section.title}}</a></li>
                   {%- elsif section.nested-title -%}
                     {%- if section.nested-index == 'first' -%}
                   <li>
@@ -51,16 +59,16 @@
                       </svg>
                     </label>
                     <ul class="sub-sub-group-list">
-                      <li><a id="{{- section.id | remove: '/section/' -}}" href="{{- section.id -}}/" >{{- section.title -}}</a></li>
+                      <li><a id="{{- section.id | remove: '/section/' -}}" href="{{- section.id -}}/" {%- if section.url == page.url -%}class="selected"{%- endif -%}>{{- section.title -}}</a></li>
                     {%- elsif section.nested-index == 'last' -%}
-                      <li><a id="{{- section.id | remove: '/section/' -}}" href="{{- section.id -}}/" >{{- section.title -}}</a></li>
+                      <li><a id="{{- section.id | remove: '/section/' -}}" href="{{- section.id -}}/" {%- if section.url == page.url -%}class="selected"{%- endif -%}>{{- section.title -}}</a></li>
                     </ul>
                   </li>
                     {%- else -%}
-                      <li><a id="{{- section.id | remove: '/section/' -}}" href="{{- section.id -}}/" >{{- section.title -}}</a></li>
+                      <li><a id="{{- section.id | remove: '/section/' -}}" href="{{- section.id -}}/" {%- if section.url == page.url -%}class="selected"{%- endif -%}>{{- section.title -}}</a></li>
                     {%- endif -%}
                   {%- else -%}
-                  <li><a href="{{section.url}}" id="{{- section.id | remove: '/section/' -}}" >{{section.title}}</a></li>                  
+                  <li><a href="{{section.url}}" id="{{- section.id | remove: '/section/' -}}" {%- if section.url == page.url -%}class="selected"{%- endif -%}>{{section.title}}</a></li>                  
                   {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
@@ -244,7 +252,7 @@
                 {%- assign first_name = first_name | join: " " -%}
                 {%- assign heading = last_name | append: ", " | append: first_name -%}
               {%- endif -%}
-                  <li><a href="{{- interview.id -}}/" id="int{{- interview.id | remove: '/interview/' -}}" >{{- heading -}}</a></li>
+                  <li><a href="{{- interview.id -}}/" id="int{{- interview.id | remove: '/interview/' -}}" {%- if interview.url == page.url -%}class="selected"{%- endif -%}>{{- heading -}}</a></li>
             {%- endfor -%}
                 </ul>
               </li>
