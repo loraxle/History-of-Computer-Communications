@@ -32,7 +32,7 @@ nav:
           - "13.7"
           - "13.25"
           - "14.12"
-          - 
+          - "c.1"
       - nested-heading: Concord Data Systems
         nested-sections:
           - "10.4"
@@ -73,6 +73,7 @@ nav:
           - "13.8"
           - "13.26"
           - "14.13"
+          - "c.2"
       - nested-heading: Milgo
         nested-sections:
           - "3.1"
