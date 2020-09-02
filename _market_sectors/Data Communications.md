@@ -2,7 +2,7 @@
 order: 01
 title: Data Communications
 nav:
-  - heading: Emergence
+  - heading: Background
     sub-sections:
       - "1.5"
       - "1.6"
