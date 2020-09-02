@@ -1,5 +1,5 @@
 const CACHE_NAME = "v1";
-const STATIC_CACHE_URLS = ["/static/index.json", "/static/pdf.json"];
+const STATIC_CACHE_URLS = ["/assets/index.json", "/assets/pdf.json"];
 
 self.addEventListener("install", event => {
   event.waitUntil(
