@@ -32,7 +32,6 @@ nav:
           - "13.7"
           - "13.25"
           - "14.12"
-          - "c.1"
       - nested-heading: Concord Data Systems
         nested-sections:
           - "10.4"
@@ -63,6 +62,7 @@ nav:
           - "7.9"
       - nested-heading: Micom
         nested-sections:
+          - "c.2"
           - "7.6"
           - "7.10"
           - "7.12"
@@ -73,7 +73,6 @@ nav:
           - "13.8"
           - "13.26"
           - "14.13"
-          - "c.2"
       - nested-heading: Milgo
         nested-sections:
           - "3.1"
@@ -113,19 +112,48 @@ nav:
     nested-nav:
       - nested-heading: 3Com
         nested-sections:
-          - "1.0"
+          - "c.3"
+          - "9.9"
+          - "9.16"
+          - "10.7"
+          - "10.23"
+          - "10.26"
+          - "12.2"
+          - "12.14"
+          - "14.16"
+          - "a.4"
+          - "a.7"
+          - "a.11"
+          - "a.12"
+          - "a.14"
+          - "a.17"
+          - "a.20"
+          - "a.21"
+          - "a.23"
       - nested-heading: Bridge Communications
         nested-sections:
-          - "1.0"
+          - "10.2"
+          - "10.14"
+          - "12.6"
+          - "12.18"
+          - "14.16"
       - nested-heading: Communications Machinery Corporation
         nested-sections:
-          - "1.0"
+          - "10.18"
+          - "12.21"
+          - "14.20"
       - nested-heading: Concord Data Systems
         nested-sections:
-          - "1.0"
+          - "10.4"
+          - "10.15"
+          - "12.7"
+          - "12.19"
+          - "14.19"
       - nested-heading: Excelan
         nested-sections:
-          - "1.0"
+          - "10.17"
+          - "10.18"
+          - 
       - nested-heading: Equinox
         nested-sections:
           - "1.0"
