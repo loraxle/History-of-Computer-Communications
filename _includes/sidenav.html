@@ -98,6 +98,7 @@
                 {%- assign idx2 = 0 -%}
                 {%- for item in market_sector.nav -%}
                   {%- assign idx2 = idx2 | plus: 1 -%}
+                  {%- assign nest-status = "" -%}
                   <li>
                     <input id="sub-sub-group-{{- idx -}}-{{- idx2 -}}" type="checkbox" hidden />
                     <label for="sub-sub-group-{{- idx -}}-{{- idx2 -}}">
@@ -109,13 +110,26 @@
                   {%- if item.sub-sections -%}
                     <ul class="sub-sub-group-list">
                     {%- for section in item.sub-sections -%}
+                      {%- if section.nested-index -%}
+                        {%- if section.nested-index == "first" -%}
+                          {%- assign nest-status = "active" -%}
+                      <script>console.log("{{ section.nested-title }}");</script>
+                      <li class="subtitle">{{ section.nested-title }}</li>
+                        {%- elsif section.nested-index == "last" -%}
+                          {%- assign nest-status = "" -%}
+                      <script>console.log("{{ section.nested-index }}");</script>
+                        {%- endif -%}
+                      {%- else -%}
                       {%- for s in sections -%}
                         {%- assign section_id = s.id | remove: "/section/" -%}
                         {%- if section_id == section -%}
                           {%- assign uid = uid | plus: 1 -%}
-                      <li><a name="section{{- uid -}}" href="{{- s.id -}}/#{{- uid -}}">{{- s.title -}}</a></li>
+                      <li {% if nest-status == "active" %} class="subsection"{% endif %}>
+                        <a name="section{{- uid -}}" href="{{- s.id -}}/#{{- uid -}}">{{- s.title -}}</a>
+                      </li>
                         {%- endif -%}
                       {%- endfor -%}
+                      {%- endif -%}
                     {%- endfor -%}
                     </ul>
                   {%- endif -%}

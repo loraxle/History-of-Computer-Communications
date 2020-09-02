@@ -1,5 +1,17 @@
 var book_data = {};
+var pdfs = [];
 var search_array = Object.entries(book_data);
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/assets/sw.js")
+    .then(serviceWorker => {
+      //console.log("Service Worker registered: ", serviceWorker);
+    })
+    .catch(error => {
+      console.error("Error registering the Service Worker: ", error);
+    });
+}
+
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 
 var menu = document.querySelector(".sidebar");
@@ -30,70 +42,100 @@ function setHash(hash, section_id){
 var refreshed = true;
 
 r(function(){
-    var fragment = 0;
-    if (window.location.hash) { // URL Fragment exists
-      fragment = parseInt(window.location.hash.replace("#", ""));
-      if (!isNaN(fragment)) { //only using integers for URL fragment
-        refreshed = false;
-        var select_name = "section" + fragment;
-        var activeSection = document.getElementsByName(select_name);
-        if (activeSection.length > 0) {
-          uncheck(activeSection[0], 'nav');
-          activeSection[0].checked=true;
-          document.querySelector(".selected").classList.remove("selected");
-          activeSection[0].classList.add("selected");
-          crawlDOM(activeSection[0]);
-        } else {
-          refreshed = true;
-        }
+  var fragment = 0;
+  if (window.location.hash) { // URL Fragment exists
+    fragment = parseInt(window.location.hash.replace("#", ""));
+    if (!isNaN(fragment)) { //only using integers for URL fragment
+      refreshed = false;
+      var select_name = "section" + fragment;
+      var activeSection = document.getElementsByName(select_name);
+      if (activeSection.length > 0) {
+        uncheck(activeSection[0], 'nav');
+        activeSection[0].checked=true;
+        document.querySelector(".selected").classList.remove("selected");
+        activeSection[0].classList.add("selected");
+        crawlDOM(activeSection[0]);
+      } else {
+        refreshed = true;
       }
     }
-    var section_id = window.location.pathname;
-    if (section_id.startsWith("/section/")) {
-      section_id = section_id.replace("/section/","").replace("/", "");
+  }
+  var section_id = window.location.pathname;
+  if (section_id.startsWith("/section/")) {
+    section_id = section_id.replace("/section/","").replace("/", "");
+  }
+  else if (section_id.startsWith("/interview/")) {
+    section_id = "int" + section_id.replace("/interview/","").replace("/", "");
+  }
+  if (refreshed) {
+    //var selected = document.querySelector(".selected");
+    var selected = document.getElementById(section_id);
+    if (selected) {
+      selected.classList.add("selected");
+      crawlDOM(selected);
     }
-    else if (section_id.startsWith("/interview/")) {
-      section_id = "int" + section_id.replace("/interview/","").replace("/", "");
-    }
-    if (refreshed) {
-      //var selected = document.querySelector(".selected");
-      var selected = document.getElementById(section_id);
-      if (selected) {
-        selected.classList.add("selected");
-        crawlDOM(selected);
-      }
-    }
-    let sidenav = document.querySelector(".sidenav");
-    if (sessionStorage.getItem("scroll")) {
-      sidenav.scrollTop = sessionStorage.getItem("scroll");
-    }
-    sidenav.classList.remove("notready"); 
-    sidenav.classList.add("ready");
-    menu.classList.add("animated");
-    //var section_id = window.location.pathname.replace("/section/","").replace("/", "");
-    let currentState = history.state;
-    if (currentState == null) {
-      var scroll = document.querySelector(".sidenav").scrollTop;
-      const state = { 'section': section_id + window.location.hash, 'scroll': scroll };
-      const title = '';
-      url = window.location.href;
-      history.pushState(state, title, url);
-    }
-    getJSON()
-    .then(JSON.parse)
-    .then(function(response) {
-        book_data = response;
+  }
+  let sidenav = document.querySelector(".sidenav");
+  if (sessionStorage.getItem("scroll")) {
+    sidenav.scrollTop = sessionStorage.getItem("scroll");
+  }
+  sidenav.classList.remove("notready"); 
+  sidenav.classList.add("ready");
+  menu.classList.add("animated");
+  //var section_id = window.location.pathname.replace("/section/","").replace("/", "");
+  let currentState = history.state;
+  if (currentState == null) {
+    var scroll = document.querySelector(".sidenav").scrollTop;
+    const state = { 'section': section_id + window.location.hash, 'scroll': scroll };
+    const title = '';
+    url = window.location.href;
+    history.pushState(state, title, url);
+  }
+  caches.open("v1").then(cache => {
+    cache.match("/assets/index.json").then(cached => {
+      cached.json().then(cached_data => {
+        book_data = cached_data;
         search_array = Object.entries(book_data);
-        if (fragment) {
-          setHash(fragment, section_id);
-        }
-    });
+      });
+    })
+  });
+  caches.open("v1").then(cache => {
+    cache.match("/assets/pdf.json").then(cached => {
+      cached.json().then(cached_data => {
+        pdfs = cached_data;
+      });
+    })
+  });
+  if (fragment) {
+    setHash(fragment, section_id);
+  }
+  /*
+  getJSON()
+  .then(JSON.parse)
+  .then(function(response) {
+    book_data = response;
+    search_array = Object.entries(book_data);
+    if (fragment) {
+      setHash(fragment, section_id);
+    }
+  });
+  */
 });
 
 window.addEventListener('beforeunload', (event) => {
   sessionStorage.setItem("scroll", document.querySelector(".sidenav").scrollTop);
   return;
 });
+
+function pdf_search(term) {
+  if (pdfs) {
+    for(var i = 0; i < pdfs.length; i++) {
+      if (pdfs[i].text.toLowerCase().includes(term.toLowerCase())) {
+        console.log(i);
+      }
+    }
+  }
+}
 
 var searchbar = document.querySelector("input[name='search']");
 

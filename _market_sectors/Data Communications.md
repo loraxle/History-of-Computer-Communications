@@ -54,9 +54,12 @@ nav:
   - heading: Adaptation
     sub-sections:
       - "13.0"
+      - nested-index: first
+        nested-title: "The Revolution of Digital Transmission"
       - "13.1"
       - "13.2"
       - "13.3"
+      - nested-index: last
       - "13.4"
       - "13.5"
       - "13.6"
