@@ -92,7 +92,7 @@ r(function(){
     history.pushState(state, title, url);
   }
   caches.open("v1").then(cache => {
-    cache.match("/assets/index.json").then(cached => {
+    cache.match("/json/index.json").then(cached => {
       cached.json().then(cached_data => {
         book_data = cached_data;
         search_array = Object.entries(book_data);

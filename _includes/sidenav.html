@@ -113,11 +113,9 @@
                       {%- if section.nested-index -%}
                         {%- if section.nested-index == "first" -%}
                           {%- assign nest-status = "active" -%}
-                      <script>console.log("{{ section.nested-title }}");</script>
                       <li class="subtitle">{{ section.nested-title }}</li>
                         {%- elsif section.nested-index == "last" -%}
                           {%- assign nest-status = "" -%}
-                      <script>console.log("{{ section.nested-index }}");</script>
                         {%- endif -%}
                       {%- else -%}
                       {%- for s in sections -%}
