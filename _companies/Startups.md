@@ -153,7 +153,7 @@ nav:
         nested-sections:
           - "10.17"
           - "10.18"
-          - 
+          -  
       - nested-heading: Equinox
         nested-sections:
           - "1.0"
