@@ -68,6 +68,7 @@ nav:
           - "7.12"
           - "9.12"
           - "10.10"
+          - "12.1"
           - "12.11"
           - "12.23"
           - "13.8"
@@ -181,26 +182,43 @@ nav:
           - "9.14"
           - "10.9"
           - "10.25"
+          - "12.1"
           - "12.4"
           - "12.16"
       - nested-heading: Ungermann-Bass
         nested-sections:
-          - "1.0"
+          - "c.4"
+          - "9.11"
+          - "9.15"
+          - "10.8"
+          - "10.24"
+          - "12.1"
+          - "12.3"
+          - "12.15"
+          - "14.17"
   - heading: Internetworking
     nested-nav:
       - nested-heading: Cisco
         nested-sections:
-          - "1.0"
-      - nested-heading: NET
+          - "14.21"
+          - "14.25"
+      - nested-heading: Network Equipment Technologies
         nested-sections:
-          - "1.0"
+          - "c.5"
+          - "13.11"
+          - "13.12"
+          - "13.21"
+          - "13.24"
       - nested-heading: Proteon
         nested-sections:
-          - "1.0"
+          - "9.4"
+          - "10.3"
+          - "14.18"
       - nested-heading: Retix
         nested-sections:
-          - "1.0"
+          - "14.24"
       - nested-heading: Wellfleet
         nested-sections:
-          - "1.0"
+          - "c.6"
+          - "14.22"
 ---
