@@ -198,11 +198,11 @@ nav:
           - "14.17"
   - heading: Internetworking
     nested-nav:
-      - nested-heading: Cisco
+      - nested-heading: cisco
         nested-sections:
           - "14.21"
           - "14.25"
-      - nested-heading: Network Equipment Technologies
+      - nested-heading: Network Equipment Technologies (NET)
         nested-sections:
           - "c.5"
           - "13.11"
