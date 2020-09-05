@@ -153,22 +153,36 @@ nav:
         nested-sections:
           - "10.17"
           - "10.18"
-          -  
+          - "12.9"
+          - "12.20"
+          - "14.20"
       - nested-heading: Equinox
         nested-sections:
-          - "1.0"
+          - "12.12"
+          - "12.13"
       - nested-heading: Interlan
         nested-sections:
-          - "1.0"
+          - "10.1"
+          - "10.13"
+          - "12.5"
+          - "12.17"
+          - "12.23"
       - nested-heading: Metapath
         nested-sections:
-          - "1.0"
+          - "12.12"
       - nested-heading: Proteon
         nested-sections:
-          - "1.0"
+          - "9.4"
+          - "10.3"
+          - "14.18"
       - nested-heading: Sytek
         nested-sections:
-          - "1.0"
+          - "9.10"
+          - "9.14"
+          - "10.9"
+          - "10.25"
+          - "12.4"
+          - "12.16"
       - nested-heading: Ungermann-Bass
         nested-sections:
           - "1.0"
