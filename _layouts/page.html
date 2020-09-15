@@ -4,7 +4,7 @@
   <body>
     {%- include nav.html -%}
     <div class="main">
-        {%- if page.name == "index.md" -%}
+        {%- if page.name == "index.md" or page.name == "search.md" -%}
           {%- include home.html -%}
         {%- endif -%}
         {%- if page.name == "contribute.md" -%}
@@ -38,9 +38,10 @@
 
     </div>
     {%- include_cached footer.html -%}
-  {% comment %}<script src="{{ site.baseurl}}/assets/app.js"></script>{% endcomment %}
   <script src="{{ site.baseurl}}/assets/page.js"></script>
-  <!--<script src="{{ site.baseurl}}/assets/search.js"></script>-->
+  {%- if page.name == "search.md" -%}
+  <script src="{{ site.baseurl}}/assets/search.js"></script>
+  {%- endif -%}
   </body>
 </html>
 

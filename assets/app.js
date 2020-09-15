@@ -1,6 +1,7 @@
 var book_data = {};
 var pdfs = [];
 var search_array = Object.entries(book_data);
+const CACHE_NAME = "v1";
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("/assets/sw.js")
@@ -91,7 +92,7 @@ r(function(){
     url = window.location.href;
     history.pushState(state, title, url);
   }
-  caches.open("v1").then(cache => {
+  caches.open(CACHE_NAME).then(cache => {
     cache.match("/json/index.json").then(cached => {
       cached.json().then(cached_data => {
         book_data = cached_data;
@@ -99,7 +100,7 @@ r(function(){
       });
     })
   });
-  caches.open("v1").then(cache => {
+  caches.open(CACHE_NAME).then(cache => {
     cache.match("/assets/pdf.json").then(cached => {
       cached.json().then(cached_data => {
         pdfs = cached_data;
@@ -109,17 +110,6 @@ r(function(){
   if (fragment) {
     setHash(fragment, section_id);
   }
-  /*
-  getJSON()
-  .then(JSON.parse)
-  .then(function(response) {
-    book_data = response;
-    search_array = Object.entries(book_data);
-    if (fragment) {
-      setHash(fragment, section_id);
-    }
-  });
-  */
 });
 
 window.addEventListener('beforeunload', (event) => {
@@ -563,29 +553,6 @@ for (var i=0; i < navList.childNodes.length; i++) {
       }
     } 
   }
-}
-
-function getJSON() {
-  return new Promise(function(resolve, reject) {
-    var req = new XMLHttpRequest();
-    req.open("GET", "/json/index.json");
-
-    req.onload = function() {
-      if (req.status == 200) {
-        resolve(req.response);
-      }
-      else {
-        return reject(Error(req.statusText));
-        console.log(req.response);
-      }
-    };
-
-    req.onerror = function() {
-      reject(Error("Network Error"));
-    };
-
-    req.send();
-  });
 }
 
 document.onkeydown = function(e){

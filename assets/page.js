@@ -1,14 +1,36 @@
 var book_data = {};
+var pdfs = [];
 var search_array = Object.entries(book_data);
+const CACHE_NAME = "v1";
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/assets/sw.js")
+    .then(serviceWorker => {
+      //console.log("Service Worker registered: ", serviceWorker);
+    })
+    .catch(error => {
+      console.error("Error registering the Service Worker: ", error);
+    });
+}
+
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 
 r(function(){
-    getJSON()
-    .then(JSON.parse)
-    .then(function(response) {
-        book_data = response;
+  caches.open(CACHE_NAME).then(cache => {
+    cache.match("/json/index.json").then(cached => {
+      cached.json().then(cached_data => {
+        book_data = cached_data;
         search_array = Object.entries(book_data);
-    });
+      });
+    })
+  });
+  caches.open(CACHE_NAME).then(cache => {
+    cache.match("/assets/pdf.json").then(cached => {
+      cached.json().then(cached_data => {
+        pdfs = cached_data;
+      });
+    })
+  });
 });
 
 var searchbar = document.querySelector("input[name='search']");
@@ -81,26 +103,3 @@ function decode (str) {
 };
 
 document.getElementById("srch").addEventListener("click", showResults, false);
-
-function getJSON() {
-  return new Promise(function(resolve, reject) {
-    var req = new XMLHttpRequest();
-    req.open("GET", "/History-of-Computer-Communications/json/");
-
-    req.onload = function() {
-      if (req.status == 200) {
-        resolve(req.response);
-      }
-      else {
-        return reject(Error(req.statusText));
-        console.log(req.response);
-      }
-    };
-
-    req.onerror = function() {
-      reject(Error("Network Error"));
-    };
-
-    req.send();
-  });
-}

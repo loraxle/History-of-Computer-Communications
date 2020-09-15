@@ -55,9 +55,9 @@ function srch(item, searchText) {
   }
   var url = "/"
   if (item[0].startsWith("int")){
-    url = "/History-of-Computer-Communications/interview/" + item[0].replace("int", "");
+    url = "/interview/" + item[0].replace("int", "");
   } else {
-    url = "/History-of-Computer-Communications/section/" + item[0];
+    url = "/section/" + item[0];
   }
   var title = highlight(item[1].title, searchText);
   if (title) {
