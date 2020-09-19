@@ -3,8 +3,8 @@ order: "03"
 title: "Government"
 nav:
   - heading: ARPA/DARPA
-    sub-sections: 
-      - "1.6
+    sub-sections:
+      - "1.6"
       - "2.23"
       - "2.26"
       - "4.1"

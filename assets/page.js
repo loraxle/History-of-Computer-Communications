@@ -57,13 +57,6 @@ var searchResults = document.getElementById("search-results");
 var menu = document.querySelector(".sidebar");
 
 function showResults() {
-  const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  if (width < 900) { // media query breakpoint
-    if (menu.classList.contains("slide-in-left")) {
-      menu.classList.remove("slide-in-left");
-      document.getElementById("burg").classList.remove("is-active");
-    }    
-  }
   if (searchResults.className != "slide-in-right") {
     searchResults.classList.add("slide-in-right");
   }

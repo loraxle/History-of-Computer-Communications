@@ -268,6 +268,7 @@ svg#vertical {
   position: relative;
   width: 100%;
   background-color: #fff;
+  overflow-x: hidden;
 }
 .content {
   width: 100%;
@@ -667,7 +668,6 @@ mark {
   position: relative;
   overflow: scroll;
   height: 100%;
-  padding: 25px 10px 10px;
 }
 .client-content {
   margin: 67px 24px 37px;
@@ -722,9 +722,21 @@ mark {
 #nextwrap.hide {
   visibility: hidden;
 }
-a.search-item {
+.search-item {
   text-decoration: none;
   color: var(--gray-darker);
+  padding: 15.5px 23px 15.5px 41px;
+}
+.search-item:hover,
+.search-item:focus {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.search-item:first-child {
+  padding-top: 31px;
+}
+.search-item:last-child {
+  padding-bottom: 31px;
 }
 section > h1,
 .search-item > h1 {
@@ -735,12 +747,33 @@ section > h1,
   font-style: normal;
   line-height: 27px;
 }
-section > h1:first-child,
-.search-item > h1:first-child {
+.search-item > h1 {
+  font-size: 17px;
+  color: #373737;
+  margin: 0 0 4px 0;
+}
+.search-item > h2 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 27px;
+  font-size: 14px;
+  color: #626262;
+  margin: 0;
+}
+.search-item > p {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #797979;
+  margin: 0;
+}
+section > h1:first-child {
   margin-top: 0;
 }
-section > p,
-.search-item > p {
+section > p {
   color: var(--gray-darker);
   font-size: 16px;
   font-family: zenon,sans-serif;
@@ -1249,6 +1282,11 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-weight: 500;
   line-height: 27px;
 }
+@media screen and (min-width: 500px) {
+  #search-results.slide-in-right {
+    width: 450px;
+  }
+}
 @media screen and (min-width: 768px) {
   .contactcontent > form[name="contact"] {
     flex-direction: row;
@@ -1591,12 +1629,10 @@ th {
     margin: 79px 59px 70px;
     /*max-width: 750px;*/
   }
-  section > h1,
-  .search-item > h1 {
+  section > h1 {
     font-size: 26px;
   }
-  section > p,
-  .search-item > p {
+  section > p {
     font-size: 18px;
     line-height: 29px;
   }
@@ -1709,12 +1745,10 @@ th {
   .client-content > .prevnav {
     max-width: 750px;
   }
-  section > h1,
-  .search-item > h1 {
+  section > h1 {
     font-size: 24px;
   }
-  section > p,
-  .search-item > p {
+  section > p {
     font-size: 16px;
     line-height: 25px;
   }
