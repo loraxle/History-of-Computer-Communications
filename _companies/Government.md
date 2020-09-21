@@ -53,7 +53,14 @@ nav:
       - "7.7"
   - heading: Department of Defense
     sub-sections:
-      - "1.0"
+      - "2.10"
+      - "3.1"
+      - "4.7"
+      - "6.10"
+      - "14.4"
+      - "14.5"
+      - "14.9"
+      - "b.2"
   - heading: Department of Justice
     sub-sections:
       - "1.0"
