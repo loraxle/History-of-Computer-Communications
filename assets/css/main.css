@@ -653,9 +653,6 @@ label > svg {
 #search-results .closebtn:hover {
   color: #f1f1f1;
 }
-.search-content {
-  padding: 10px;
-}
 #search-results > div > h1,
 #search-results > div > h2,
 #search-results > div > h3 {
@@ -750,13 +747,13 @@ section > h1,
 .search-item > h1 {
   font-size: 17px;
   color: #373737;
-  margin: 0 0 4px 0;
+  margin: 0;
 }
 .search-item > h2 {
   font-family: acumin-pro, sans-serif;
   font-weight: 700;
   font-style: normal;
-  line-height: 27px;
+  line-height: 20px;
   font-size: 14px;
   color: #626262;
   margin: 0;
@@ -768,7 +765,7 @@ section > h1,
   line-height: 20px;
   font-size: 14px;
   color: #797979;
-  margin: 0;
+  margin: 4px 0 0;
 }
 section > h1:first-child {
   margin-top: 0;
@@ -801,8 +798,7 @@ section a[name^="fnloc"],
   top: -0.4em;
 }
 /*section p img[src*="-l"] { }*/
-section p div.imgl,
-.search-item p div.img {
+section p div.imgl {
   border: 1px solid #E6E6E6;
   float: left;
   margin-right: 10px;
@@ -812,12 +808,18 @@ section p div.imgl,
   width: 100%;
   max-width: 281px;
 }
-section p div.imgl img,
-.search-item p div.imgl img {
+.search-item div.imgl {
+  margin: 10px 0;
+  width: 100%;
+}
+.search-item div.imgl img {
+  max-width: 100%;
+}
+section p div.imgl img {
   max-width: 263px;
 }
 section p div.imgl h3,
-.search-item p div.imgl h3 {
+.search-item div > h3 {
   margin: 8px 0 0 0;
   padding: 0;
   text-align: center;
@@ -1067,8 +1069,8 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 }
 .pagecontent > h1 {
   width: 100%;
-  border-bottom: 4px solid #03485C;
-  color: #03485C;
+  border-bottom: 4px solid var(--bg-blue);
+  color: var(--bg-blue);
   font-family: acumin-pro, sans-serif;
   font-style: normal;
   font-size: 37px;
@@ -1096,7 +1098,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-style: normal;
   line-height: 27px;
   font-size: 24px;
-  color: #03485C;
+  color: var(--bg-blue);
   margin: 18px 0px;
 }
 .pagecontent > h4 {
@@ -1119,7 +1121,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-size: 16px;
 }
 .pagecontent > p > a {
-  color: #03485C;
+  color: var(--bg-blue);
 }
 .pagecontent > p > a.smt {
   font-weight: 600;
@@ -1130,7 +1132,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 }
 .pagecontent > ul.mrkt li::before {
   content: "\25A0";
-  color: #03485C;
+  color: var(--bg-blue);
   display: inline-block; 
   width: 1em;
   margin-left: -1em;
@@ -1149,12 +1151,12 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 }
 .pagecontent > ul > li > span {
   font-weight: 700;
-  color: #03485C;
+  color: var(--bg-blue);
 }
 .pagecontent > ul li a {
   text-decoration: none;
   font-weight: 600;
-  color: #03485C;
+  color: var(--bg-blue);
 }
 .pagecontent > p a.noul {
   text-decoration: none;
@@ -1187,7 +1189,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-style: normal;
   font-size: 20px;
   line-height: 27px;
-  color: #03485c;
+  color: var(--bg-blue);
   margin: 0;
 }
 .pagecontent > div.about-author > div > p {
@@ -1211,8 +1213,8 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
 }
 .contactcontent > h1 {
   width: 100%;
-  border-bottom: 4px solid #03485C;
-  color: #03485C;
+  border-bottom: 4px solid var(--bg-blue);
+  color: var(--bg-blue);
   font-family: acumin-pro, sans-serif;
   font-style: normal;
   font-size: 37px;
@@ -1242,7 +1244,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   font-weight: 700;
   font-size: 16px;
   line-height: 27px;
-  color: #03485c;
+  color: var(--bg-blue);
 }
 .contactcontent > form[name="contact"] input {
   font-family: acumin-pro, sans-serif;
@@ -1274,7 +1276,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   width: 100%;
   height: 45px;
   border-radius: 5px;
-  background: #03485c;
+  background: var(--bg-blue);
   border: 1px solid #d9d9d9;
   color: #fff;
   font-size: 16px;
@@ -1345,7 +1347,7 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   flex-direction: column;
 }
 #hometopbox {
-  background-color: #03485C;
+  background-color: var(--bg-blue);
   color: #fff;
   max-width: 550px;
   padding: 23px 28px;
@@ -1450,7 +1452,7 @@ blockquote > blockquote > p::before {
   font-style: normal;
   line-height: 42px;
   font-size: 30px;
-  color: #03485C;
+  color: var(--bg-blue);
   margin: 0;
 }
 #homemid > #homebook > div > h3 {

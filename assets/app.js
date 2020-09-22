@@ -233,8 +233,8 @@ function uncheck(selected_element, uncheck_name){
 function formatImgs(){
   var imgs = document.querySelectorAll("section p img");
   for (var i = imgs.length - 1; i >= 0; i--) {
-    var filename=imgs[i].src.split('/').pop()
-    classname = "";
+    var filename=imgs[i].src.split('/').pop();
+    var classname = "imgl";
     if (filename.includes("-c.")) {
       classname = "imgc";
     } else if (filename.includes("-l.")) {
@@ -244,7 +244,7 @@ function formatImgs(){
     }
     var formattedImg = 
       "<div class='" + classname + "'>" + 
-        "<img src='" + imgs[i].src + "' alt='" + imgs[i].src + "' title='" + imgs[i].src + "'>" + 
+        "<img src='" + imgs[i].src + "' alt='" + imgs[i].alt + "' title='" + imgs[i].title + "'>" + 
         "<h3>" + imgs[i].title + "</h3>" + 
       "</div";
     imgs[i].parentNode.innerHTML = formattedImg; 
