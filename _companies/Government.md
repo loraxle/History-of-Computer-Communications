@@ -63,7 +63,16 @@ nav:
       - "b.2"
   - heading: Department of Justice
     sub-sections:
-      - "1.0"
+      - "2.7"
+      - "2.10"
+      - "2.13"
+      - "2.16"
+      - "2.17"
+      - "2.18"
+      - "2.23"
+      - "7.2"
+      - "7.7"
+      - "10.20"
   - heading: FCC
     sub-sections:
       - "2.8"
