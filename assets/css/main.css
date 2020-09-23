@@ -723,9 +723,10 @@ mark {
   text-decoration: none;
   color: var(--gray-darker);
   padding: 15.5px 23px 15.5px 41px;
+  display: block;
 }
-.search-item:hover,
-.search-item:focus {
+a.search-item:hover,
+a.search-item:focus {
   background-color: #ffffff;
   cursor: pointer;
 }
