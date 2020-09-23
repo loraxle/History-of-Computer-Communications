@@ -172,7 +172,11 @@ function srch(item, searchText) {
         ${matched_img}</a>`;
     //return html;
     if (is_interview) {
-      search_item.interview = [html];      
+      if (title_matched) {
+        search_item.interview = [html];
+      } else {
+        search_item.interviews = [html];
+      }
     }
     else if (section_matched || title_matched) {
       search_item.h2 = html;
@@ -197,6 +201,7 @@ document.getElementById('search').addEventListener('keyup', function (e) {
       showResults();
       var search_results = {
         "h2" : [],
+        "interview" : [],
         "interviews" : [],
         "p" : [],
         "img" : []
@@ -208,7 +213,10 @@ document.getElementById('search').addEventListener('keyup', function (e) {
             search_results.h2.push(search_query.h2);
           }
           if (search_query.interview){
-            search_results.interviews.push(search_query.interview);
+            search_results.interview.push(search_query.interview);
+          }
+          if (search_query.interviews){
+            search_results.interviews.push(search_query.interviews);
           }
           if (search_query.p){
             search_results.p.push(search_query.p);
@@ -219,12 +227,16 @@ document.getElementById('search').addEventListener('keyup', function (e) {
         }
       }
       html = search_results.h2.join("");
+      if (search_results.interview.length > 0) {
+        html += "<div class='search-item'><h1>Interviews:</h1></div>";
+        html += search_results.interview.join("");
+      }
+      html += search_results.p.join("");
+      html += search_results.img.join("");
       if (search_results.interviews.length > 0) {
         html += "<div class='search-item'><h1>Interviews:</h1></div>";
         html += search_results.interviews.join("");
       }
-      html += search_results.p.join("");
-      html += search_results.img.join("");
     }
     document.getElementById('results').innerHTML = html;
   }, 250);

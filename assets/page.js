@@ -33,26 +33,6 @@ r(function(){
   });
 });
 
-var searchbar = document.querySelector("input[name='search']");
-
-function search(){
-  if (searchbar.value) {
-    console.log(searchbar.value);
-  }
-  else {
-    searchbar.focus();
-  }
-}
-
-searchbar.onkeypress = function(e){
-    if (!e) e = window.event;
-    var keyCode = e.keyCode || e.which;
-    if (keyCode == '13'){
-      //showResults();
-      return false;
-    }
-}
-
 var searchResults = document.getElementById("search-results");
 var menu = document.querySelector(".sidebar");
 
@@ -94,5 +74,3 @@ function decode (str) {
                .replace(/&lt;/g, '<')
                .replace(/&amp;/g, '&');
 };
-
-document.getElementById("srch").addEventListener("click", showResults, false);

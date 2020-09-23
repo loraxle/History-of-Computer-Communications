@@ -47,6 +47,7 @@ r(function(){
   if (window.location.hash) { // URL Fragment exists
     fragment = parseInt(window.location.hash.replace("#", ""));
     if (!isNaN(fragment)) { //only using integers for URL fragment
+      console.log(fragment);
       refreshed = false;
       var select_name = "section" + fragment;
       var activeSection = document.getElementsByName(select_name);
@@ -126,30 +127,6 @@ function pdf_search(term) {
     }
   }
 }
-
-var searchbar = document.querySelector("input[name='search']");
-
-function search(){
-  if (searchbar.value) {
-    console.log(searchbar.value);
-  }
-  else {
-    searchbar.focus();
-  }
-}
-
-searchbar.onkeypress = function(e){
-    if (!e) e = window.event;
-    var keyCode = e.keyCode || e.which;
-    if (keyCode == '13'){
-      //showResults();
-      return false;
-    }
-}
-
-//searchbar.onfocus = function(e){
-//  showResults();
-//}
 
 var mq = window.matchMedia("(min-width: 1100px)");
 
@@ -542,7 +519,6 @@ function handleLink(e) {
 document.getElementById("nextwrap").addEventListener("click", handleLink, false);
 document.getElementById("prevwrap").addEventListener("click", handleLink, false);
 document.getElementById("expl").addEventListener("click", sidemenu, false);
-document.getElementById("srch").addEventListener("click", showResults, false);
 
 var navList = document.querySelector(".nav__list");
 for (var i=0; i < navList.childNodes.length; i++) {

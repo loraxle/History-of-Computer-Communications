@@ -621,11 +621,11 @@ label > svg {
 
 #search-results {
   height: 100%;
-  width: 0;
+  width: 300px;
   position: absolute;
   z-index: 0;
   top: 0px;
-  right: -0;
+  right: -300px;
   background-color: var(--sidebar-bg);
   transition: 0.5s;
   box-shadow: none;
@@ -635,7 +635,6 @@ label > svg {
 #search-results.slide-in-right {
   opacity: 1;
   right: 0px;
-  width: 300px;
   box-shadow: -6px 1px 12px rgba(0,0,0,0.16);
 }
 .closewrap {
@@ -1286,6 +1285,10 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   line-height: 27px;
 }
 @media screen and (min-width: 500px) {
+  #search-results {
+    width: 450px;
+    right: -450px;
+  }
   #search-results.slide-in-right {
     width: 450px;
   }

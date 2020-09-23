@@ -16,7 +16,7 @@ nav:
   - heading: Montgomery Securities
     sub-sections:
       - "13.25"
-      - "https://histofcom.netlify.app/interview/74/"
+      - "int74"
   - heading: Robertson Colman & Stephens
     sub-sections:
       - "12.14"

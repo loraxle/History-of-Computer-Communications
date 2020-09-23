@@ -1,4 +1,5 @@
     {%- assign sections = site.sections | sort: 'order' -%}
+    {%- assign interviews = site.interviews | sort: 'order' -%}
       <div class="sidenav notready">
         <input type="hidden" id="custId" value="">
         <h1>Explore</h1>
@@ -177,13 +178,23 @@
                   {%- if item.sub-sections -%}
                     <ul class="sub-sub-group-list">
                     {%- for section in item.sub-sections -%}
-                      {%- for s in sections -%}
-                        {%- assign section_id = s.id | remove: "/section/" -%}
-                        {%- if section_id == section -%}
-                          {%- assign uid = uid | plus: 1 -%}
+                      {%- if section contains "int" -%}
+                        {%- assign intrvw = section | remove: "int" -%}
+                        {%- for i in interviews -%}
+                          {%- assign interview_id = i.id | remove: "/interview/" -%}
+                          {%- if interview_id == intrvw -%}
+                      <li><a href="{{- i.id -}}/">{{- i.title -}}</a></li>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      {%- else -%}
+                        {%- for s in sections -%}
+                          {%- assign section_id = s.id | remove: "/section/" -%}
+                          {%- if section_id == section -%}
+                            {%- assign uid = uid | plus: 1 -%}
                       <li><a name="section{{- uid -}}" href="{{- s.id -}}/#{{- uid -}}">{{- s.title -}}</a></li>
-                        {%- endif -%}
-                      {%- endfor -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      {%- endif -%}
                     {%- endfor -%}
                     </ul>
                   {%- endif -%}
@@ -245,7 +256,6 @@
                   </svg>
                 </label>
                 <ul class="sub-group-list">
-            {%- assign interviews = site.interviews | sort: 'order' -%}
             {%- for interview in interviews -%}
               {%- assign fullname = interview.title | split: " " -%}
               {%- if fullname[2] and fullname[2] == '&' -%}
