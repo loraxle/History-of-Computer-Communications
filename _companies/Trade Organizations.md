@@ -7,5 +7,6 @@ nav:
       - "1.0"
   - heading: IDCMA
     sub-sections:
-      - "1.0"
+      - "2.11
+      - "5.9"
 ---
