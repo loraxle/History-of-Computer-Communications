@@ -42,20 +42,46 @@ nav:
       - "int78"
   - heading: Stanford
     sub-sections:
-      - "1.0"
+      - "6.7"
+      - "8.4"
+      - "9.16"
+      - "14.21"
+      - "int10"
+      - "int15"
   - heading: UC Irvine
     sub-sections:
-      - "1.0"
+      - "8.5"
+      - "8.6"
   - heading: UCLA
     sub-sections:
-      - "1.0"
+      - "4.7"
+      - "4.8"
+      - "6.0"
+      - "6.2"
+      - "6.3"
+      - "6.5'
+      - "6.7"
+      - "6.9"
+      - "6.12"
+      - "7.3"
+      - "7.4"
+      - "14.5"
+      - "int11"
   - heading: UCSB
     sub-sections:
-      - "1.0"
+      - "4.8"
+      - "6.3"
+      - "int82"
   - heading: University of Hawaii
     sub-sections:
-      - "1.0"
+      - "6.10"
+      - "8.7"
+      - "int1"
+      - "int4"
+      - "int17"
   - heading: University of Utah
     sub-sections:
-      - "1.0"
+      - "3.3"
+      - "4.8"
+      - "6.3"
 ---
