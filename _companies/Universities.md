@@ -2,9 +2,6 @@
 order: "05"
 title: "Universities"
 nav:
-  - heading: Harvard
-    sub-sections:
-      - "1.0"
   - heading: MIT
     sub-sections:
       - "1.0"
