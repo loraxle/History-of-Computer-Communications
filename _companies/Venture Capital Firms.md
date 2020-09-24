@@ -4,26 +4,35 @@ title: "Venture Capital Firms"
 nav:
   - heading: American Research and Development Corporation
     sub-sections:
-      - "1.0"
+      - "2.24"
+      - "7.1"
+      - "14.20"
   - heading: J.H. Whitney & Company
     sub-sections:
-      - "1.0"
+      - "10.1"
+      - "13.12"
+      - "14.22"
   - heading: Kleiner Perkins Caufield & Byers
     sub-sections:
-      - "1.0"
+      - "9.15"
+      - "10.8"
+      - "14.18"
   - heading: Merrill, Pickard, Anderson & Eyre
     sub-sections:
-      - "1.0"
+      - "13.12"
   - heading: Oak Investment Partners
     sub-sections:
-      - "1.0"
+      - "9.11"
+      - "12.12"
+      - "int16"
   - heading: Robertson Colman & Stevens
     sub-sections:
-      - "1.0"
+      - "12.14"
   - heading: Sequoia Capital
     sub-sections:
-      - "1.0"
+      - "10.7"
+      - "14.21"
   - heading: Sevin Rosen Bayless Borovoy
     sub-sections:
-      - "1.0"
+      - "14.18"
 ---
