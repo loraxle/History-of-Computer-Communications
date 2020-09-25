@@ -21,7 +21,7 @@ nav:
       - "6.2"
       - "6.3"
       - "6.4"
-      subtitle: "The Early LAN Competitors – 1982"
+    subtitle: "Subtitle"
       - "6.5"
       - "6.6"
       - "6.7"
