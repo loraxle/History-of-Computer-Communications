@@ -21,7 +21,8 @@ nav:
       - "6.2"
       - "6.3"
       - "6.4"
-    subtitle: "Subtitle"
+  - heading: "Subtitle"
+    sub-sections:
       - "6.5"
       - "6.6"
       - "6.7"
