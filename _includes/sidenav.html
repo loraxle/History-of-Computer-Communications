@@ -81,6 +81,7 @@
             {%- assign idx = 0 -%}
             {%- for market_sector in marketSectors -%}
               {%- assign idx = idx | plus: 1 -%}
+              {%- assign idx2 = 0 -%}
               <li>
                 <input id="sub-group-00{{- idx -}}" type="checkbox" name="subnav" hidden />
                 <label for="sub-group-00{{- idx -}}" class="nonum">
@@ -90,19 +91,9 @@
                   </svg>
                 </label>
                 <ul class="sub-group-list">
-                {%- assign idx2 = 0 -%}
-                {%- for item in market_sector.nav -%}
-                  {%- if item.link -%}
-                    {%- if item.link contains "int" -%}
-                      {%- assign intrvw = item.link | remove: "int" -%}
-                  <li><a href="/interview/{{ intrvw }}/">{{- item.heading -}}</a></li>
-                  <script>console.log("{{- item.heading -}} - {{ item.link }}");</script>
-                    {%- else -%}
-                  <li><a href="/section/{{ item.link }}/">{{- item.heading -}}</a></li>
-                    {%- endif -%}
-                  {%- else -%}
-                    {%- assign idx2 = idx2 | plus: 1 -%}
-                    {%- assign nest-status = "" -%}
+              {%- for item in market_sector.nav -%}
+                {%- assign idx2 = idx2 | plus: 1 -%}
+                {%- assign nest-status = "" -%}
                   <li>
                     <input id="sub-sub-group-{{- idx -}}-{{- idx2 -}}" type="checkbox" hidden />
                     <label for="sub-sub-group-{{- idx -}}-{{- idx2 -}}">
@@ -111,52 +102,51 @@
                         <path d="M.8.6l4.1 5.1-4.1 5.2" fill="none" stroke="#7E7E7E" stroke-width="1"/>
                       </svg>
                     </label>
-                    {%- if item.sub-sections -%}
+                {%- if item.sub-sections -%}
                     <ul class="sub-sub-group-list">
-                      {%- assign prevsubtitle = '' -%}
-                      {%- for section in item.sub-sections -%}
-                        {%- assign sub_section = "" -%}
-                        {%- assign sub_section_title = "" -%}
-                        {%- assign subtitle = "" -%}
-                        {%- assign sub_id = "" -%}
-                        {%- assign sub_url = "" -%}
-                        {%- for s in sections -%}
-                          {%- assign section_id = s.id | remove: "/section/" -%}
-                          {%- if section_id == section -%}
-                            {%- assign sub_section = section -%}
-                            {%- assign uid = uid | plus: 1 -%}
-                            {%- assign sub_section_title = s.title -%}
-                            {%- assign sub_id = s.id -%}
-                            {%- assign sub_url = s.url -%}
-                            {%- if s.subtitle -%}
-                              {%- assign subtitle = s.subtitle -%}
-                            {%- endif -%}
-                          {%- endif -%}
-                        {%- endfor -%}
-                        {%- if section.nested-index -%}
-                          {%- if section.nested-index == "first" -%}
-                            {%- assign nest-status = "active" -%}
+                  {%- assign prevsubtitle = '' -%}
+                  {%- for section in item.sub-sections -%}
+                    {%- assign sub_section = "" -%}
+                    {%- assign sub_section_title = "" -%}
+                    {%- assign subtitle = "" -%}
+                    {%- assign sub_id = "" -%}
+                    {%- assign sub_url = "" -%}
+                    {%- for s in sections -%}
+                      {%- assign section_id = s.id | remove: "/section/" -%}
+                      {%- if section_id == section -%}
+                        {%- assign sub_section = section -%}
+                        {%- assign uid = uid | plus: 1 -%}
+                        {%- assign sub_section_title = s.title -%}
+                        {%- assign sub_id = s.id -%}
+                        {%- assign sub_url = s.url -%}
+                        {%- if s.subtitle -%}
+                          {%- assign subtitle = s.subtitle -%}
+                        {%- endif -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                    {%- if section.nested-index -%}
+                      {%- if section.nested-index == "first" -%}
+                        {%- assign nest-status = "active" -%}
                       <li class="subtitle">{{ section.nested-title }}</li>
-                          {%- elsif section.nested-index == "last" -%}
-                            {%- assign nest-status = "" -%}
-                          {%- endif -%}
-                        {%- elsif subtitle != "" -%}
-                          {%- if subtitle != prevsubtitle -%}
-                            {%- assign prevsubtitle=subtitle -%}
+                      {%- elsif section.nested-index == "last" -%}
+                        {%- assign nest-status = "" -%}
+                      {%- endif -%}
+                    {%- elsif subtitle != "" -%}
+                      {%- if subtitle != prevsubtitle -%}
+                        {%- assign prevsubtitle=subtitle -%}
                       <li class="subtitle">{{- subtitle -}}</li>
-                          {%- endif -%}
+                      {%- endif -%}
                       <li class="subsection"><a href="{{ sub_url }}" id="subsection{{- sub_id | remove: '/section/' -}}" >{{ sub_section_title }}</a></li>
-                        {%- else -%}
+                    {%- else -%}
                       <li {% if nest-status == "active" %} class="subsection"{% endif %}>
                         <a name="section{{- uid -}}" href="{{- sub_id -}}/#{{- uid -}}">{{- sub_section_title -}}</a>
                       </li>
-                        {%- endif -%}
-                      {%- endfor -%}
-                    </ul>
                     {%- endif -%}
+                  {%- endfor -%}
+                    </ul>
+                {%- endif -%}
                   </li>
-                  {%- endif -%}
-                {%- endfor -%}  
+              {%- endfor -%}  
                 </ul>
               </li>
             {%- endfor -%}
