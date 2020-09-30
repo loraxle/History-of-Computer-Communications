@@ -16,12 +16,6 @@
         {%- if site.chapters -%}
             <ul class="group-list">
           {%- for chapter in site.chapters -%}
-            {%- assign has_sections = '0' -%}
-            {%- for section in sections -%}
-              {%- if section.chapter == chapter.chapter -%}
-                {%- capture has_sections -%}{{- has_sections = has_sections | plus: '1'}}{%- endcapture -%}
-              {%- endif -%}
-            {%- endfor -%}
             {%- assign prevsubtitle = '' -%}
               <li>
                 <input id="chapter-{{chapter.chapter}}" type="checkbox" name="subnav" hidden />
@@ -119,7 +113,26 @@
                     </label>
                     {%- if item.sub-sections -%}
                     <ul class="sub-sub-group-list">
+                      {%- assign prevsubtitle = '' -%}
                       {%- for section in item.sub-sections -%}
+                        {%- assign sub_section = "" -%}
+                        {%- assign sub_section_title = "" -%}
+                        {%- assign subtitle = "" -%}
+                        {%- assign sub_id = "" -%}
+                        {%- assign sub_url = "" -%}
+                        {%- for s in sections -%}
+                          {%- assign section_id = s.id | remove: "/section/" -%}
+                          {%- if section_id == section -%}
+                            {%- assign sub_section = section -%}
+                            {%- assign uid = uid | plus: 1 -%}
+                            {%- assign sub_section_title = s.title -%}
+                            {%- assign sub_id = s.id -%}
+                            {%- assign sub_url = s.url -%}
+                            {%- if s.subtitle -%}
+                              {%- assign subtitle = s.subtitle -%}
+                            {%- endif -%}
+                          {%- endif -%}
+                        {%- endfor -%}
                         {%- if section.nested-index -%}
                           {%- if section.nested-index == "first" -%}
                             {%- assign nest-status = "active" -%}
@@ -127,16 +140,16 @@
                           {%- elsif section.nested-index == "last" -%}
                             {%- assign nest-status = "" -%}
                           {%- endif -%}
-                        {%- else -%}
-                        {%- for s in sections -%}
-                          {%- assign section_id = s.id | remove: "/section/" -%}
-                          {%- if section_id == section -%}
-                            {%- assign uid = uid | plus: 1 -%}
-                      <li {% if nest-status == "active" %} class="subsection"{% endif %}>
-                        <a name="section{{- uid -}}" href="{{- s.id -}}/#{{- uid -}}">{{- s.title -}}</a>
-                      </li>
+                        {%- elsif subtitle != "" -%}
+                          {%- if subtitle != prevsubtitle -%}
+                            {%- assign prevsubtitle=subtitle -%}
+                      <li class="subtitle">{{- subtitle -}}</li>
                           {%- endif -%}
-                        {%- endfor -%}
+                      <li class="subsection"><a href="{{ sub_url }}" id="subsection{{- sub_id | remove: '/section/' -}}" >{{ sub_section_title }}</a></li>
+                        {%- else -%}
+                      <li {% if nest-status == "active" %} class="subsection"{% endif %}>
+                        <a name="section{{- uid -}}" href="{{- sub_id -}}/#{{- uid -}}">{{- sub_section_title -}}</a>
+                      </li>
                         {%- endif -%}
                       {%- endfor -%}
                     </ul>

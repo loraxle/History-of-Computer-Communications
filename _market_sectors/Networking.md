@@ -22,12 +22,6 @@ nav:
       - "6.3"
       - "6.4"
   - heading: "Subtitle"
-    link:
-      "1.0"
-  - heading: "Subtitle"
-    link:
-      "int1"
-  - heading: "Subtitle"
     sub-sections:
       - "6.5"
       - "6.6"
