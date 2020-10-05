@@ -543,3 +543,8 @@ document.onkeydown = function(e){
     }
   }
 };
+
+var searchbar = document.querySelector("input[name='search']");
+document.getElementById("srch").addEventListener("click", function() {
+  searchbar.focus();
+});

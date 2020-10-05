@@ -273,6 +273,9 @@ svg#vertical {
 .content {
   width: 100%;
   min-height: 100vh;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
 }
@@ -311,7 +314,7 @@ svg#vertical {
   position: sticky;
   top: 0;
   overflow: scroll;
-  max-height: 100vh;
+  max-height: 100%;
   border-right: 1px solid #E0E0E0;
   border-top: 1px solid #E0E0E0;
   padding: 50px 0px 87px 27px;
@@ -799,14 +802,20 @@ section a[name^="fnloc"],
 }
 /*section p img[src*="-l"] { }*/
 section p div.imgl {
+  /*
   border: 1px solid #E6E6E6;
   float: left;
   margin-right: 10px;
-  margin-top: 7px;
-  padding: 9px;
   background-color: #F5F5F5;
-  width: 100%;
+  padding: 9px;
   max-width: 281px;
+  */
+  margin-top: 7px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .search-item div.imgl {
   margin: 10px 0;
@@ -816,7 +825,8 @@ section p div.imgl {
   max-width: 100%;
 }
 section p div.imgl img {
-  max-width: 263px;
+  /*max-width: 263px;*/
+  max-width: 100%;
 }
 section p div.imgl h3,
 .search-item div > h3 {
@@ -1057,6 +1067,9 @@ footer #footright > div {
   justify-content: center;
   align-items: center;
 }
+footer #footright > div > a {
+  display: flex;
+}
 ul.sub-sub-group-list {
   margin-left: 20px;
 }
@@ -1237,6 +1250,16 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-height: 244px;
+}
+
+div#contact-send > h2 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+  color: var(--bg-blue);
+  text-align: center;
 }
 
 .contactcontent > form[name="contact"] label {
@@ -1436,6 +1459,7 @@ blockquote > blockquote > p::before {
   justify-content: center;
   flex-direction: column;
   background: #fff;
+  padding: 0 14px;
 }
 #homemid > #homebook > img {
   width: 100%;
@@ -1487,13 +1511,12 @@ blockquote > blockquote > p::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 70px;
   flex-direction: column;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   color: #2F2F2F;
-  padding: 0 10px 30px 10px;
+  padding: 0 24px 30px 24px;
 }
 #homebtm > p {
   font-family: acumin-pro, sans-serif;
@@ -1650,8 +1673,14 @@ th {
     font-size: 18.3px;
     line-height: 29px;
   }
+  #homemid > #homebook {
+    padding: 0;
+  }
   #homemid > #homebook > img {
     margin: -70px auto 0 auto;
+  }
+  #homemid > #homebook > div > h2 {
+    margin: 0;
   }
   #homebtm {
     padding: 0 0 65px;
