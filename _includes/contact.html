@@ -3,7 +3,7 @@
           <section>
             <div class="contactcontent">
               <h1>Contact</h1>
-              <form name="contact" method="POST" data-netlify="true">
+              <form name="contact" data-netlify="true" action="thank-you" netlify-honeypot="bot-field" enctype="application/x-www-form-urlencoded">
                 <div>
                   <div>
                     <label>Name:</label>
@@ -11,18 +11,18 @@
                   </div>
                   <div>
                     <label>Email:</label>
-                    <input type="email" name="name" />
+                    <input type="email" name="email" />
                   </div>
                   <div>
                     <label>Subject:</label>
-                    <input type="text" name="name" />
+                    <input type="text" name="subject" />
                   </div>
                 </div>
                 <div>
                   <div>
                     <label>Message: <textarea name="message"></textarea></label>
                   </div>
-                  <div>
+                  <div id="contact-send">
                     <button type="submit">Send</button>
                   </div>
                 </div>

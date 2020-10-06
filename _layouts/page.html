@@ -2,44 +2,33 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include_cached head.html -%}
   <body>
-    {%- include nav.html -%}
+  {%- include nav.html -%}
     <div class="main">
-        {%- if page.name == "index.md" or page.name == "search.md" -%}
-          {%- include home.html -%}
-        {%- endif -%}
-        {%- if page.name == "contribute.md" -%}
-          {%- include contribute.html -%}
-        {%- endif -%}
-        {%- if page.name == "about.md" -%}
-          {%- include about.html -%}
-        {%- endif -%}
-        {%- if page.name == "contact.md" -%}
-          {%- include contact.html -%}
-        {%- endif -%}
-      {% comment %}
-      <div id="stickyside">
-        <div id="menutab" onclick="sidemenu();">
-          <div id="burg" class="burg burg--spin">
-            <div class="burg-box">
-              <div class="burg-inner"></div>
-            </div>
-          </div>
-        </div>
-        <div class="sidebar">{%- include sidenav.html -%}</div>
-      </div>
-      {% endcomment %}
-
+  {%- if page.name == "index.md" or page.name == "search.md" -%}
+    {%- include home.html -%}
+  {%- endif -%}
+  {%- if page.name == "contribute.md" -%}
+    {%- include contribute.html -%}
+  {%- endif -%}
+  {%- if page.name == "about.md" -%}
+    {%- include about.html -%}
+  {%- endif -%}
+  {%- if page.name == "contact.md" -%}
+    {%- include contact.html -%}
+  {%- endif -%}
       <div id="search-results">
         <div class="closewrap">
           <div class="closebtn" onclick="hideResults()">×</div>
         </div>
         <div id="results"></div>
       </div>
-
     </div>
-    {%- include_cached footer.html -%}
+  {%- include_cached footer.html -%}
   <script src="{{ site.baseurl}}/assets/page.js"></script>
   <script src="{{ site.baseurl}}/assets/search.js"></script>
+  {%- if page.name == "contact.md" -%}
+  <script src="{{ site.baseurl}}/assets/contact.js"></script>
+  {%- endif -%}
   </body>
 </html>
 

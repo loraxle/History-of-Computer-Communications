@@ -273,6 +273,9 @@ svg#vertical {
 .content {
   width: 100%;
   min-height: 100vh;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
 }
@@ -311,7 +314,7 @@ svg#vertical {
   position: sticky;
   top: 0;
   overflow: scroll;
-  max-height: 100vh;
+  max-height: 100%;
   border-right: 1px solid #E0E0E0;
   border-top: 1px solid #E0E0E0;
   padding: 50px 0px 87px 27px;
@@ -799,14 +802,20 @@ section a[name^="fnloc"],
 }
 /*section p img[src*="-l"] { }*/
 section p div.imgl {
+  /*
   border: 1px solid #E6E6E6;
   float: left;
   margin-right: 10px;
-  margin-top: 7px;
-  padding: 9px;
   background-color: #F5F5F5;
-  width: 100%;
+  padding: 9px;
   max-width: 281px;
+  */
+  margin-top: 7px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .search-item div.imgl {
   margin: 10px 0;
@@ -816,7 +825,8 @@ section p div.imgl {
   max-width: 100%;
 }
 section p div.imgl img {
-  max-width: 263px;
+  /*max-width: 263px;*/
+  max-width: 100%;
 }
 section p div.imgl h3,
 .search-item div > h3 {
@@ -908,15 +918,14 @@ footer {
   font-family: acumin-pro, sans-serif;
   font-style: normal;
   border-top: 4px solid #00394A;
-  display: none;
+  display: flex;
   justify-content: center;
 }
 footer #footwrap {
   width:100%;
-  max-width: 1336px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  padding: 0 28px;
 }
 footer #footleft {
   height: 100%;
@@ -930,10 +939,11 @@ footer #footleftcontent {
 }
 footer #footleftcontent > div {
   height: 100%;
-  margin-left: -60px;
+  white-space: 100%;
+  margin-left: 0px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 20px;
 }
 footer h3 {
@@ -945,6 +955,7 @@ footer h3 {
 footer #footleftcontent > div > h3 {
   width: 160px;
   text-align: center;
+  white-space: nowrap;
 }
 footer img#book {
   margin-top: -45px;
@@ -952,6 +963,7 @@ footer img#book {
   max-height: 207px;
   z-index: 9;
   pointer-events: none;
+  display: none;
 }
 footer img#chm {
   width: 130px;
@@ -962,6 +974,7 @@ footer img.vertsep {
   margin: 0px 30px;
   width: 1.47px;
   height: 148px;
+  display: none;
 }
 a.preorder {
   background-color: #EB9426;
@@ -974,7 +987,7 @@ a.preorder {
   text-decoration: none;
   padding: 9px 14px;
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 0px;
 }
 footer ul > li {
   max-width: 225px;
@@ -983,12 +996,16 @@ footer ul > li {
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  margin-bottom: 7px;    
+  margin-bottom: 7px;
+}
+footer #additional > ul > li {
+  margin-bottom: 2px;
 }
 footer #footleftcontent > div > ul {
   list-style: none;
   padding-left: 0;
-  display: none;
+  display: flex;
+  flex-direction: column;
 }
 footer #footleftcontent > div > ul > li {
   margin-left: 15px;
@@ -1001,7 +1018,7 @@ footer #footleftcontent > div > ul > li::before {
 footer #additional > ul {
   list-style: none;
   padding-left: 0;
-  margin-left: 10px;
+  margin: 4px 0;
 }
 #additional > ul > li > a {
   text-decoration: none;
@@ -1011,6 +1028,13 @@ footer #footleftbtm {
   margin: 0 0 10px 40px;
   font-size: 12px;
   line-height: 21px;
+  display: none;
+}
+footer #footbtmmob {
+  display: flex;
+  font-size: 12px;
+  line-height: 21px;
+  margin: 24px 0 37px;
 }
 footer #footmid {
   height: 100%;
@@ -1018,11 +1042,10 @@ footer #footmid {
   flex-direction: column;
 }
 footer #additional {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 footer #additional h3 {
   text-decoration: underline;
-  display: none;
 }
 footer #footfb {
   display: flex;
@@ -1048,14 +1071,16 @@ footer #footfb > #footfbdesk {
 footer #footright {
   height: 100%;
   display: flex;
-  justify-content: center;
-  margin-right: 50px;
+  margin-top: 36px;
 }
 footer #footright > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+footer #footright > div > a {
+  display: flex;
 }
 ul.sub-sub-group-list {
   margin-left: 20px;
@@ -1237,6 +1262,16 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-height: 244px;
+}
+
+div#contact-send > h2 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+  color: var(--bg-blue);
+  text-align: center;
 }
 
 .contactcontent > form[name="contact"] label {
@@ -1436,6 +1471,7 @@ blockquote > blockquote > p::before {
   justify-content: center;
   flex-direction: column;
   background: #fff;
+  padding: 0 16px;
 }
 #homemid > #homebook > img {
   width: 100%;
@@ -1487,13 +1523,12 @@ blockquote > blockquote > p::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 70px;
   flex-direction: column;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   color: #2F2F2F;
-  padding: 0 10px 30px 10px;
+  padding: 0 28px 30px;
 }
 #homebtm > p {
   font-family: acumin-pro, sans-serif;
@@ -1650,8 +1685,14 @@ th {
     font-size: 18.3px;
     line-height: 29px;
   }
+  #homemid > #homebook {
+    padding: 0;
+  }
   #homemid > #homebook > img {
     margin: -70px auto 0 auto;
+  }
+  #homemid > #homebook > div > h2 {
+    margin: 0;
   }
   #homebtm {
     padding: 0 0 65px;
@@ -1674,8 +1715,59 @@ th {
     line-height: 27px;
     margin: 16px 0px;
   }
-  footer {
+  footer #footwrap {
+    max-width: 1336px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  footer #footleftcontent > div {
+    height: 100%;
+    margin-left: -60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  footer img#book {
+    display: block;
+  }
+  footer img.vertsep {
+    display: block;
+  }
+  footer #additional h3 {
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  footer #footright {
+    justify-content: center;
+    margin-right: 50px;
+    margin-top: 0; 
+  }
+  footer #footleftbtm {
+    display: block;
+  }
+  footer #footbtmmob {
+    display: none;
+  }
+  footer #footleftcontent > div > h3 {
+    white-space: normal;
+  }
+  a.preorder {
+    margin-top: 15px;
+  }
+  footer #additional > ul > li {
+    margin-bottom: 7px;
+  }
+  footer #additional > ul {
+    margin: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-left: 10px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1720,6 +1812,9 @@ th {
   }
   #homebtm {
     padding: 0 0 75px;
+  }
+  footer #additional h3 {
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 1100px) {
@@ -1801,9 +1896,11 @@ th {
     width: auto;
     text-align: left;
   }
+  /*
   footer #footleftcontent > div > ul {
     display: block;
   }
+  */
   footer img.vertsep {
     height: 192.76px;
   }
@@ -1813,9 +1910,6 @@ th {
   }
   footer #additional {
     width: 210px;
-  }
-  footer #additional h3 {
-    display: block;
   }
   footer #additional > ul {
     margin-left: 0;
