@@ -115,7 +115,7 @@ function srch(item, searchText) {
       var shadow_img = img_dom.getElementsByTagName('IMG')[0]
       if (shadow_img) {
         if (shadow_img.src) {
-          var classname = "imgl";         
+          var classname = "imgc";         
           var img_title = highlight(shadow_img.title, searchText);
           if (!img_title) {
             img_title = shadow_img.title;

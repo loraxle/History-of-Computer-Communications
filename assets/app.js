@@ -211,7 +211,7 @@ function formatImgs(){
   var imgs = document.querySelectorAll("section p img");
   for (var i = imgs.length - 1; i >= 0; i--) {
     var filename=imgs[i].src.split('/').pop();
-    var classname = "imgl";
+    var classname = "imgc";
     if (filename.includes("-c.")) {
       classname = "imgc";
     } else if (filename.includes("-l.")) {
