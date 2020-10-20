@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Financial Histories Aligned by IPO Year"
+slug: "Financial Histories Aligned by IPO Year"
 order: 1511
 ---
 

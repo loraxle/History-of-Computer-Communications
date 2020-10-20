@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Synoptics and 3Com Analysis"
+slug: "Synoptics and 3Com Analysis"
 order: 1517
 ---
 

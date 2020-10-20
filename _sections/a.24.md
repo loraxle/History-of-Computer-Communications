@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Internetworking Sector Income Statements"
+slug: "Internetworking Sector Income Statements"
 order: 1524
 ---
 

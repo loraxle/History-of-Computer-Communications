@@ -22,7 +22,7 @@ url: ""
 collections:
     sections:
         output: true
-        permalink: /section/:path/
+        permalink: /section/:path/:title/
     chapters:
         output: false
     market_sectors:

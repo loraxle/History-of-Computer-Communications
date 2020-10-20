@@ -34,7 +34,7 @@
                       {%- assign prevsubtitle=section.subtitle -%}
                   <li class="subtitle">{{- section.subtitle -}}</li>
                     {%- endif -%}
-                  <li class="subsection"><a href="{{section.url}}" id="{{- section.id | remove: '/section/' -}}" >{{section.title}}</a></li>
+                  <li class="subsection"><a href="{{section.url}}" id="{{- section.relative_path | remove: '_sections/' | remove: '.md' -}}" >{{section.title}}</a></li>
                   {%- elsif section.nested-title -%}
                     {%- if section.nested-index == 'first' -%}
                   <li>
@@ -46,16 +46,16 @@
                       </svg>
                     </label>
                     <ul class="sub-sub-group-list">
-                      <li><a id="{{- section.id | remove: '/section/' -}}" href="{{- section.id -}}/" >{{- section.title -}}</a></li>
+                      <li><a id="{{- section.relative_path | remove: '_sections/' | remove: '.md' -}}" href="{{- section.id -}}/" >{{- section.title -}}</a></li>
                     {%- elsif section.nested-index == 'last' -%}
-                      <li><a id="{{- section.id | remove: '/section/' -}}" href="{{- section.id -}}/" >{{- section.title -}}</a></li>
+                      <li><a id="{{- section.relative_path | remove: '_sections/' | remove: '.md' -}}" href="{{- section.id -}}/" >{{- section.title -}}</a></li>
                     </ul>
                   </li>
                     {%- else -%}
-                      <li><a id="{{- section.id | remove: '/section/' -}}" href="{{- section.id -}}/" >{{- section.title -}}</a></li>
+                      <li><a id="{{- section.relative_path | remove: '_sections/' | remove: '.md' -}}" href="{{- section.id -}}/" >{{- section.title -}}</a></li>
                     {%- endif -%}
                   {%- else -%}
-                  <li><a href="{{section.url}}" id="{{- section.id | remove: '/section/' -}}" >{{section.title}}</a></li>                  
+                  <li><a href="{{section.url}}" id="{{- section.relative_path | remove: '_sections/' | remove: '.md' -}}" >{{section.title}}</a></li>
                   {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
@@ -112,7 +112,7 @@
                     {%- assign sub_id = "" -%}
                     {%- assign sub_url = "" -%}
                     {%- for s in sections -%}
-                      {%- assign section_id = s.id | remove: "/section/" -%}
+                      {%- assign section_id = s.relative_path | remove: "_sections/" | remove: ".md" -%}
                       {%- if section_id == section -%}
                         {%- assign sub_section = section -%}
                         {%- assign uid = uid | plus: 1 -%}
@@ -139,7 +139,7 @@
                       <li class="subsection"><a href="{{ sub_url }}" id="subsection{{- sub_id | remove: '/section/' -}}" >{{ sub_section_title }}</a></li>
                     {%- else -%}
                       <li {% if nest-status == "active" %} class="subsection"{% endif %}>
-                        <a name="section{{- uid -}}" href="{{- sub_id -}}/#{{- uid -}}">{{- sub_section_title -}}</a>
+                        <a name="section{{- uid -}}" href="{{- sub_url -}}#{{- uid -}}">{{- sub_section_title -}}</a>
                       </li>
                     {%- endif -%}
                   {%- endfor -%}
@@ -201,10 +201,10 @@
                         {%- endfor -%}
                       {%- else -%}
                         {%- for s in sections -%}
-                          {%- assign section_id = s.id | remove: "/section/" -%}
+                          {%- assign section_id = s.relative_path | remove: "_sections/" | remove: ".md" -%}
                           {%- if section_id == section -%}
                             {%- assign uid = uid | plus: 1 -%}
-                      <li><a name="section{{- uid -}}" href="{{- s.id -}}/#{{- uid -}}">{{- s.title -}}</a></li>
+                      <li><a name="section{{- uid -}}" href="{{- s.url -}}#{{- uid -}}">{{- s.title -}}</a></li>
                           {%- endif -%}
                         {%- endfor -%}
                       {%- endif -%}
@@ -228,12 +228,10 @@
                         <ul class="sub-sub-group-list">
                         {%- for section in nested.nested-sections -%}
                           {%- for s in sections -%}
-                            {%- if s.id -%}
-                              {%- assign section_id = s.id | remove: "/section/" -%}
-                              {%- if section_id == section -%}
-                                {%- assign uid = uid | plus: 1 -%}
-                          <li><a name="section{{- uid -}}" href="{{- s.id -}}/#{{- uid -}}">{{- s.title -}}</a></li>
-                              {%- endif -%}
+                            {%- assign section_id = s.relative_path | remove: "_sections/" | remove: ".md" -%}
+                            {%- if section_id == section -%}
+                              {%- assign uid = uid | plus: 1 -%}
+                          <li><a name="section{{- uid -}}" href="{{- s.url -}}#{{- uid -}}">{{- s.title -}}</a></li>
                             {%- endif -%}
                           {%- endfor -%}
                         {%- endfor -%}
@@ -323,6 +321,7 @@
                         {%- for interview in item.sub-sections -%}
                           {%- for i in interviews -%}
                             {%- assign section_id = i.id | remove: "/interview/" -%}
+                            {%- assign section_id = i.relative_path | remove: "_interviews/" | remove: ".md" -%}
                             {%- if section_id == interview -%}
                               {%- assign uid = uid | plus: 1 -%}
                           <li><a name="int{{- uid -}}" href="{{- i.id -}}/#{{- uid -}}">{{- i.title -}}</a></li>
@@ -349,7 +348,7 @@
                             {%- for interview in nested.nested-sections -%}
                               {%- for i in interviews -%}
                                 {%- if i.id -%}
-                                  {%- assign section_id = i.id | remove: "/interview/" -%}
+                                  {%- assign section_id = i.relative_path | remove: "_interviews/" | remove: ".md" -%}
                                   {%- if section_id == interview -%}
                                     {%- assign uid = uid | plus: 1 -%}
                               <li><a name="int{{- uid -}}" href="{{- i.id -}}/#{{- uid -}}">{{- i.title -}}</a></li>

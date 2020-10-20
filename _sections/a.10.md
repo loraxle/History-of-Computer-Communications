@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Balance Sheet Analysis"
+slug: "Balance Sheet Analysis"
 order: 1510
 ---
 

@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Entrepreneurial Profit"
+slug: "Entrepreneurial Profit"
 order: 1514
 ---
 

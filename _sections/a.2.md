@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Computer and Terminal Forecasts 1968-1988"
+slug: "Computer and Terminal Forecasts 1968-1988"
 order: 1502
 ---
 

@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Computer Communications Revenues Reconcilliation"
+slug: "Computer Communications Revenues Reconcilliation"
 order: 1504
 ---
 

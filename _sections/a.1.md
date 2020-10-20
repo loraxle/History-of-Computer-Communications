@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Product Revenues 1970-1988"
+slug: "Product Revenues 1970-1988"
 order: 1501
 ---
 

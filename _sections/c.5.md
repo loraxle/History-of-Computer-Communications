@@ -1,6 +1,7 @@
 ---
 chapter: 17
 title: "Network Equipment Technologies"
+slug: "Network Equipment Technologies"
 order: 1705
 ---
 

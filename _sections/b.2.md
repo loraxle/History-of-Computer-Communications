@@ -1,6 +1,7 @@
 ---
 chapter: 16
 title: "Manley Irwin Papers"
+slug: "Manley Irwin Papers"
 order: 1602
 ---
 

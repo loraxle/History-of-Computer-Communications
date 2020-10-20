@@ -1,6 +1,7 @@
 ---
 chapter: 17
 title: "3Com"
+slug: "3Com"
 order: 1703
 ---
 

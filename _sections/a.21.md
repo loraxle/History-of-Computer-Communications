@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Networking Market-Structure Analysis"
+slug: "Networking Market-Structure Analysis"
 order: 1521
 ---
 

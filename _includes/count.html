@@ -11,7 +11,7 @@
         {%- if item.sub-sections -%}
           {%- for section in item.sub-sections -%}
             {%- for s in site.sections -%}
-              {%- assign section_id = s.id | remove: "/section/" -%}
+              {%- assign section_id = s.relative_path | remove: "_sections/" | remove: ".md" -%}
               {%- if section_id == section -%}
                 {%- assign uid = uid | plus: 1 -%}
                 {%- assign section_str = uid | append: '" : "' | append: section_id -%}
@@ -35,7 +35,7 @@
         {%- if item.sub-sections -%}
           {%- for section in item.sub-sections -%}
             {%- for s in site.sections -%}
-              {%- assign section_id = s.id | remove: "/section/" -%}
+              {%- assign section_id = s.relative_path | remove: "_sections/" | remove: ".md" -%}
               {%- if section_id == section -%}
                 {%- assign uid = uid | plus: 1 -%}
                 {%- assign section_str = uid | append: '" : "' | append: section_id -%}
@@ -52,7 +52,7 @@
               {%- for section in nested.nested-sections -%}
                 {%- for s in site.sections -%}
                   {%- if s.id -%}
-                    {%- assign section_id = s.id | remove: "/section/" -%}
+                    {%- assign section_id = s.relative_path | remove: "_sections/" | remove: ".md" -%}
                     {%- if section_id == section -%}
                       {%- assign uid = uid | plus: 1 -%}
                       {%- assign section_str = uid | append: '" : "' | append: section_id -%}
@@ -68,4 +68,4 @@
     {%- endfor -%}
   {%- endif -%}
 {%- assign dict = dict | append: "-@" | remove: ",-@" -%}
-<script>var count = { {{ dict }} };</script>
+<script>var link_count = { {{ dict }} };</script>

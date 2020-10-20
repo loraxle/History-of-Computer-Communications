@@ -1,6 +1,7 @@
 ---
 chapter: 17
 title: "Micom"
+slug: "Micom"
 order: 1702
 ---
 

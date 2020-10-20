@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Networking Sector Income Statements"
+slug: "Networking Sector Income Statements"
 order: 1520
 ---
 

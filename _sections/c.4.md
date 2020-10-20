@@ -1,6 +1,7 @@
 ---
 chapter: 17
 title: "Ungermann-Bass"
+slug: "Ungermann-Bass"
 order: 1704
 ---
 

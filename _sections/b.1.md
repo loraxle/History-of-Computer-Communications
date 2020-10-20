@@ -1,6 +1,7 @@
 ---
 chapter: 16
 title: "Bolt Beranek & Newman (BBN) documents"
+slug: "Bolt Beranek & Newman (BBN) documents"
 order: 1601
 ---
 

@@ -22,6 +22,7 @@ layout: null
       {%- assign tail = "" -%}
     {%- endif -%}
     {%- assign section_id=section.url | remove: "/section/" | remove: "/" -%}
+    {%- assign section_id=section.relative_path | remove: "_sections/" | remove: ".md" -%}
     "{{ section_id }}" : {
       "ch" : "{{ section.chapter }}",
       {%- if chapter.appendix -%}
@@ -43,7 +44,8 @@ layout: null
       {%- endif -%}   
       "next" : "{%- if section_count < sections_size -%}{{ sections[section_count].url }}{%- else -%}{{ first_interview }}{%- endif -%}",
       "prev" : "{%- assign prev_count = section_count | minus: 2 -%}{%- if prev_count >= 0 -%}{{ sections[prev_count].url }}{%- else -%}{{ last_interview }}{%- endif -%}",
-      "title" : "{{ section.title }}"
+      "title" : "{{ section.title }}",
+      "url" : "{{ section.url | replace: '/section/', '' | replace: section_id, '' | replace : '/', ''}}"
     }{{ tail }}
   {%- endfor -%}
 {%- endfor -%}

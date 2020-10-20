@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Dominant Design Examples"
+slug: "Dominant Design Examples"
 order: 1516
 ---
 

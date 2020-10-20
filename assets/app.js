@@ -19,19 +19,19 @@ var menu = document.querySelector(".sidebar");
 var preva = document.getElementById("preva");
 var nexta = document.getElementById("nexta");
 function setHash(hash, section_id){
-  if (count.hasOwnProperty(hash)) {
-    if (count[hash] == section_id) {
+  if (link_count.hasOwnProperty(hash)) {
+    if (link_count[hash] == section_id) {
       var prev = preva.pathname;
       if (preva.href != "") {
         if (hash > 1) {
-          if (count.hasOwnProperty(hash - 1)) {
+          if (link_count.hasOwnProperty(hash - 1)) {
             prev = prev + "#" + (hash - 1);
             preva.href = prev;
           }
         }
       }
       if (nexta.href != "") {
-        if (count.hasOwnProperty(hash + 1)) {
+        if (link_count.hasOwnProperty(hash + 1)) {
           var next = nexta.href + "#" + (hash + 1);
           nexta.href = next;
         }
@@ -47,14 +47,17 @@ r(function(){
   if (window.location.hash) { // URL Fragment exists
     fragment = parseInt(window.location.hash.replace("#", ""));
     if (!isNaN(fragment)) { //only using integers for URL fragment
-      console.log(fragment);
       refreshed = false;
       var select_name = "section" + fragment;
       var activeSection = document.getElementsByName(select_name);
       if (activeSection.length > 0) {
         uncheck(activeSection[0], 'nav');
         activeSection[0].checked=true;
-        document.querySelector(".selected").classList.remove("selected");
+        if (document.querySelector(".selected")) {
+          document.querySelector(".selected").classList.remove("selected");
+        } else {
+          console.log("NO PREVIOUSLY SELECTED SIDENAV LINK");
+        }
         activeSection[0].classList.add("selected");
         crawlDOM(activeSection[0]);
       } else {
@@ -64,13 +67,16 @@ r(function(){
   }
   var section_id = window.location.pathname;
   if (section_id.startsWith("/section/")) {
-    section_id = section_id.replace("/section/","").replace("/", "");
+    var s_id = section_id.replace("/section/", "");
+    s_id = s_id.split("/");
+    if (!isNaN(s_id[0])) {
+      section_id = s_id[0];
+    }
   }
   else if (section_id.startsWith("/interview/")) {
     section_id = "int" + section_id.replace("/interview/","").replace("/", "");
   }
   if (refreshed) {
-    //var selected = document.querySelector(".selected");
     var selected = document.getElementById(section_id);
     if (selected) {
       selected.classList.add("selected");
@@ -84,7 +90,6 @@ r(function(){
   sidenav.classList.remove("notready"); 
   sidenav.classList.add("ready");
   menu.classList.add("animated");
-  //var section_id = window.location.pathname.replace("/section/","").replace("/", "");
   let currentState = history.state;
   if (currentState == null) {
     var scroll = document.querySelector(".sidenav").scrollTop;
@@ -168,10 +173,6 @@ function sidemenu() {
       document.getElementById("burg").classList.add("is-active");   
     }
   } else {
-    //if (searchResults.classList.contains("slide-in-right")) {
-    //  searchResults.classList.remove("slide-in-right");
-    //  document.getElementById("burg").classList.remove("is-active");
-    //}
     if (menu.classList.contains("slide-in-left")) {
       menu.classList.remove("slide-in-left");
       document.getElementById("burg").classList.remove("is-active");
@@ -304,12 +305,13 @@ function decode (str) {
 };
 
 function renderContent(section_id) {
+    console.log("rendering " + section_id);
     var hash = 0;
     var section_id_array = section_id.split("#");
     if (section_id_array.length > 1) {
       section_id = section_id_array[0];
       if (!isNaN(parseInt(section_id_array[1]))) {
-        hash = parseInt(section_id_array[1]);         
+        hash = parseInt(section_id_array[1]);
       } 
     }
     let pagecontent = document.querySelector(".pagecontent");
@@ -330,9 +332,14 @@ function renderContent(section_id) {
     if (book_data[section_id].appendix == "true") {
       section_title = book_data[section_id].title;
     }
+    var canonical = window.location.origin;
     if (section_id.startsWith("int")) {
       section_title = book_data[section_id].title;
+      canonical += "/interview/" + section_id.replace("int","");
+    } else {
+      canonical += "/section/" + section_id + "/" + book_data[section_id].url + "/";
     }
+    document.querySelector("link[rel='canonical']").setAttribute("href", canonical);
     document.getElementById("section-title").innerHTML = section_title;
     if (book_data[section_id].prev == "") {
       document.getElementById("prevwrap").classList.add("hide");  
@@ -375,8 +382,6 @@ function renderContent(section_id) {
       }
       document.getElementById("footnotes").appendChild(ul);
     }
-    var canonical = window.location.origin + "/section/" + section_id;
-    document.querySelector("link[rel='canonical']").setAttribute("href", canonical);
 }
 
 function handleLink(e) {
@@ -417,7 +422,8 @@ function handleLink(e) {
         if (nexta.pathname.includes("interview")) {
           section_id = "int" + nexta.pathname.replace("/interview/","").replace("/","");
         } else {
-          section_id = nexta.pathname.replace("/section/","").replace("/","");
+          let next_a = nexta.pathname.replace("/section/", "").split("/");
+          section_id = next_a[0];
         } 
         var hash = parseInt(nexta.hash.replace("#", ""));
         if (!isNaN(hash)) {
@@ -435,6 +441,7 @@ function handleLink(e) {
           }
           catch(err) {
             console.log(err);
+            console.log("Erroneous section_id: " + section_id);
             section_id = section_id.replace("/","")
             document.getElementById(section_id).classList.add("selected");
             crawlDOM(document.getElementById(section_id));
@@ -451,7 +458,7 @@ function handleLink(e) {
         if (preva.pathname.includes("interview")) {
           section_id = "int" + preva.pathname.replace("/interview/","").replace("/","");
         } else {
-          section_id = preva.pathname.replace("/section/","").replace("/","");            
+          section_id = preva.pathname.replace("/section/", "").split("/")[0];
         } 
         var hash = parseInt(preva.hash.replace("#", ""));
         if (!isNaN(hash)) {
@@ -470,7 +477,7 @@ function handleLink(e) {
       case 3: //<a>
         var pathname = e.target.pathname;
         if ( pathname.startsWith("/section/")) {
-          section_id = pathname.replace("/section/","").replace("/", "");
+          section_id = pathname.replace("/section/", "").split("/")[0];
         }
         else if (pathname.startsWith("/interview/")){
           section_id = pathname.replace("/interview/","").replace("/", "");

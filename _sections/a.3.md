@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Computer Communications Market"
+slug: "Computer Communications Market"
 order: 1503
 ---
 

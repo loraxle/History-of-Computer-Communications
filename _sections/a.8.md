@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Computer Communications Market-Structure Consolodation"
+slug: "Computer Communications Market-Structure Consolodation"
 order: 1508
 ---
 

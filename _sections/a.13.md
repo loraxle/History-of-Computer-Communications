@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Market Windows and Organization Ecology"
+slug: "Market Windows and Organization Ecology"
 order: 1513
 ---
 

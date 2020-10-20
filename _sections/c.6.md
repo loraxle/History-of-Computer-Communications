@@ -1,6 +1,7 @@
 ---
 chapter: 17
 title: "Wellfleet"
+slug: "Wellfleet"
 order: 1706
 ---
 

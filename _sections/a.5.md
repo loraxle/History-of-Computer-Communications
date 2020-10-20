@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Product Categories and Firms"
+slug: "Product Categories and Firms"
 order: 1505
 ---
 

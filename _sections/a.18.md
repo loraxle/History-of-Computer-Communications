@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Data Communications Firm Interrelationships"
+slug: "Data Communications Firm Interrelationships"
 order: 1518
 ---
 

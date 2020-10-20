@@ -1,6 +1,7 @@
 ---
 chapter: 17
 title: "Codex"
+slug: "Codex"
 order: 1701
 ---
 

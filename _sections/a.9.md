@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Income Statement Analysis"
+slug: "Income Statement Analysis"
 order: 1509
 ---
 

@@ -1,6 +1,7 @@
 ---
 chapter: 15
 title: "Market Research Forecasting Uncertainties"
+slug: "Market Research Forecasting Uncertainties"
 order: 1515
 ---
 

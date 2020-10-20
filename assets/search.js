@@ -51,7 +51,7 @@ function srch(item, searchText) {
   if (item[0].startsWith("int")){
     url = "/interview/" + item[0].replace("int", "");
   } else {
-    url = "/section/" + item[0];
+    url = "/section/" + item[0] + "/" + item[1].url + "/";
   }
   if (item[1].ch == "Interviews") {
     is_interview = true;
