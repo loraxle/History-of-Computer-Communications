@@ -1,7 +1,7 @@
 var book_data = {};
 var pdfs = [];
 var search_array = Object.entries(book_data);
-const CACHE_NAME = "v1";
+const CACHE_NAME = "v1.1";
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("/assets/sw.js")
