@@ -517,7 +517,7 @@ function handleLink(e) {
     var scroll = document.querySelector(".sidenav").scrollTop;
     const state = { 'section': section_id, 'scroll': scroll };
     const title = '';
-    history.pushState(state, title, url);
+    history.pushState(state, title, url.toLowerCase());
     window.scrollTo(0,0); //scroll to top
     return false;
   }
