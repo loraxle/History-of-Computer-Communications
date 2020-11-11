@@ -233,7 +233,7 @@
 /Book/8/8.7-IBM-PC-IBMTokenRingLAN981-82.html  /section/10.6/the-ibm-pc-and-ibm-s-token-ring-lan-1981-1982/
 /Book/8/8.8-3Com-UngermanBass-Sytek.html  /section/10.8/ungermann-bass/
 /Book/8/8.9-3Com.html  /section/10.7/3com/
-/Book/8/8.10-Ungermann-Bass.html  
+/Book/8/8.10-Ungermann-Bass.html  /section/10.8/ungermann-bass/
 /Book/8/8.11-Sytek.html  /section/10.9/sytek/
 /Book/8/8.12-DataCommunicationCompetitors1981-1982.html  /explore.html
 /Book/8/8.13-Micom.html  /section/10.10/micom/
@@ -297,7 +297,7 @@
 /Book/10/10.20-Ungermann-Bass.html  /section/12.15/ungermann-bass/
 /Book/10/10.21-Sytek.html  /section/12.16/sytek/
 /Book/10/10.22-EarlyLANCompetitors85-86.html  /explore.html
-/Book/10/10.23-Interlan.html  section/12.17/interlan/
+/Book/10/10.23-Interlan.html  /section/12.17/interlan/
 /Book/10/10.24-Bridge Communications.html  /section/12.18/bridge-communications/
 /Book/10/10.25-Concord Data Systems.html  /section/12.19/concord-data-systems/
 /Book/10/10.26-SecondWaveOfLANCompetitors85-86.html  /explore.html
@@ -318,7 +318,7 @@
 /Book/11/11.7_Timeplex.html  /section/13.6/timeplex/
 /Book/11/11.8_Codex.html  /section/13.7/codex/
 /Book/11/11.9_Micom.html  /section/13.8/micom/
-/Book/11/11.10_DigitalCommunicationAssociates.html  section/13.9/digital-communication-associates/
+/Book/11/11.10_DigitalCommunicationAssociates.html  /section/13.9/digital-communication-associates/
 /Book/11/11.11_OtherDataCommunicationFirms.html  /section/13.10/other-data-communication-firms/
 /Book/11/11.12-TymnetCaravanProject1982.html  /section/13.11/tymnet-and-the-caravan-project-1982/
 /Book/11/11.13_ EntrepreneursT-1_Start-Ups1982-1985.html  /explore.html
@@ -399,7 +399,7 @@
 /Organizations/Startups/3Com/3ComHome.html  /section/c.3/3com/
 /Organizations/Startups/NetworkEquipmentTechnologies/NET-BalanceSheet.html  /explore.html
 /Organizations/Startups/NetworkEquipmentTechnologies/NETIncomeStatement.html  /explore.html
-/Organizations/Startups/NetworkEquipmentTechnologies/NetworkEquipmentTechnologiesHome.html  section/c.5/network-equipment-technologies/
+/Organizations/Startups/NetworkEquipmentTechnologies/NetworkEquipmentTechnologiesHome.html  /section/c.5/network-equipment-technologies/
 /MarketSectors/NetworkingMarketStructureAnalysis.html  /explore.html
 /MarketSectors/MarketSectorsHome.html  /explore.html
 /MarketSectors/ExploreByMarketSectors.html  /explore.html
