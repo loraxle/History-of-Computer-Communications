@@ -206,7 +206,7 @@ document.getElementById('search').addEventListener('keyup', function (e) {
         "p" : [],
         "img" : []
       };
-      for (var i=0; i<search_array.length; i++) {
+      for (var i=1; i<search_array.length; i++) { // offset first entry for toc
         let search_query = srch(search_array[i], searchText);
         if (search_query) {
           if (search_query.h2){
