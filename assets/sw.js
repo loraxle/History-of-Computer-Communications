@@ -1,4 +1,4 @@
-const CACHE_NAME = "v1.1";
+const CACHE_NAME = "v2fddf80";
 const STATIC_CACHE_URLS = ["/json/index.json", "/assets/pdf.json"];
 
 self.addEventListener("install", event => {

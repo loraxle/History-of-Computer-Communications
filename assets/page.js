@@ -1,10 +1,10 @@
 var book_data = {};
 var pdfs = [];
 var search_array = Object.entries(book_data);
-const CACHE_NAME = "v1.1";
+const CACHE_NAME = "v2fddf80";
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/assets/sw.js")
+    .register("/assets/sw.js?v=2fddf80")
     .then(serviceWorker => {
       //console.log("Service Worker registered: ", serviceWorker);
     })
@@ -16,20 +16,26 @@ if ("serviceWorker" in navigator) {
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 
 r(function(){
-  caches.open(CACHE_NAME).then(cache => {
+  window.caches.open(CACHE_NAME).then(cache => {
     cache.match("/json/index.json").then(cached => {
-      cached.json().then(cached_data => {
-        book_data = cached_data;
-        search_array = Object.entries(book_data);
-      });
-    })
-  });
-  caches.open(CACHE_NAME).then(cache => {
+      try {
+        cached.json().then(cached_data => {
+          book_data = cached_data;
+          search_array = Object.entries(book_data);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    });
     cache.match("/assets/pdf.json").then(cached => {
-      cached.json().then(cached_data => {
-        pdfs = cached_data;
-      });
-    })
+      try {
+        cached.json().then(cached_data => {
+          pdfs = cached_data;
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    });
   });
 });
 

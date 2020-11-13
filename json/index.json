@@ -14,6 +14,11 @@ layout: null
 {%- assign last_interview = interviews.last.url -%}
 
 {
+  {% assign toc = site.pages | where: "name", "table-of-contents.md" | first %}
+    "toc" : {
+      "ch_title" : "{{- toc.title -}}",
+      "content" : "{{- toc.content | markdownify | strip_newlines | xml_escape -}}"
+    },
 {%- for chapter in site.chapters -%}{%- assign ch_section = sections | where: "chapter", chapter.chapter | sort: 'order' -%}
   {%- for section in ch_section -%}
     {%- assign section_count = section_count | plus: 1 -%}
@@ -32,12 +37,12 @@ layout: null
       "ch_title" : "Chapter {{ chapter.chapter }} - {{ chapter.title }}",
       "appendix" : "false",
       {%- endif -%}
-      "content" : "{{- section.content | strip_newlines | xml_escape  -}}",
+      "content" : "{{- section.content | strip_newlines | xml_escape -}}",
       {%- if section.footnotes -%}"footnotes" : [
         {%- for footnote in section.footnotes -%}
         {
           "num" : {{ footnote.num }},
-          "src" : "{{- footnote.src | strip | markdownify | strip -}}"  
+          "src" : "{{- footnote.src | strip | markdownify | strip -}}"
         }{%- unless forloop.last -%},{%- endunless -%}
         {%- endfor -%}
       ],

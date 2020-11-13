@@ -1,10 +1,10 @@
 var book_data = {};
 var pdfs = [];
 var search_array = Object.entries(book_data);
-const CACHE_NAME = "v1.1";
+const CACHE_NAME = "v2fddf80";
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/assets/sw.js")
+    .register("/assets/sw.js?v=2fddf80")
     .then(serviceWorker => {
       //console.log("Service Worker registered: ", serviceWorker);
     })
@@ -98,20 +98,26 @@ r(function(){
     url = window.location.href;
     history.pushState(state, title, url);
   }
-  caches.open(CACHE_NAME).then(cache => {
+  window.caches.open(CACHE_NAME).then(cache => {
     cache.match("/json/index.json").then(cached => {
-      cached.json().then(cached_data => {
-        book_data = cached_data;
-        search_array = Object.entries(book_data);
-      });
-    })
-  });
-  caches.open(CACHE_NAME).then(cache => {
+      try {
+        cached.json().then(cached_data => {
+          book_data = cached_data;
+          search_array = Object.entries(book_data);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    });
     cache.match("/assets/pdf.json").then(cached => {
-      cached.json().then(cached_data => {
-        pdfs = cached_data;
-      });
-    })
+      try {
+        cached.json().then(cached_data => {
+          pdfs = cached_data;
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    });
   });
   if (fragment) {
     setHash(fragment, section_id);
@@ -555,3 +561,20 @@ var searchbar = document.querySelector("input[name='search']");
 document.getElementById("srch").addEventListener("click", function() {
   searchbar.focus();
 });
+
+document.getElementById("table-of-contents").onchange = function(){
+  if (this.checked) {
+    let pagecontent = document.querySelector(".pagecontent");
+    if (pagecontent) {
+      pagecontent.remove();
+    }
+    document.getElementById("chapter-title").innerHTML = book_data["toc"].ch_title;
+    document.getElementById("section-title").innerHTML = "";
+    document.querySelector("content").innerHTML = decode(book_data["toc"].content);
+    document.getElementById("footnotes").innerHTML = "";
+    document.getElementById("preva").href = "";
+    document.getElementById("prevwrap").classList.add("hide");
+    document.getElementById("nexta").href = "";
+    document.getElementById("nextwrap").classList.add("hide");
+  }
+};
