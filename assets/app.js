@@ -1,12 +1,29 @@
 var book_data = {};
 var pdfs = [];
 var search_array = Object.entries(book_data);
+var toc = "";
 const CACHE_NAME = "v2fddf80";
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/assets/sw.js?v=2fddf80")
+    .register("/assets/service-worker.js")
     .then(serviceWorker => {
       //console.log("Service Worker registered: ", serviceWorker);
+
+      fetch('/json/index.json')
+        .then(response => response.json())
+        .then(data => {
+          //console.log(data);
+          book_data = data;
+          toc = book_data["toc"];
+          delete book_data["toc"]; // remoce toc
+          search_array = Object.entries(book_data);
+        });
+      fetch('/assets/pdf.json')
+        .then(response => response.json())
+        .then(data => {
+          pdfs = data;
+        });
+
     })
     .catch(error => {
       console.error("Error registering the Service Worker: ", error);
@@ -98,6 +115,7 @@ r(function(){
     url = window.location.href;
     history.pushState(state, title, url);
   }
+/*
   window.caches.open(CACHE_NAME).then(cache => {
     cache.match("/json/index.json").then(cached => {
       try {
@@ -119,6 +137,7 @@ r(function(){
       }
     });
   });
+*/
   if (fragment) {
     setHash(fragment, section_id);
   }
@@ -568,9 +587,9 @@ document.getElementById("table-of-contents").onchange = function(){
     if (pagecontent) {
       pagecontent.remove();
     }
-    document.getElementById("chapter-title").innerHTML = book_data["toc"].ch_title;
+    document.getElementById("chapter-title").innerHTML = toc.ch_title;
     document.getElementById("section-title").innerHTML = "";
-    document.querySelector("content").innerHTML = decode(book_data["toc"].content);
+    document.querySelector("content").innerHTML = decode(toc.content);
     document.getElementById("footnotes").innerHTML = "";
     document.getElementById("preva").href = "";
     document.getElementById("prevwrap").classList.add("hide");

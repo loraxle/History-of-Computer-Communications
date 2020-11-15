@@ -1,12 +1,27 @@
 var book_data = {};
 var pdfs = [];
 var search_array = Object.entries(book_data);
+var toc = "";
 const CACHE_NAME = "v2fddf80";
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/assets/sw.js?v=2fddf80")
+    .register("/assets/service-worker.js")
     .then(serviceWorker => {
       //console.log("Service Worker registered: ", serviceWorker);
+      fetch('/json/index.json')
+        .then(response => response.json())
+        .then(data => {
+          //console.log(data);
+          book_data = data;
+          toc = book_data["toc"];
+          delete book_data["toc"]; // remoce toc
+          search_array = Object.entries(book_data);
+        });
+      fetch('/assets/pdf.json')
+        .then(response => response.json())
+        .then(data => {
+          pdfs = data;
+        });
     })
     .catch(error => {
       console.error("Error registering the Service Worker: ", error);
@@ -14,8 +29,9 @@ if ("serviceWorker" in navigator) {
 }
 
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
-
+/*
 r(function(){
+
   window.caches.open(CACHE_NAME).then(cache => {
     cache.match("/json/index.json").then(cached => {
       try {
@@ -38,6 +54,7 @@ r(function(){
     });
   });
 });
+*/
 
 var searchResults = document.getElementById("search-results");
 var menu = document.querySelector(".sidebar");
