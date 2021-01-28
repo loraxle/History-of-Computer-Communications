@@ -194,7 +194,7 @@
                       {%- if section contains "int" -%}
                         {%- assign intrvw = section | remove: "int" -%}
                         {%- for i in interviews -%}
-                          {%- assign interview_id = i.id | remove: "/interview/" -%}
+                          {%- assign interview_id = i.id | remove: "/interviews/" -%}
                           {%- if interview_id == intrvw -%}
                       <li><a href="{{- i.url -}}">{{- i.title -}}</a></li>
                           {%- endif -%}
@@ -277,7 +277,7 @@
                 {%- assign first_name = first_name | join: " " -%}
                 {%- assign heading = last_name | append: ", " | append: first_name -%}
               {%- endif -%}
-                  <li><a href="{{- interview.url -}}" id="int{{- interview.url | remove: '/interview/' -}}" >{{- heading -}}</a></li>
+                  <li><a href="{{- interview.url -}}" id="int{{- interview.url | remove: '/interviews/' -}}" >{{- heading -}}</a></li>
             {%- endfor -%}
                 </ul>
               </li>
@@ -320,7 +320,7 @@
                         <ul class="sub-sub-group-list">
                         {%- for interview in item.sub-sections -%}
                           {%- for i in interviews -%}
-                            {%- assign section_id = i.id | remove: "/interview/" -%}
+                            {%- assign section_id = i.id | remove: "/interviews/" -%}
                             {%- assign section_id = i.relative_path | remove: "_interviews/" | remove: ".md" -%}
                             {%- if section_id == interview -%}
                               {%- assign uid = uid | plus: 1 -%}

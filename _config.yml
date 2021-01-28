@@ -31,7 +31,7 @@ collections:
         output: false
     interviews:
         output: true
-        permalink: /interview/:title/
+        permalink: /interviews/:title/
     interview_organizations:
         output: false
 

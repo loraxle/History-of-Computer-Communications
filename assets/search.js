@@ -49,7 +49,7 @@ function srch(item, searchText) {
   var is_interview = false;
   var url = "/"
   if (item[0].startsWith("int")){
-    url = "/interview/" + item[0].replace("int", "");
+    url = "/interviews/" + item[0].replace("int", "");
   } else {
     url = "/section/" + item[0] + "/" + item[1].url + "/";
   }

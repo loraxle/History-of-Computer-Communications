@@ -60,7 +60,7 @@ layout: null
     {%- if interview_count >= interviews_size -%}
       {%- assign tail = "" -%}
     {%- endif -%}
-    {%- assign section_id=interview.url | remove: "/interview/" | remove: "/" -%}
+    {%- assign section_id=interview.url | remove: "/interviews/" | remove: "/" -%}
     {%- assign fullname = interview.title | split: " " -%}
     {%- assign last_name = fullname[-1] -%}        
     {%- assign first_names = fullname | pop -%}

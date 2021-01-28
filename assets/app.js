@@ -90,8 +90,8 @@ r(function(){
       section_id = s_id[0];
     }
   }
-  else if (section_id.startsWith("/interview/")) {
-    section_id = "int" + section_id.replace("/interview/","").replace("/", "");
+  else if (section_id.startsWith("/interviews/")) {
+    section_id = "int" + section_id.replace("/interviews/","").replace("/", "");
   }
   if (refreshed) {
     var selected = document.getElementById(section_id);
@@ -360,7 +360,7 @@ function renderContent(section_id) {
     var canonical = window.location.origin;
     if (section_id.startsWith("int")) {
       section_title = book_data[section_id].title;
-      canonical += "/interview/" + section_id.replace("int","");
+      canonical += "/interviews/" + section_id.replace("int","");
     } else {
       canonical += "/section/" + section_id + "/" + book_data[section_id].url + "/";
     }
@@ -445,7 +445,7 @@ function handleLink(e) {
         window.scrollTo(0,0); //scroll to top
         url = nexta.href;
         if (nexta.pathname.includes("interview")) {
-          section_id = "int" + nexta.pathname.replace("/interview/","").replace("/","");
+          section_id = "int" + nexta.pathname.replace("/interviews/","").replace("/","");
         } else {
           let next_a = nexta.pathname.replace("/section/", "").split("/");
           section_id = next_a[0];
@@ -481,7 +481,7 @@ function handleLink(e) {
         window.scrollTo(0,0); //scroll to top
         url = preva.href;
         if (preva.pathname.includes("interview")) {
-          section_id = "int" + preva.pathname.replace("/interview/","").replace("/","");
+          section_id = "int" + preva.pathname.replace("/interviews/","").replace("/","");
         } else {
           section_id = preva.pathname.replace("/section/", "").split("/")[0];
         } 
@@ -504,8 +504,8 @@ function handleLink(e) {
         if ( pathname.startsWith("/section/")) {
           section_id = pathname.replace("/section/", "").split("/")[0];
         }
-        else if (pathname.startsWith("/interview/")){
-          section_id = pathname.replace("/interview/","").replace("/", "");
+        else if (pathname.startsWith("/interviews/")){
+          section_id = pathname.replace("/interviews/","").replace("/", "");
           section_id = "int" + section_id;
         }
         else { // remove this
