@@ -8,7 +8,6 @@ if ("serviceWorker" in navigator) {
     .register("/assets/service-worker.js")
     .then(serviceWorker => {
       //console.log("Service Worker registered: ", serviceWorker);
-
       fetch('/json/index.json')
         .then(response => response.json())
         .then(data => {
@@ -23,7 +22,6 @@ if ("serviceWorker" in navigator) {
         .then(data => {
           pdfs = data;
         });
-
     })
     .catch(error => {
       console.error("Error registering the Service Worker: ", error);

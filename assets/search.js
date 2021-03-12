@@ -42,11 +42,13 @@ function srch(item, searchText) {
   var content = "";
   var ch_title = "";
   var section = "";
+  var footnotes = "";
   var title_matched = false;
   var section_matched = false;
   var p_matched = false;
   var img_matched = false;
   var is_interview = false;
+  var fn_matched = false;
   var url = "/"
   if (item[0].startsWith("int")){
     url = "/interviews/" + item[0].replace("int", "");
@@ -161,30 +163,57 @@ function srch(item, searchText) {
   } else {
     content = "";
   }
+  if (item[1].footnotes !== undefined) {
+    var matched_fn = item[1].footnotes.filter(obj => obj.src.toLowerCase().indexOf(searchText.toLowerCase()) >= 0);
+    var fn_size = Object.keys(matched_fn).length;
+    if (fn_size) {
+      matched = true;
+      fn_matched = true;
+      footnotes = matched_fn.map(footnote => {
+        let found_fn = highlight(footnote.src.replace(/(<([^>]+)>)/ig, ""), searchText);
+        if (found_fn !== undefined) {
+          return `<p><span>[${footnote.num}]</span> : ${found_fn}</p>`;
+        }
+      });
+    }
+  }
   if (matched) {
-    var search_link = "<a href='" + url + "'>";
+    console.log("\n\n" + section);
+
     var search_item = {};
+    if (Object.keys(footnotes).length > 0) {
+      let footnotes_str = footnotes.join("");
+      footnotes = footnotes_str;
+      footnotes = `<div class="footnote"><div>Footnotes:</div>${footnotes}</div>`
+    } else {
+      footnotes = "";
+    }
     var html = 
-      `<a href="${url}" class="search-item">
-        <h1>${ch_title}</h1>
-        <h2>${section} ${title}</h2>
-        ${content}
-        ${matched_img}</a>`;
-    //return html;
+      `<a href="${url}" class="search-item"><h1>${ch_title}</h1><h2>${section} ${title}</h2>${content}${matched_img}${footnotes}</a>`;
     if (is_interview) {
       if (title_matched) {
+        console.log("int title matched");
         search_item.interview = [html];
       } else {
         search_item.interviews = [html];
+        console.log("int no title matched");
       }
     }
     else if (section_matched || title_matched) {
       search_item.h2 = html;
+      console.log("non-int section/title matched");
     } else if (p_matched && !section_matched && !title_matched) {
       search_item.p = [html];
+      console.log("p matched");
     } else if (img_matched && !section_matched && !title_matched && !p_matched) {
       search_item.img = [html];
-    }	
+      console.log("img matched");
+    } else if (fn_matched && !section_matched && !title_matched && !p_matched && !img_matched && footnotes != "") {
+      console.log("footnotes matched");
+      search_item.footnotes = html;
+      console.log(html);
+      console.log(footnotes);
+    }
     return search_item;
   }
 }
@@ -204,7 +233,8 @@ document.getElementById('search').addEventListener('keyup', function (e) {
         "interview" : [],
         "interviews" : [],
         "p" : [],
-        "img" : []
+        "img" : [],
+        "footnotes" : []
       };
       for (var i=1; i<search_array.length; i++) { // offset first entry for toc
         let search_query = srch(search_array[i], searchText);
@@ -224,8 +254,12 @@ document.getElementById('search').addEventListener('keyup', function (e) {
           if (search_query.img){
             search_results.img.push(search_query.img);
           }
+          if (search_query.footnotes){
+            search_results.footnotes = search_results.footnotes.concat(search_query.footnotes);
+          }
         }
       }
+      console.log(search_results);
       html = search_results.h2.join("");
       if (search_results.interview.length > 0) {
         html += "<div class='search-item'><h1>Interviews:</h1></div>";
@@ -236,6 +270,11 @@ document.getElementById('search').addEventListener('keyup', function (e) {
       if (search_results.interviews.length > 0) {
         html += "<div class='search-item'><h1>Interviews:</h1></div>";
         html += search_results.interviews.join("");
+      }
+      if (search_results.footnotes.length > 0) {
+        //html += search_results.footnotes;
+        html += search_results.footnotes.join("");
+        console.log(search_results.footnotes);
       }
     }
     document.getElementById('results').innerHTML = html;

@@ -120,6 +120,9 @@ svg#vertical {
   width: 1px;
   height: 30px;
 }
+a {
+  color: var(--bg-blue);
+}
 .search {
   display: flex;
   align-items: center;
@@ -770,6 +773,26 @@ section > h1,
   color: #797979;
   margin: 4px 0 0;
 }
+.search-item > .footnote {
+  font-family: acumin-pro, sans-serif;
+  font-style: normal;
+  color: #797979;
+  margin: 4px 0 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+}
+.search-item > .footnote > p {
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
+}
+.search-item > .footnote > p > span {
+  color: var(--bg-blue);
+  text-decoration: none;
+}
+.search-item > .footnote > div {
+  margin-top: 6px;
+}
 section > h1:first-child {
   margin-top: 0;
 }
@@ -850,6 +873,9 @@ content > p {
   color: var(--gray-darker);
   line-height: 25px;
 }
+p.indented {
+  padding-left: 25px;
+}
 content img {
   max-width: 100%;
 }
@@ -888,6 +914,8 @@ blockquote {
   margin: 25px 0 25px 25px;
   padding: 0;
   quotes: "\201C""\201D";
+  display: flex;
+  flex-direction: column;
 }
 blockquote p {
   display: inline;
@@ -898,8 +926,18 @@ blockquote p {
   font-size: 16.3px;
   line-height: 25px;
   position: relative;
+  margin-block-start: 0.5em;
+  margin-inline-start: 0px;
+  margin-block-end: 0.5em;
+  margin-inline-end: 0px;
 }
-blockquote p::before {
+blockquote p:first-child {
+  margin-block-start: 1em;
+}
+blockquote p:last-child {
+  margin-block-end: 1em;
+}
+blockquote p:first-child::before {
   color: var(--bg-blue);
   content: open-quote;
   font-family: zenon,sans-serif;
@@ -1189,6 +1227,9 @@ ul.group-list li ul.sub-group-list li ul.sub-sub-group-list li ul.sub-sub-group-
   text-decoration: none;
   font-weight: 600;
   color: var(--bg-blue);
+}
+.pagecontent > ul li a.darkgray {
+  color: var(--gray-darker);
 }
 .pagecontent > p a.noul {
   text-decoration: none;
@@ -1586,6 +1627,8 @@ td,th {
 }
 td {
   text-align: right;
+  max-width: 170px;
+  white-space: break-spaces;
 }
 tr:nth-child(even){background-color: #f2f2f2;}
 
@@ -1819,6 +1862,9 @@ th {
   }
   #homebtm {
     padding: 0 0 75px;
+  }
+  td {
+    max-width: 150px;
   }
   footer #additional h3 {
     font-size: 18px;
