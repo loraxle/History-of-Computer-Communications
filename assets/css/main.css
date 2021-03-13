@@ -1367,6 +1367,30 @@ div#contact-send > h2 {
   font-weight: 500;
   line-height: 27px;
 }
+#topbtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+}
+#topbtn img {
+  background-color: #fff;
+}
+#topbtn > div {
+  color: #797979;
+  font-family: acumin-pro, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
 @media screen and (min-width: 500px) {
   #search-results {
     width: 450px;

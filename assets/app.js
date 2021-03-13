@@ -595,3 +595,19 @@ document.getElementById("table-of-contents").onchange = function(){
     document.getElementById("nextwrap").classList.add("hide");
   }
 };
+var topbutton = document.getElementById("topbtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  console.log("scrollFunction");
+  if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+    topbutton.style.display = "flex";
+  } else {
+    topbutton.style.display = "none";
+  }
+}
+window.addEventListener('gesturechange', function() {});
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

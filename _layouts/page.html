@@ -19,6 +19,15 @@
   {%- if page.name == "table-of-contents.md" -%}
     {%- include table-of-contents.html -%}
   {%- endif -%}
+      <div id="stickyside">
+        <div id="menutab" onclick="window.open('/explore.html', '_self')">
+          <div id="burg" class="burg burg--spin">
+            <div class="burg-box">
+              <div class="burg-inner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="search-results">
         <div class="closewrap">
           <div class="closebtn" onclick="hideResults()">×</div>
