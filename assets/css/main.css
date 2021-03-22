@@ -1664,6 +1664,7 @@ th {
   text-align: center;
   background-color: var(--bg-blue);
   color: #fff;
+  white-space: break-spaces;
 }
 
 @media screen and (min-width: 768px) {

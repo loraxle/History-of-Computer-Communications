@@ -596,11 +596,19 @@ document.getElementById("table-of-contents").onchange = function(){
   }
 };
 var topbutton = document.getElementById("topbtn");
+var footer = document.querySelector("footer");
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
-  console.log("scrollFunction");
   if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
     topbutton.style.display = "flex";
+    var position = footer.getBoundingClientRect();
+    if(position.top < window.innerHeight && position.bottom >= 0) {
+      let stickyspace = 30 + (window.innerHeight - position.top); 
+      stickyspace = stickyspace + "px";
+      topbutton.style.bottom = stickyspace;
+    } else {
+      topbutton.style.bottom = "30px";
+    }
   } else {
     topbutton.style.display = "none";
   }
