@@ -1489,14 +1489,17 @@ div#contact-send > h2 {
   max-width: 348px;
   margin-left: 0px;
 }
+#homequote blockquote {
+  margin: 25px 0 10px 25px;
+}
 #homequote blockquote p {
   display: inline-block;
   font-family: zenon,sans-serif;
   font-weight: 500;
   font-style: italic;
   color: var(--gray-darker);
-  font-size: 19px;
-  line-height: 27px;
+  font-size: 16px;
+  line-height: 24px;
   position: relative;
   text-align: center;
 }
@@ -1511,13 +1514,28 @@ div#contact-send > h2 {
 }
 #homequote blockquote p::before {
   content: open-quote;
-  top: 16px;
-  left: -20px;
+  top: 0px;
+  left: -40px;
 }
 #homequote blockquote p::after {
   content: close-quote;
-  bottom: -14px;
+  bottom: -25px;
   right: 55px;
+}
+#homequote > div {
+  font-family: acumin-pro, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  line-height: 22px;
+  text-align: center;
+}
+#homequote-name {
+  font-weight: 600;
+  font-style: normal;
+}
+#homequote-title {
+  font-weight: 400;
+  font-style: italic;
 }
 blockquote > blockquote > p {
   margin-left: -3rem;
