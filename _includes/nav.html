@@ -17,7 +17,7 @@
     </a>
     <div class="nav">
       <div class="navbar">
-        <a href="/" {%- if page.name == "index.md" or page.name == "about.md" or page.name == "contact.md" -%} class="active" {%- endif -%} title="Home">Home</a>    
+        <a href="/" {%- if page.name == "index.md" -%} class="active" {%- endif -%} title="Home">Home</a>    
         <a href="/explore.html" {% if page.name == "explore.md" or page.name == "table-of-contents.md" %} class="active"{% endif %} id="expl" title="Explore">Explore</a>
         <a href="/contribute.html" {%- if page.name == "contribute.md" -%} class="active" {%- endif -%} title="Contribute">Contribute</a>    
       </div>
