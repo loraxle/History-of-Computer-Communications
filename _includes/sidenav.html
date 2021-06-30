@@ -276,7 +276,7 @@
                 {%- assign first_name = first_name | join: " " -%}
                 {%- assign heading = last_name | append: ", " | append: first_name -%}
               {%- endif -%}
-                  <li><a href="{{- interview.url -}}" id="int{{- interview.url | remove: '/interviews/' -}}" >{{- heading -}}</a></li>
+                  <li><a href="{{- interview.url -}}" id="int{{- interview.url | remove: '/interviews/' | remove: '/' -}}" >{{- heading -}}</a></li>
             {%- endfor -%}
                 </ul>
               </li>

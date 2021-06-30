@@ -130,7 +130,7 @@ function pdf_search(term) {
   }
 }
 
-let mql = window.matchMedia('(min-width: 60rem)');
+let mql = window.matchMedia('(min-width: 68.75rem)');
 var mq = window.matchMedia("(min-width: 1100px)");
 
 function desktopMenu(mq) {
@@ -405,7 +405,8 @@ function handleLink(e) {
       case 1: //Next
         window.scrollTo(0,0); //scroll to top
         url = nexta.href;
-        if (nexta.pathname.includes("interview")) {
+        if (nexta.pathname.includes("interviews")) {
+          //section_id = "int" + nexta.pathname.replace("/interviews/","").replace("/","");
           section_id = "int" + nexta.pathname.replace("/interviews/","").replace("/","");
         } else {
           let next_a = nexta.pathname.replace("/section/", "").split("/");
@@ -441,7 +442,8 @@ function handleLink(e) {
       case 2: //Prev
         window.scrollTo(0,0); //scroll to top
         url = preva.href;
-        if (preva.pathname.includes("interview")) {
+        if (preva.pathname.includes("interviews")) {
+          //section_id = "int" + preva.pathname.replace("/interviews/","").replace("/","");
           section_id = "int" + preva.pathname.replace("/interviews/","").replace("/","");
         } else {
           section_id = preva.pathname.replace("/section/", "").split("/")[0];
