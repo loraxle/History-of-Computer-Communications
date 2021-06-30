@@ -654,11 +654,11 @@ label > svg {
   top: 0;
   right: 25px;
   font-size: 36px;
-  transition: transform .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 #search-results .closebtn:hover {
   transform: rotate(180deg);
-  top: 5px;
+  top: 6px;
 }
 #search-results > div > h1,
 #search-results > div > h2,
