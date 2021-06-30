@@ -1085,6 +1085,8 @@ footer #footmid {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
 }
 footer #additional {
   margin-top: 20px;
@@ -1413,6 +1415,19 @@ div#contact-send > h2 {
   .contactcontent > form[name="contact"] > div > div:not(:last-child) input {
     margin-bottom: 14px;
   }
+  footer #additional {
+    margin-left: 50px;
+  }
+  footer #footmid {
+    margin-top: 0;
+  }
+  footer #footfb > #footfbdesk {
+    display: flex;
+    padding: 15px 0;
+  }
+  footer a#footfbmobile {
+    display: none;
+  }
 }
 /* end contact */
 /* home content */
@@ -1424,7 +1439,7 @@ div#contact-send > h2 {
   width: 100%;
   min-height: 437px;
   background-color: rgba(255,255,255,1);
-  padding: 30px 0 50px;
+  padding: 30px 0 30px;
 }
 #Rectangle_12_h {
   opacity: 0.339;
@@ -1555,6 +1570,7 @@ blockquote > blockquote > p::before {
 #homemid {
   position: relative;
   top: 0;
+  padding-top: 40px;
 }
 #homemid > #homebook {
   display: flex;
@@ -1626,6 +1642,15 @@ blockquote > blockquote > p::before {
   font-style: normal;
   line-height: 24px;
   font-size: 16px;
+}
+#homebtm > p:first-child {
+  font-size: 18px;
+  font-weight: 800;
+  width: 100%;
+  text-align: left;
+}
+#homebtm > p:nth-child(2) {
+  font-weight: 600;
 }
 ul.homelist {
   list-style: none;
@@ -2006,9 +2031,13 @@ th {
   }
   footer #additional {
     width: 210px;
+    margin-left: 100px;
   }
   footer #additional > ul {
     margin-left: 0;
+  }
+  footer #footright {
+    margin-right: 100px;
   }
   footer ul > li {
     font-size: 17px;    
@@ -2016,12 +2045,6 @@ th {
   footer #footfb {
     height: 100%;
     margin-left: 32px;
-  }
-  footer a#footfbmobile {
-    display: none;
-  }
-  footer #footfb > #footfbdesk {
-    display: flex;
   }
   footer img#chm {
     width: 130px;

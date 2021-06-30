@@ -11,7 +11,6 @@ if ("serviceWorker" in navigator) {
       fetch('/json/index.json')
         .then(response => response.json())
         .then(data => {
-          //console.log(data);
           book_data = data;
           toc = book_data["toc"];
           delete book_data["toc"]; // remoce toc
@@ -156,21 +155,11 @@ function pdf_search(term) {
   }
 }
 
+let mql = window.matchMedia('(min-width: 60rem)');
 var mq = window.matchMedia("(min-width: 1100px)");
 
 function desktopMenu(mq) {
-  
-  if (mq.matches) {
-    //document.getElementById("burg").classList.add("is-active");
-    /*
-    if (!document.getElementById("burg").classList.contains("is-active")) {
-      document.getElementById("burg").classList.add("is-active");
-    }
-    if (!menu.classList.contains("slide-in-left")) {
-      menu.classList.add("slide-in-left");
-    }
-    */
-  } else {
+  if (!mq.matches) {
     sidemenu();
     if (document.getElementById("burg").classList.contains("is-active")) {
       document.getElementById("burg").classList.remove("is-active");
@@ -182,7 +171,6 @@ function desktopMenu(mq) {
 }
 
 desktopMenu(mq);
-//mq.addListener(desktopMenu);
 var searchResults = document.getElementById("search-results");
 
 function sidemenu() {
@@ -328,7 +316,7 @@ function decode (str) {
 };
 
 function renderContent(section_id) {
-    console.log("rendering " + section_id);
+    //console.log("rendering " + section_id);
     var hash = 0;
     var section_id_array = section_id.split("#");
     if (section_id_array.length > 1) {
@@ -527,6 +515,9 @@ function handleLink(e) {
           }
         }
         url = e.target.href;
+        if (!mql.matches) {
+          sidemenu();
+        }
         break;
       default:
         return false;
