@@ -13,7 +13,7 @@ if ("serviceWorker" in navigator) {
         .then(data => {
           book_data = data;
           toc = book_data["toc"];
-          delete book_data["toc"]; // remoce toc
+          delete book_data["toc"]; // remove toc
           search_array = Object.entries(book_data);
         });
       fetch('/assets/pdf.json')
@@ -69,8 +69,6 @@ r(function(){
         activeSection[0].checked=true;
         if (document.querySelector(".selected")) {
           document.querySelector(".selected").classList.remove("selected");
-        } else {
-          console.log("NO PREVIOUSLY SELECTED SIDENAV LINK");
         }
         activeSection[0].classList.add("selected");
         crawlDOM(activeSection[0]);
@@ -112,29 +110,6 @@ r(function(){
     url = window.location.href;
     history.pushState(state, title, url);
   }
-/*
-  window.caches.open(CACHE_NAME).then(cache => {
-    cache.match("/json/index.json").then(cached => {
-      try {
-        cached.json().then(cached_data => {
-          book_data = cached_data;
-          search_array = Object.entries(book_data);
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    });
-    cache.match("/assets/pdf.json").then(cached => {
-      try {
-        cached.json().then(cached_data => {
-          pdfs = cached_data;
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    });
-  });
-*/
   if (fragment) {
     setHash(fragment, section_id);
   }
@@ -569,7 +544,7 @@ var searchbar = document.querySelector("input[name='search']");
 document.getElementById("srch").addEventListener("click", function() {
   searchbar.focus();
 });
-
+/*
 document.getElementById("table-of-contents").onchange = function(){
   if (this.checked) {
     let pagecontent = document.querySelector(".pagecontent");
@@ -586,6 +561,7 @@ document.getElementById("table-of-contents").onchange = function(){
     document.getElementById("nextwrap").classList.add("hide");
   }
 };
+*/
 var topbutton = document.getElementById("topbtn");
 var footer = document.querySelector("footer");
 window.onscroll = function() {scrollFunction()};

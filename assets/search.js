@@ -178,8 +178,7 @@ function srch(item, searchText) {
     }
   }
   if (matched) {
-    console.log("\n\n" + section);
-
+    //console.log("\n\n" + section);
     var search_item = {};
     if (Object.keys(footnotes).length > 0) {
       let footnotes_str = footnotes.join("");
@@ -192,27 +191,27 @@ function srch(item, searchText) {
       `<a href="${url}" class="search-item"><h1>${ch_title}</h1><h2>${section} ${title}</h2>${content}${matched_img}${footnotes}</a>`;
     if (is_interview) {
       if (title_matched) {
-        console.log("int title matched");
+        //console.log("int title matched");
         search_item.interview = [html];
       } else {
         search_item.interviews = [html];
-        console.log("int no title matched");
+        //console.log("int no title matched");
       }
     }
     else if (section_matched || title_matched) {
       search_item.h2 = html;
-      console.log("non-int section/title matched");
+      //console.log("non-int section/title matched");
     } else if (p_matched && !section_matched && !title_matched) {
       search_item.p = [html];
-      console.log("p matched");
+      //console.log("p matched");
     } else if (img_matched && !section_matched && !title_matched && !p_matched) {
       search_item.img = [html];
-      console.log("img matched");
+      //console.log("img matched");
     } else if (fn_matched && !section_matched && !title_matched && !p_matched && !img_matched && footnotes != "") {
-      console.log("footnotes matched");
+      //console.log("footnotes matched");
       search_item.footnotes = html;
-      console.log(html);
-      console.log(footnotes);
+      //console.log(html);
+      //console.log(footnotes);
     }
     return search_item;
   }
@@ -259,7 +258,7 @@ document.getElementById('search').addEventListener('keyup', function (e) {
           }
         }
       }
-      console.log(search_results);
+      //console.log(search_results);
       html = search_results.h2.join("");
       if (search_results.interview.length > 0) {
         html += "<div class='search-item'><h1>Interviews:</h1></div>";
@@ -274,7 +273,7 @@ document.getElementById('search').addEventListener('keyup', function (e) {
       if (search_results.footnotes.length > 0) {
         //html += search_results.footnotes;
         html += search_results.footnotes.join("");
-        console.log(search_results.footnotes);
+        //console.log(search_results.footnotes);
       }
     }
     document.getElementById('results').innerHTML = html;

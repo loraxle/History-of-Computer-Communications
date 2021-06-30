@@ -1636,7 +1636,8 @@ blockquote > blockquote > p::before {
   color: #2F2F2F;
   padding: 0 28px 30px;
 }
-#homebtm > p {
+#homebtm > p,
+#homebtm > .img-p > p {
   font-family: acumin-pro, sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -1651,6 +1652,15 @@ blockquote > blockquote > p::before {
 }
 #homebtm > p:nth-child(2) {
   font-weight: 600;
+}
+#homebtm > .img-p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#homebtm > .img-p > img {
+  width: 320px;
+  height: 245.68px;
 }
 ul.homelist {
   list-style: none;
@@ -1814,6 +1824,12 @@ th {
   }
   #homebtm {
     padding: 0 0 65px;
+  }
+  #homebtm > .img-p {
+    flex-direction: row;
+  }
+  #homebtm > .img-p > img {
+    margin-right: 60px;
   }
   .pagecontent > h1.origins {
     /*line-height: 37px;*/

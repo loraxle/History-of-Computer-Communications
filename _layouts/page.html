@@ -20,12 +20,15 @@
     {%- include table-of-contents.html -%}
   {%- endif -%}
       <div id="stickyside">
-        <div id="menutab" onclick="window.open('/explore.html', '_self')">
+        <div id="menutab" onclick="sidemenu();">
           <div id="burg" class="burg burg--spin">
             <div class="burg-box">
               <div class="burg-inner"></div>
             </div>
           </div>
+        </div>
+        <div class="sidebar animated">
+          <div class="sidenav ready">{%- include_cached sidenav.html -%}</div>
         </div>
       </div>
       <div id="search-results">
