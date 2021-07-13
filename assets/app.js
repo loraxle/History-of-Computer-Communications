@@ -318,6 +318,7 @@ function renderContent(section_id) {
     if (book_data[section_id].appendix == "true") {
       section_title = book_data[section_id].title;
     }
+    document.title = book_data[section_id].title;
     var canonical = window.location.origin;
     if (section_id.startsWith("int")) {
       section_title = book_data[section_id].title;
@@ -546,24 +547,6 @@ var searchbar = document.querySelector("input[name='search']");
 document.getElementById("srch").addEventListener("click", function() {
   searchbar.focus();
 });
-/*
-document.getElementById("table-of-contents").onchange = function(){
-  if (this.checked) {
-    let pagecontent = document.querySelector(".pagecontent");
-    if (pagecontent) {
-      pagecontent.remove();
-    }
-    document.getElementById("chapter-title").innerHTML = toc.ch_title;
-    document.getElementById("section-title").innerHTML = "";
-    document.querySelector("content").innerHTML = decode(toc.content);
-    document.getElementById("footnotes").innerHTML = "";
-    document.getElementById("preva").href = "";
-    document.getElementById("prevwrap").classList.add("hide");
-    document.getElementById("nexta").href = "";
-    document.getElementById("nextwrap").classList.add("hide");
-  }
-};
-*/
 var topbutton = document.getElementById("topbtn");
 var footer = document.querySelector("footer");
 window.onscroll = function() {scrollFunction()};
