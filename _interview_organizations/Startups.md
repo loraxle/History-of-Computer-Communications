@@ -29,7 +29,7 @@ nav:
           - "16"
       - nested-heading: General Datacom
         nested-sections:
-          - "77"
+          - "76"
       - nested-heading: Infotron
         nested-sections:
           - "16"
