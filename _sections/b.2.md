@@ -5,6 +5,8 @@ slug: "Manley Irwin Papers"
 order: 1602
 ---
 
+![Manley Irwin](/assets/img/manley-irwin.JPG)
+
 Manley Irwin worked as a staff economist for Bernard Strassburg at the FCC Common Carrier Bureau. In these papers, Irwin describes the research he did on the convergence of computers and telecommunication. His work was crucial to Strassburg's understanding of the coming challenges to regulating these industries. Strassburg was awarded a National Civil Services Award in 1966 for is role in anticipating the issue before it became a bigger problem.
 
 1) [FCC Computer Inquiry](/assets/pdf/Manley Irwin - The FCC Computer Inquiry.pdf){:target="_blank"}
