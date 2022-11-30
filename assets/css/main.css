@@ -972,28 +972,25 @@ footer #footleftcontent {
 }
 footer #footleftcontent > div {
   height: 100%;
-  white-space: 100%;
+  white-space: wrap;
   margin-left: 0px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 20px;
 }
 footer h3 {
-  margin: 10px 0 0;
+  margin: 10px 0 4px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 21px;
 }
 footer #footleftcontent > div > h3 {
-  width: 160px;
-  text-align: center;
   white-space: nowrap;
 }
 footer img#book {
   margin-top: -45px;
   margin-left: -40px;
-  max-height: 207px;
+  max-height: 268px;
   z-index: 9;
   pointer-events: none;
   display: none;
@@ -1025,6 +1022,7 @@ a.preorder {
 footer ul > li {
   max-width: 225px;
   font-size: 14px;
+  line-height: 17px;
   font-family: acumin-pro, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -1035,18 +1033,17 @@ footer #additional > ul > li {
   margin-bottom: 2px;
 }
 footer #footleftcontent > div > ul {
-  list-style: none;
+  list-style: "- ";
   padding-left: 0;
   display: flex;
   flex-direction: column;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  margin-left: 3px;
+  width: 100%;
 }
 footer #footleftcontent > div > ul > li {
   margin-left: 15px;
-}
-/* Prevent nested li's from getting messed up */
-footer #footleftcontent > div > ul > li::before {
-  content: "- ";
-  margin-left: -15px;
 }
 footer #additional > ul {
   list-style: none;
@@ -1073,11 +1070,8 @@ footer #footmid {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   margin-top: 25px;
-}
-footer #additional {
-  margin-top: 20px;
 }
 footer #additional h3 {
   text-decoration: underline;
@@ -1403,8 +1397,9 @@ div#contact-send > h2 {
   .contactcontent > form[name="contact"] > div > div:not(:last-child) input {
     margin-bottom: 14px;
   }
-  footer #additional {
-    margin-left: 50px;
+  footer ul > li {
+    font-size: 17px;
+    line-height: 19px;
   }
   footer #footmid {
     margin-top: 0;
@@ -1855,8 +1850,7 @@ th {
     margin-left: -60px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    align-items: start;
   }
   footer img#book {
     display: block;
@@ -1880,10 +1874,7 @@ th {
     display: none;
   }
   footer #footleftcontent > div > h3 {
-    white-space: normal;
-  }
-  a.preorder {
-    margin-top: 15px;
+    white-space: nowrap;
   }
   footer #additional > ul > li {
     margin-bottom: 7px;
@@ -1894,7 +1885,6 @@ th {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    margin-left: 10px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -2002,7 +1992,6 @@ th {
   }
   footer h3 {
     margin: 10px 0 0;
-    font-size: 20px;
   }
   footer #footleftcontent > div {
     width: 280px;
@@ -2023,16 +2012,12 @@ th {
   }
   footer #additional {
     width: 210px;
-    margin-left: 100px;
   }
   footer #additional > ul {
     margin-left: 0;
   }
   footer #footright {
     margin-right: 100px;
-  }
-  footer ul > li {
-    font-size: 17px;    
   }
   footer #footfb {
     height: 100%;
