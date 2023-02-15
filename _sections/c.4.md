@@ -1,8 +1,0 @@
----
-chapter: 17
-title: "Ungermann-Bass"
-slug: "Ungermann-Bass"
-order: 1704
----
-
-Upon being forced out of Zilog at the end of 1978, Ralph Ungermann immediately began looking for the next great technological opportunity: he was intent on starting another company. After talking with a wide assortment of experts, he formulated a vision of an independent local area networking company. In time, the vision would be expanded to encompass not just one, or a few technologies, but interconnecting many of the LAN technologies customers wanted to buy. Knowing he needed a team of seasoned technologists, he turned first to Charlie Bass. Disgruntled with Zilog, Bass readily agreed to join Ungermann and, in July 1979, they founded Ungermann-Bass. Quickly they recruited others they knew were dissatisfied working at Zilog including Judith Estrin and John Davidson. But when it came to closing their first round of venture capital, they were forced to bring a seasoned marketing and sales executive aboard. They then met Jim Jordan, vice-president of sales of Four-Phase Systems, who had been unsuccessful in getting management to take the early generation LAN of Datapoint seriously. On joining Ungermann-Bass, venture capitalists agreed to invest. Swept forward by the demand of corporations needing to interconnect their growing bases of computers, Ungermann-Bass went public on June 23, 1983 with a company valuation of $288 million. They had seized leadership of the emerging Networking market sector. But trying to master all technologies would prove expensive and, in 1988, Tandem Computers acquired Ungermann-Bass for $274 million. 
